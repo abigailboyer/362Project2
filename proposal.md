@@ -1,4 +1,6 @@
-Team Members: Davon Branch
+Team Members:
+Davon Branch
+Abigail Boyer
 
 Booking System: Purchasing tickets for airplanes.
 
@@ -6,5 +8,6 @@ URL of team GitHub repository: https://github.com/WebDev362
 
 URL of each team member's individual fork:
 Davon: https://github.com/davonab/362Project2
+Abigail: https://github.com/abigailboyer/362Project2
 
 Communication app we are using: Basecamp
