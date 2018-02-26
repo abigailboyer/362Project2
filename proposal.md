@@ -3,23 +3,13 @@
 
 ### Team
 
-Davon Branch
+Davon Branch - [fork](https://github.com/davonab/362Project2)
 
-Abigail Boyer
+Abigail Boyer - [fork](https://github.com/abigailboyer/362Project2)
 
-Elijah Irizarry
+Elijah Irizarry - [fork](https://github.com/Eirizarr/362Project2)
 
 [team GitHub repository](https://github.com/WebDev362/)
-
-
-
-**Individual Forks**
-
-[Davon](https://github.com/davonab/362Project2)
-
-[Abigail](https://github.com/abigailboyer/362Project2)
-
-[Elijah](https://github.com/Eirizarr/362Project2)
 
 ### Booking System
 
