@@ -1,15 +1,18 @@
-Team Members:
-Davon Branch
-Abigail Boyer
-Elijah Irizarry
+# ITMD 362 Project 2
+## The Dominators' Airline Seat Selection
 
-Booking System: Purchasing tickets for airplanes.
+### Team
 
-URL of team GitHub repository: https://github.com/WebDev362
+- [Davon Branch](https://github.com/davonab/362Project2)
+- [Abigail Boyer](https://github.com/abigailboyer/362Project2)
+- [Elijah Irizarry](https://github.com/Eirizarr/362Project2)
 
-URL of each team member's individual fork:
-Davon: https://github.com/davonab/362Project2
-Abigail: https://github.com/abigailboyer/362Project2
-Elijah: https://github.com/Eirizarr/362Project2
+[team GitHub repository](https://github.com/WebDev362/)
 
-Communication app we are using: Basecamp, Groupme
+### Booking System
+
+Purchasing airline tickets with seat selection.
+
+### Communication Methods
+
+Basecamp, Groupme
