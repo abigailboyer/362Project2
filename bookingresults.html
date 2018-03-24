@@ -41,3 +41,42 @@
       </li>
     </ol>
   </form>
+  <!-- Second form that will allow users to pick times, stops, and tell them duration, and price for thier departure flight -->
+  <h2>Departing Flight</h2>
+  <form id="departureform" action="#null" method="get">
+    <ol>
+      <li id="Departtime">
+        <label for="DepartureTime" class="labels"> Please select your Departure Time: </label>
+        <select name="Departure Times">
+          <option value="1st Choice">5:45 am</option>
+          <option value="2nd Choice">10:30 am</option>
+          <option value="3rd Choice">3:00 pm</option>
+          <option value="4th Choice">7:00 pm</option>
+        </select>
+      </li>
+      <li id="Arrivaltime">
+        <label for="ArrivalTime" class="labels">Please select your arrival Arrival Time: </label>
+        <select name="Arrival Times">
+          <option value="1st Choice">5:45 am</option>
+          <option value="2nd Choice">10:30 am</option>
+          <option value="3rd Choice">3:00 pm</option>
+          <option value="4th Choice">7:00 pm</option>
+        </select>
+      </li>
+      <li>
+      <input type="checkbox" name="vehicle" value="Orlando">Nonstop</input>
+    </li>
+      <li id="Duration">
+      <p id="duration"> Your Duration is: </p>
+      </li>
+      <li id="Price">
+          <p id="Price"> Your Price is: </p>
+      </li>
+      <li>
+       <input type="submit" name="update" value="select" id="update"/>
+     </li>
+      <li>
+        <p id="confirmation"> ..................</p>
+      </li>
+    </ol>
+  </form>
