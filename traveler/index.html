@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <title>User</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <link rel="stylesheet" href="http://basehold.it/20" />
+  <link rel="stylesheet" href="../screen.css" />
 </head>
 <body>
   <header>
@@ -27,11 +29,10 @@
             <input type="date" id="birthday" name="birthday" />
           </li>
           <li>
-            <label for="gender">Gender</label>
-            <select>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </selection>
+            <label for="malegender">Male</label>
+            <input type="radio" id="malegender" name="gender" />
+            <label for="femalegender">Female</label>
+            <input type="radio" id="femalegender" name="gender" />
           </li>
         </ol>
       </form>
@@ -57,4 +58,3 @@
   </main>
 </body>
 </html>
-
