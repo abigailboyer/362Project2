@@ -12,18 +12,19 @@
   <main id="content">
     <section id="insurance">
       <h2>Insurance</h2>
-      <p>Here we have the option for you to cover your flight with our 
-        insurance plan, included you are guaranteed a refund if you become
-        ill and it covers any lost backage that was loaded onto the luggage
+      <p>Here we have the option for you to cover your flight with our
+        insurance plan, included, you are guaranteed a refund if you become
+        ill and it covers any lost backage that was loaded onto the plane
       </p>
       <form action="#null" method="get" id="insuranceinformation">
         <ol>
           <li>
-            <label for="insuranceoptions">Choice of Insurance</label>
-            <select>
-              <option value="yes">Yes, I want to pay an extra $25.00</option>
-              <option value="no">No, I do not want to add the insurance plan to my payment.</option>
-            </select>
+            <input type="radio" id="yesopt" name="yesopt" value="yes" >
+            <label for="yesopt">Yes, I want to add an extra $25.00 onto
+            my total.</label>
+            <input type="radio" id="noopt" name="noopt" value="no" >
+            <label for="noopt">No, I dont want to purchase the flight insurance.
+            </label>
           </li>
         </ol>
       </form>
@@ -49,7 +50,7 @@
             <input name="username" id="username" type="text" />
           </li>
           <li>
-            <label for="address">Billing address</label> 
+            <label for="address">Billing address</label>
             <input name="address" id="address" type="text" />
           </li>
           <li>
@@ -80,11 +81,3 @@
   </main>
 </body>
 </html>
-
-
-
-
-          
-
-
-
