@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <title>Payment Information</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="stylesheet" href="http://basehold.it/20" />
+  <link rel="stylesheet" href="../screen.css" />
 </head>
 <body>
   <header>
@@ -19,11 +21,10 @@
       <form action="#null" method="get" id="insuranceinformation">
         <ol>
           <li>
-            <label for="insuranceoptions">Choice of Insurance</label>
-            <select>
-              <option value="yes">Yes, I want to pay an extra $25.00</option>
-              <option value="no">No, I do not want to add the insurance plan to my payment.</option>
-            </select>
+            <label for="yesoption">Yes, I want to pay an extra $25.00</label>
+            <input type="radio" id="yesoption" name="yes" />
+            <label for="nooption">No, I want to keep my total as it is</label>
+            <input type="radio" id="nooption" name="no" />
           </li>
         </ol>
       </form>
