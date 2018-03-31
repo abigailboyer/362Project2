@@ -23,5 +23,12 @@ $.noConflict();
     if(document.getElementById("email").value === '' ){
       $('#email').after('<li id="error">Your email is missing!</li>');
     }
+    // check if there is data in the input boxes
+    if(document.getElementById("fname").value !== '' && document.getElementById("lname").value !== ''
+    && document.getElementById("number").value !== '' && document.getElementById("email").value !== ''){
+      $('uinformation').append('<p>Your information has been submitted, thank you!</p>');
+      // remove the error messages
+       document.getElementById("error").remove();
+    }
   });
 })(jQuery);
