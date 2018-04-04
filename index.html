@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Flight Booking</title>
+  <title>Flight Booking: Search for Flights</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
-  <link rel="stylesheet" href="screen.css" />
   <link rel="stylesheet" href="http://basehold.it/20" />
+  <link rel="stylesheet" href="screen.css" />
 </head>
 <body>
   <header>
@@ -19,16 +19,19 @@
   <main>
     <section id="flightsearch">
       <h2>Find a flight!</h2>
-      <form action="../searchresults/index.html" method="get" id="flightsearch" novalidate>
-        <ol id="search">
-          <li>
-            <label for="oneway">One-Way</label>
-            <input type="radio" id="oneway" name="trip" value="One-Way" />
-          </li>
-          <li>
-            <label for="round">Round Trip</label>
-            <input type="radio" id="round" name="trip" value="Round Trip" checked />
-          </li>
+     <form action="../searchresults/index.html" method="get" id="flightsearch" novalidate>
+        <ol id="searchone">
+          <ul id="trip">
+            <li>
+              <label for="oneway">One-Way</label>
+              <input type="radio" id="oneway" name="trip" value="One-Way" />
+            </li>
+            <li>
+              <label for="round">Round Trip</label>
+              <input type="radio" id="round" name="trip" value="Round Trip" checked />
+            </li>
+          </ul>
+          <!-- todo: change placeholders -->
           <li>
             <label for="departloc">Departing Location</label>
             <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
