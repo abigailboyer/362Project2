@@ -26,6 +26,7 @@ html {
 
 body {
   color: #222;
+  font-family: sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
@@ -34,34 +35,52 @@ h1,
 h2,
 h3,
 h4 {
-  color: #217FE8;
+  color: #003773;
 }
 
 h1 {
-  font-size: 35.538px;
+  font-size: 37.897px;
   line-height: 50px;
+  margin-bottom: 20px;
+
+  background-color: orange;
+}
+
+h1 a {
+    color: #003773;
 }
 
 h2 {
-  font-size: 21.328px;
+  font-size: 28.43px;
   line-height: 30px;
+  margin-bottom: 20px;
+
+  background-color: pink;
 }
 
 a {
   color: #217FE8;
+  text-decoration: none;
 }
 
-a:visited {
-  color: inherit;
+a:hover {
+  color: #ADD4FF;
 }
+
+/* form styles */
+/* todo: add form reset later */
 
 form {
-  background-color: #6BB1FF;
+  background-color: #ADD4FF;
 }
 
 label {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 21.328px;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+  display: block;
+
+  background-color: red;
 }
 
 input {
@@ -71,11 +90,15 @@ input {
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
+  margin: 0 0 10px 0;
 
-  padding-bottom: 10px;
 }
 
 input[type="submit"] {
-  color: #ADD4FF;
+  color: #ffffff;
   background-color: #004EA6;
+}
+
+input[type="radio"] {
+  transition: 0.2s all linear;
 }
