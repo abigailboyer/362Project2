@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Search Results</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="stylesheet" href="http://basehold.it/20" />
+  <link rel="stylesheet" href="../screen.css" />
+</head>
+<body>
+  <main>
+    <h1>Search Results</h1>
+    <!-- todo: add form that replicates inputs from
+    the first form and allows editing -->
+
+    
+  <!--  <form id="userform" action="#null" method="get">
+      <ol>
+        <li>
+          <label for="DepartureLocation" class="labels"> Please enter your Departure Location: </label>
+          <input type="text" name="departloc" id="departloc" placeholder="Chicago, IL" />
+        </li>
+        <li>
+          <label for="ArrivalLocation" class="labels">Please select your arrival destination: </label>
+          <select name="Cities">
+            <option value="New York">New York City, New York</option>
+            <option value="Orlando">Orlando, Florida</option>
+            <option value="Dallas, Texas">Dallas, Texas</option>
+            <option value="San Fancisco">San Francisco, California</option>
+          </select>
+        </li>
+        <li>
+          <label for="departure" class="labels">Enter your Departure date: </label>
+           <input type="date" id="ddate" name="departuredate"/>
+        </li>
+        <li>
+          <label for="return" class="labels">Enter your Return Date: </label>
+           <input type="date" id="rdate" name="returndate"/>
+        </li>
+        <li>
+         <input type="submit" name="update" value="Update!" id="update"/>
+       </li>
+        <li>
+          <p id="confirmation"> ..................</p>
+        </li>
+      </ol>
+    </form> -->
+
+<!-- todo: only show return flight when round trip was selected -->
+
+  <form id="flightselection" action="#null" method="get">
+    <h2>Departing Flight</h2>
+  <!-- select departing flight -->
+    <ol>
+      <li>
+        <label for="flightone">Flight One</label>
+        <input type="radio" id="flightone" name="departflight" />
+        <ul>
+          <li>
+            Depature Time
+          </li>
+          <li>
+            Arrival Time
+          </li>
+          <li>
+            Flight Duration
+          </li>
+          <li>
+            Stops
+          </li>
+          <li>
+            Price
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <label for="flighttwo">Flight Two</label>
+        <input type="radio" id="flighttwo" name="departflight" />
+        <ul>
+          <li>
+            Depature Time
+          </li>
+          <li>
+            Arrival Time
+          </li>
+          <li>
+            Flight Duration
+          </li>
+          <li>
+            Stops
+          </li>
+          <li>
+            Price
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <label for="flightthree">Flight Three</label>
+        <input type="radio" id="flightthree" name="departflight" />
+        <ul>
+          <li>
+            Depature Time
+          </li>
+          <li>
+            Arrival Time
+          </li>
+          <li>
+            Flight Duration
+          </li>
+          <li>
+            Stops
+          </li>
+          <li>
+            Price
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <label for="flightfour">Flight Four</label>
+        <input type="radio" id="flightfour" name="departflight" />
+        <ul>
+          <li>
+            Depature Time
+          </li>
+          <li>
+            Arrival Time
+          </li>
+          <li>
+            Flight Duration
+          </li>
+          <li>
+            Stops
+          </li>
+          <li>
+            Price
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>Return Flight</h2>
+    <ol>
+      <li>
+        <label for="fone">Flight One</label>
+        <input type="radio" id="fone" name="returnflight" />
+        <ul>
+          <li>
+            Depature Time
+          </li>
+          <li>
+            Arrival Time
+          </li>
+          <li>
+            Flight Duration
+          </li>
+          <li>
+            Stops
+          </li>
+          <li>
+            Price
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <label for="ftwo">Flight Two</label>
+        <input type="radio" id="ftwo" name="returnflight" />
+        <ul>
+          <li>
+            Depature Time
+          </li>
+          <li>
+            Arrival Time
+          </li>
+          <li>
+            Flight Duration
+          </li>
+          <li>
+            Stops
+          </li>
+          <li>
+            Price
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <label for="fthree">Flight Three</label>
+        <input type="radio" id="fthree" name="returnflight" />
+        <ul>
+          <li>
+            Depature Time
+          </li>
+          <li>
+            Arrival Time
+          </li>
+          <li>
+            Flight Duration
+          </li>
+          <li>
+            Stops
+          </li>
+          <li>
+            Price
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <label for="ffour">Flight Four</label>
+        <input type="radio" id="ffour" name="returnflight" />
+        <ul>
+          <li>
+            Depature Time
+          </li>
+          <li>
+            Arrival Time
+          </li>
+          <li>
+            Flight Duration
+          </li>
+          <li>
+            Stops
+          </li>
+          <li>
+            Price
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="submit" id="submit" name="submit" value="Select Flights" />
+      </li>
+    </ol>
+  </form>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../site.js"></script>
+</body>
+</html>
