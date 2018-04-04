@@ -12,27 +12,21 @@
     <h1>Payment Information</h1>
   </header>
   <main id="content">
-    <section id="insurance">
-      <h2>Insurance</h2>
+    <section id="CardInformation">
+      <h2 id="h2card">Card Information</h2>
       <p>Here we have the option for you to cover your flight with our
-        insurance plan, included you are guaranteed a refund if you become
-        ill and it covers any lost backage that was loaded onto the luggage
+        insurance plan, included, you are guaranteed a refund if you become
+        ill and it covers any lost backage that was loaded onto the plane
       </p>
-      <form action="#null" method="get" id="insuranceinformation">
+      <form action="../confirmeditinerary/index.html" method="get" id="paymentinformation">
         <ol>
           <li>
-            <label for="yesoption">Yes, I want to pay an extra $25.00</label>
-            <input type="radio" id="yesoption" name="yes" />
-            <label for="nooption">No, I want to keep my total as it is</label>
-            <input type="radio" id="nooption" name="no" />
+            <input type="radio" id="yesopt" name="yesopt" value="yes" >
+            <label for="yesopt">Yes, I want to add an extra $25.00 onto
+            my total.</label>
+            <input type="radio" id="noopt" name="noopt" value="no" >
+            <label for="noopt">No, I dont want to purchase the flight insurance.
           </li>
-        </ol>
-      </form>
-    </section>
-    <section>
-      <h2>Form of Payment</h2>
-      <form action="null" method="get" id="paymentinformation">
-        <ol>
           <li>
             <label for="cardinfo">Credit/Debit card number</label>
             <input id="cardnumber" name="cardnumber" type="number" />
@@ -79,7 +73,7 @@
       </form>
     </section>
   </main>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="../site.js"></script>
 </body>
 </html>
