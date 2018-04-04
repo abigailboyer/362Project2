@@ -4,13 +4,16 @@
   <title>Search Results</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
-  <link rel="stylesheet" href="screen.css" />
   <link rel="stylesheet" href="http://basehold.it/20" />
   <link rel="stylesheet" href="../screen.css" />
 </head>
 <body>
   <main>
     <h1>Search Results</h1>
+    <!-- todo: add form that replicates inputs from
+    the first form and allows editing -->
+
+    
   <!--  <form id="userform" action="#null" method="get">
       <ol>
         <li>
@@ -42,84 +45,8 @@
         </li>
       </ol>
     </form> -->
-  <!-- Second form that will allow users to pick times, stops, and tell them duration, and price for their departure flight -->
-  <!-- <h2>Departing Flight</h2>
-  <form id="departflight" action="#null" method="get">
-    <ol>
-      <li>
-        <label for="DepartTime">Flight Times</label>
-        <select name="Departure Times">
-          <option value="1st Choice">5:45 am</option>
-          <option value="2nd Choice">10:30 am</option>
-          <option value="3rd Choice">3:00 pm</option>
-          <option value="4th Choice">7:00 pm</option>
-        </select>
-      </li> -->
-      <!--<li id="Arrivaltime">
-        <label for="ArrivalTime" class="labels">Please select your arrival Arrival Time: </label>
-        <select name="Arrival Times">
-          <option value="1st Choice">5:45 am</option>
-          <option value="2nd Choice">10:30 am</option>
-          <option value="3rd Choice">3:00 pm</option>
-          <option value="4th Choice">7:00 pm</option>
-        </select>
-      </li>-->
-  <!--    <li>
-      <input type="checkbox" name="vehicle" value="Orlando">Nonstop</input>
-    </li>
-      <li id="Duration">
-      <p id="duration"> Your Duration is: </p>
-      </li>
-      <li id="Price">
-          <p id="Price"> Your Price is: </p>
-      </li>
-      <li>
-       <input type="submit" name="update" value="select" id="update"/>
-     </li>
-      <li>
-        <p id="confirmation"> ..................</p>
-      </li>
-    </ol>
-  </form> -->
-<!-- third form that will allow users to pick times, stops, and tell them duration, and price for thier return flight-->
-<!--  <h2>Returning Flight</h2>
-  <form id="returnform" action="#null" method="get">
-    <ol>
-      <li id="returnDeparttime">
-        <label for="returnDepartureTime" class="labels"> Please select your Departure Time: </label>
-        <select name="returnDeparture Times">
-          <option value="1st Choice">5:45 am</option>
-          <option value="2nd Choice">10:30 am</option>
-          <option value="3rd Choice">3:00 pm</option>
-          <option value="4th Choice">7:00 pm</option>
-        </select>
-      </li>
-      <li id="returnArrivaltime">
-        <label for="returnArrivalTime" class="labels">Please select your arrival Arrival Time: </label>
-        <select name="returnArrival Times">
-          <option value="r1st Choice">5:45 am</option>
-          <option value="r2nd Choice">10:30 am</option>
-          <option value="r3rd Choice">3:00 pm</option>
-          <option value="r4th Choice">7:00 pm</option>
-        </select>
-      </li>
-      <li>
-      <input type="checkbox" name="vehicle" value="Orlando">Nonstop</input>
-    </li>
-      <li id="rDuration">
-      <p id="rduration"> Your Duration is: </p>
-      </li>
-      <li id="rreturnPrice">
-          <p id="rPrice"> Your Price is: </p>
-      </li>
-      <li>
-       <input type="submit" name="update" value="select" id="submit"/>
-     </li>
-      <li>
-        <p id="TotalPrice"> ..................</p>
-      </li>
-    </ol>
-  </form> -->
+
+<!-- todo: only show return flight when round trip was selected -->
 
   <form id="flightselection" action="#null" method="get">
     <h2>Departing Flight</h2>
@@ -145,8 +72,9 @@
             Price
           </li>
         </ul>
+      </li>
 
-  <!-- put the p inside of the value attribute instead??? -->
+      <li>
         <label for="flighttwo">Flight Two</label>
         <input type="radio" id="flighttwo" name="departflight" />
         <ul>
@@ -166,7 +94,9 @@
             Price
           </li>
         </ul>
+      </li>
 
+      <li>
         <label for="flightthree">Flight Three</label>
         <input type="radio" id="flightthree" name="departflight" />
         <ul>
@@ -186,7 +116,9 @@
             Price
           </li>
         </ul>
+      </li>
 
+      <li>
         <label for="flightfour">Flight Four</label>
         <input type="radio" id="flightfour" name="departflight" />
         <ul>
@@ -231,8 +163,9 @@
             Price
           </li>
         </ul>
+      </li>
 
-  <!-- put the p inside of the value attribute instead??? -->
+      <li>
         <label for="ftwo">Flight Two</label>
         <input type="radio" id="ftwo" name="returnflight" />
         <ul>
@@ -252,7 +185,9 @@
             Price
           </li>
         </ul>
+      </li>
 
+      <li>
         <label for="fthree">Flight Three</label>
         <input type="radio" id="fthree" name="returnflight" />
         <ul>
@@ -272,7 +207,9 @@
             Price
           </li>
         </ul>
+      </li>
 
+      <li>
         <label for="ffour">Flight Four</label>
         <input type="radio" id="ffour" name="returnflight" />
         <ul>
@@ -300,6 +237,6 @@
   </form>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--<script src="site.js"></script>-->
+  <script src="../site.js"></script>
 </body>
 </html>
