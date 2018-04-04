@@ -16,14 +16,17 @@
       <h2>Find a flight!</h2>
       <form action="#null" method="get" id="flightsearch" novalidate>
         <ol id="search">
-          <li>
-            <label for="oneway">One-Way</label>
-            <input type="radio" id="oneway" name="trip" value="One-Way" />
-          </li>
-          <li>
-            <label for="round">Round Trip</label>
-            <input type="radio" id="round" name="trip" value="Round Trip" checked />
-          </li>
+          <ul id="trip">
+            <li>
+              <label for="oneway">One-Way</label>
+              <input type="radio" id="oneway" name="trip" value="One-Way" />
+            </li>
+            <li>
+              <label for="round">Round Trip</label>
+              <input type="radio" id="round" name="trip" value="Round Trip" checked />
+            </li>
+          </ul>
+          <!-- todo: change placeholders -->
           <li>
             <label for="departloc">Departing Location</label>
             <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
