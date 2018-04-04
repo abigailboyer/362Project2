@@ -13,8 +13,8 @@
   </header>
   <main id="content">
     <section id="userinfo">
-      <h2>Personal Information</h2>
-      <form action="#null" method="get" id="uinformation">
+      <h2 id="header2">Personal Information</h2>
+      <form action="../payment/index.html" method="get" id="uinformation">
         <ol>
           <li>
             <label for="first name">First Name</label>
@@ -29,19 +29,11 @@
             <input type="date" id="birthday" name="birthday" />
           </li>
           <li>
-            <label for="malegender">Male</label>
-            <input type="radio" id="malegender" name="gender" />
-
-            <label for="femalegender">Female</label>
-            <input type="radio" id="femalegender" name="gender" />
+            <input type="radio" id="mgender" name="mgender" value="male" />
+            <label for="mgender">Male</label>
+            <input type="radio" id="fgender" name="fgender" value="female" />
+            <label for="fgender">Female</label>
           </li>
-        </ol>
-      </form>
-      </section>
-      <section id="contactinfo">
-        <h2>Contact Information</h2>
-        <form action="#null" method="get" id="cinformation">
-        <ol>
           <li>
             <label for="phonenumber">Phone Number</label>
             <input type="tel" id="number" name="number" placeholder="708-111-2222" />
@@ -57,7 +49,7 @@
       </form>
     </section>
   </main>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="../site.js"></script>
 </body>
 </html>
