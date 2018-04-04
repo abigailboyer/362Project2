@@ -5,12 +5,6 @@ menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul
 /* stylelint-enable */
 
 /*
-COLOR PALETTE
-  http://paletton.com/#uid=13D0u0k7UUa3cZA5wXlaiQ5cFL3
-  http://paletton.com/#uid=13D0u0kleqtbzEKgVuIpcmGtdhZ
-*/
-
-/*
 MODULAR SCALE
 ratio 1.333 @ 16px and 20px
 16px  1em
@@ -27,17 +21,23 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #E4EEFB;
+  background-color: #ffffff;
 }
 
 body {
-  color: #23252A;
+  color: #222;
   font-size: 16px;
   line-height: 20px;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  color: #217FE8;
+}
+
 h1 {
-  color: #21477;
   font-size: 35.538px;
   line-height: 50px;
 }
@@ -48,11 +48,11 @@ h2 {
 }
 
 a {
-  color: #384665;
+  color: #217FE8;
 }
 
 form {
-  background-color: #87A8D3;
+  background-color: #6BB1FF;
 }
 
 label {
@@ -63,7 +63,7 @@ label {
 input {
   border: none;
   box-sizing: border-box;
-  background-color: #CEDFF5;
+  background-color: #ffffff;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
@@ -72,6 +72,6 @@ input {
 }
 
 input[type="submit"] {
-  color: #E4EEFB;
-  background-color: #5375A1;
+  color: #ADD4FF;
+  background-color: #004EA6;
 }
