@@ -5,12 +5,6 @@ menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul
 /* stylelint-enable */
 
 /*
-COLOR PALETTE
-  http://paletton.com/#uid=13D0u0k7UUa3cZA5wXlaiQ5cFL3
-  http://paletton.com/#uid=13D0u0kleqtbzEKgVuIpcmGtdhZ
-*/
-
-/*
 MODULAR SCALE
 ratio 1.333 @ 16px and 20px
 16px  1em
@@ -27,51 +21,112 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #E4EEFB;
+  background-color: #ffffff;
 }
 
 body {
-  color: #23252A;
+  color: #222;
+  font-family: sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  color: #003773;
+}
+
 h1 {
-  color: #21477;
-  font-size: 35.538px;
+  font-size: 37.897px;
   line-height: 50px;
 }
 
+h1 a {
+    color: #003773;
+}
+
 h2 {
-  font-size: 21.328px;
+  font-size: 28.43px;
   line-height: 30px;
 }
 
 a {
-  color: #384665;
+  color: #217FE8;
+  text-decoration: none;
 }
 
+a:hover {
+  color: #ADD4FF;
+  transition: 0.4s;
+}
+
+a:focus {
+  border: 1px grey dotted;
+}
+
+/* todo: change margins later */
+
+header {
+  margin: 10px 5%;
+  margin-bottom: 20px;
+}
+
+#flightsearch h2 {
+  margin: 0 5%;
+  margin-bottom: 10px;
+}
+
+/* form styles */
+/* todo: add form reset later */
+
 form {
-  background-color: #87A8D3;
+  background-color: #ADD4FF;
+  margin: 0 5%;
+}
+
+#searchone {
+  padding: 10px 10px;
 }
 
 label {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 21.328px;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+  display: block;
 }
 
 input {
   border: none;
   box-sizing: border-box;
-  background-color: #CEDFF5;
+  background-color: #ffffff;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
-
-  padding-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
 input[type="submit"] {
-  color: #E4EEFB;
-  background-color: #5375A1;
+  color: #ffffff;
+  background-color: #004EA6;
+}
+
+/* todo: make radio buttons touch accessible */
+/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
+
+#trip ul {
+  width: 100%;
+}
+
+#trip input[type="radio"] {
+  height: 30px;
+  margin: 0 10px;
+}
+
+
+#trip label {
+  float: left;
+  margin: 0;
+  padding: 0;
 }
