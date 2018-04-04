@@ -41,9 +41,6 @@ h4 {
 h1 {
   font-size: 37.897px;
   line-height: 50px;
-  margin-bottom: 20px;
-
-  background-color: orange;
 }
 
 h1 a {
@@ -53,9 +50,6 @@ h1 a {
 h2 {
   font-size: 28.43px;
   line-height: 30px;
-  margin-bottom: 20px;
-
-  background-color: pink;
 }
 
 a {
@@ -65,6 +59,23 @@ a {
 
 a:hover {
   color: #ADD4FF;
+  transition: 0.4s;
+}
+
+a:focus {
+  border: 1px grey dotted;
+}
+
+/* todo: change margins later */
+
+header {
+  margin: 10px 5%;
+  margin-bottom: 20px;
+}
+
+#flightsearch h2 {
+  margin: 0 5%;
+  margin-bottom: 10px;
 }
 
 /* form styles */
@@ -72,6 +83,11 @@ a:hover {
 
 form {
   background-color: #ADD4FF;
+  margin: 0 5%;
+}
+
+#searchone {
+  padding: 10px 10px;
 }
 
 label {
@@ -79,8 +95,6 @@ label {
   line-height: 30px;
   margin: 0 0 10px 0;
   display: block;
-
-  background-color: red;
 }
 
 input {
@@ -91,7 +105,6 @@ input {
   font-size: 16px;
   line-height: 20px;
   margin: 0 0 10px 0;
-
 }
 
 input[type="submit"] {
@@ -99,6 +112,21 @@ input[type="submit"] {
   background-color: #004EA6;
 }
 
-input[type="radio"] {
-  transition: 0.2s all linear;
+/* todo: make radio buttons touch accessible */
+/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
+
+#trip ul {
+  width: 100%;
+}
+
+#trip input[type="radio"] {
+  height: 30px;
+  margin: 0 10px;
+}
+
+
+#trip label {
+  float: left;
+  margin: 0;
+  padding: 0;
 }
