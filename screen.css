@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 /* stylelint-disable */
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,
 nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,
 menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
-
-/*
-COLOR PALETTE
-  http://paletton.com/#uid=13D0u0k7UUa3cZA5wXlaiQ5cFL3
-  http://paletton.com/#uid=13D0u0kleqtbzEKgVuIpcmGtdhZ
-*/
 
 /*
 MODULAR SCALE
@@ -28,55 +21,122 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #E4EEFB;
+  background-color: #ffffff;
 }
 
 body {
-  color: #23252A;
+  color: #222;
+  font-family: sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
 
+#Departflights ul {
+  display: inline-block;
+}
+
+#ReturnFlights ul{
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #003773;
+}
+
 h1 {
-  color: #21477;
-  font-size: 35.538px;
+  font-size: 37.897px;
   line-height: 50px;
 }
 
+h1 a {
+    color: #003773;
+}
+
 h2 {
-  font-size: 21.328px;
+  font-size: 28.43px;
   line-height: 30px;
 }
 
 a {
-  color: #384665;
+  color: #217FE8;
+  text-decoration: none;
 }
 
+a:hover {
+  color: #ADD4FF;
+  transition: 0.4s;
+}
+
+a:focus {
+  border: 1px grey dotted;
+}
+
+/* todo: change margins later */
+
+header {
+  margin: 10px 5%;
+  margin-bottom: 20px;
+}
+
+#flightsearch h2 {
+  margin: 0 5%;
+  margin-bottom: 10px;
+}
+
+/* form styles */
+/* todo: add form reset later */
+
 form {
-  background-color: #87A8D3;
+  background-color: #ADD4FF;
+  margin: 0 5%;
+}
+
+#searchone {
+  padding: 10px 10px;
 }
 
 label {
-  font-size: 25px;
-  line-height: 29px;
+  font-size: 21.328px;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+  display: block;
 }
 
 input {
   border: none;
   box-sizing: border-box;
-  background-color: #CEDFF5;
+  background-color: #ffffff;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
-  padding-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
-footer{
-  margin-left: 45%;
+input[type="submit"] {
+  color: #ffffff;
+  background-color: #004EA6;
 }
 
-ol{
-  margin-left: 1.5em;
+/* todo: make radio buttons touch accessible */
+/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
+
+#trip ul {
+  width: 100%;
+}
+
+#trip input[type="radio"] {
+  height: 30px;
+  margin: 0 10px;
+}
+
+
+#trip label {
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 
 input[type="submit"] {
@@ -220,4 +280,3 @@ input[type="submit"] {
   margin: 0;
   padding: 0;
 }
->>>>>>> 9ae1c975c6216a7c4fe431c7f3d4f503333733ce

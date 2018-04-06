@@ -4,17 +4,14 @@
   <title>Flight Booking: Search Results</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="stylesheet" href="screen.css" />
   <link rel="stylesheet" href="http://basehold.it/20" />
   <link rel="stylesheet" href="../screen.css" />
 </head>
 <body>
   <main>
     <h1>Search Results</h1>
-    <!-- todo: add form that replicates inputs from
-    the first form and allows editing -->
-
-
-  <!--  <form id="userform" action="#null" method="get">
+    <form id="Fligtupdate" action="#null" method="get">
       <ol>
         <li>
           <label for="DepartureLocation" class="labels"> Please enter your Departure Location: </label>
@@ -44,18 +41,37 @@
           <p id="confirmation"> ..................</p>
         </li>
       </ol>
-    </form> -->
-
-<!-- todo: only show return flight when round trip was selected -->
-
-  <form id="flightselection" action="../seats/index.html" method="get">
-    <h2>Departing Flight</h2>
+    </form>
+    <form id="flightselection" action="../seats/index.html" method="get">
+      <h2>Departing Flight</h2>
   <!-- select departing flight -->
-    <ol>
-      <li>
-        <label for="flightone">Flight One</label>
-        <input type="radio" id="flightone" name="departflight" />
+  <ol id='Departflights'>
         <ul>
+          <li>
+            <label>Flight One:<input type="radio" name="departflight" id="flightone"/></label>
+          </li>
+          <li>
+            Depature Time 7:30 am
+          </li>
+          <li>
+            Arrival Time 9:45 am
+          </li>
+          <li>
+            Flight Duration 2 hours and 15 min
+          </li>
+          <li>
+            Stops 0
+          </li>
+          <li>
+            Price 540
+          </li>
+        </ul>
+
+  <!-- put the p inside of the value attribute instead??? -->
+        <ul>
+          <li>
+          <label>Flight Two:<input type="radio" name="departflight" id="flighttwo"/></label>
+          </li>
           <li>
             Depature Time
           </li>
@@ -72,12 +88,10 @@
             Price
           </li>
         </ul>
-      </li>
-
-      <li>
-        <label for="flighttwo">Flight Two</label>
-        <input type="radio" id="flighttwo" name="departflight" />
         <ul>
+          <li>
+            <label>Flight Three:<input type="radio" name="departflight" id="flightthree"/></label>
+          </li>
           <li>
             Depature Time
           </li>
@@ -94,34 +108,10 @@
             Price
           </li>
         </ul>
-      </li>
-
-      <li>
-        <label for="flightthree">Flight Three</label>
-        <input type="radio" id="flightthree" name="departflight" />
         <ul>
           <li>
-            Depature Time
+          <label>Flight Four:<input type="radio" name="departflight" id="flightfour"/></label>
           </li>
-          <li>
-            Arrival Time
-          </li>
-          <li>
-            Flight Duration
-          </li>
-          <li>
-            Stops
-          </li>
-          <li>
-            Price
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <label for="flightfour">Flight Four</label>
-        <input type="radio" id="flightfour" name="departflight" />
-        <ul>
           <li>
             Depature Time
           </li>
@@ -142,91 +132,88 @@
     </ol>
 
     <h2>Return Flight</h2>
-    <ol>
-      <li>
-        <label for="fone">Flight One</label>
-        <input type="radio" id="fone" name="returnflight" />
+    <ol id='ReturnFlights'>
         <ul>
           <li>
-            Depature Time
+            <label>Flight One:<input type="radio" name="returnflight" id="fone"/></label>
           </li>
           <li>
-            Arrival Time
+            Depature Time 3:45
           </li>
           <li>
-            Flight Duration
+            Arrival Time 9:45
           </li>
           <li>
-            Stops
+            Flight Duration 5 hours
           </li>
           <li>
-            Price
+            Stops 2
+          </li>
+          <li>
+            Price 340
           </li>
         </ul>
-      </li>
 
-      <li>
-        <label for="ftwo">Flight Two</label>
-        <input type="radio" id="ftwo" name="returnflight" />
+  <!-- put the p inside of the value attribute instead??? -->
         <ul>
           <li>
-            Depature Time
+            <label>Flight Two:<input type="radio" name="returnflight" id="ftwo"/></label>
           </li>
           <li>
-            Arrival Time
+            Depature Time 4:30 pm
           </li>
           <li>
-            Flight Duration
+            Arrival Time 7:45 pm
           </li>
           <li>
-            Stops
+            Flight Duration 3 hours 15 minutes
           </li>
           <li>
-            Price
+            Stops 0
+          </li>
+          <li>
+            Price 390
           </li>
         </ul>
-      </li>
 
-      <li>
-        <label for="fthree">Flight Three</label>
-        <input type="radio" id="fthree" name="returnflight" />
         <ul>
           <li>
-            Depature Time
+              <label>Flight Three:<input type="radio" name="returnflight" id="fthree"/></label>
           </li>
           <li>
-            Arrival Time
+            Depature Time 5:45 am
           </li>
           <li>
-            Flight Duration
+            Arrival Time 9:30 am
           </li>
           <li>
-            Stops
+            Flight Duration 3 hours 45 minutes
           </li>
           <li>
-            Price
+            Stops 1
+          </li>
+          <li>
+            Price 560
           </li>
         </ul>
-      </li>
-
-      <li>
-        <label for="ffour">Flight Four</label>
-        <input type="radio" id="ffour" name="returnflight" />
         <ul>
           <li>
-            Depature Time
+              <label>Flight Four:<input type="radio" name="returnflight" id="ffour"/></label>
           </li>
           <li>
-            Arrival Time
+            Depature Time 9:30 am
           </li>
           <li>
-            Flight Duration
+            Arrival Time  12:30pm
           </li>
           <li>
-            Stops
+            Flight Duration 3 hours
           </li>
           <li>
-            Price
+            Stops: 0
+          </li>
+          <li>
+            Price: 450
           </li>
         </ul>
       </li>
