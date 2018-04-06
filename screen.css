@@ -97,15 +97,13 @@ header a:hover {
 form {
   background-color: #ADD4FF;
   margin: 0 5%;
-}
-
-#searchone {
+  margin-bottom: 40px;
   padding: 10px 10px;
 }
 
 label {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 20px;
   margin: 0 0 10px 0;
   display: block;
 }
@@ -123,6 +121,12 @@ input {
 input[type="submit"] {
   color: #ffffff;
   background-color: #004EA6;
+  width: 100%;
+  padding: 10px 0;
+}
+
+input[type="submit"]:hover {
+  background-color: #FFC05E;
 }
 
 /* todo: make radio buttons touch accessible */
@@ -133,8 +137,10 @@ input[type="submit"] {
 }
 
 #trip input[type="radio"] {
-  height: 30px;
-  margin: 0 10px;
+  margin: auto 10px;
+}
+
+button {
 }
 
 #trip label {
