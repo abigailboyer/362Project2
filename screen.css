@@ -116,6 +116,7 @@ input {
   font-size: 16px;
   line-height: 20px;
   margin: 0 0 10px 0;
+  width: 100%;
 }
 
 input[type="submit"] {
@@ -129,22 +130,9 @@ input[type="submit"]:hover {
   background-color: #FFC05E;
 }
 
-/* todo: make radio buttons touch accessible */
+input[type="radio"] {
+  width: auto;
+}
+
+/* todo: make radio buttons touch accessible make the stupid button more clickable */
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
-
-#trip ul {
-  width: 100%;
-}
-
-#trip input[type="radio"] {
-  margin: auto 10px;
-}
-
-button {
-}
-
-#trip label {
-  float: left;
-  margin: 0;
-  padding: 0;
-}
