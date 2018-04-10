@@ -127,13 +127,16 @@ input {
 
 input[type="submit"] {
   color: #ffffff;
+  font-weight: bold;
   background-color: #004EA6;
   width: 100%;
   padding: 10px 0;
+  margin-top: 10px;
 }
 
 input[type="submit"]:hover {
   background-color: #FFC05E;
+  transition: .2s;
 }
 
 input[type="radio"] {
@@ -157,24 +160,28 @@ input[type="radio"] {
   display: flex;
   justify-content: space-evenly;
   /* what rhe hell */
-  background-color: pink;
-}
-
-.last a {
-  display: flex;
-  justify-content: space-between;
 }
 
 .seats a {
   display: block;
-  padding: 10px;
+  padding: 15px;
+  background-color: #004EA6;
+  color: white;
 }
+/*
+ADD4FF
+6BB1FF
+004EA6
+003773
+217FE8*/
 
 .seats a:hover {
-  background-color: yellow;
+  background-color: #FFC05E;
 }
 
 .seats a.unavailable {
+
+  background-color: #6BB1FF;
 
 }
 
