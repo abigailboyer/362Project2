@@ -4,6 +4,8 @@ nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,su
 menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
+/* http://paletton.com/#uid=23B0N0ktSSEbc++k9++++vV++mb */
+
 /*
 MODULAR SCALE
 ratio 1.333 @ 16px and 20px
@@ -70,6 +72,12 @@ a:focus {
   border: 1px grey dotted;
 }
 
+ul,
+ol,
+li {
+  list-style: none;
+}
+
 /* todo: change margins later */
 
 header {
@@ -107,7 +115,7 @@ label {
 }
 
 input {
-  border: none;
+  border: 0;
   box-sizing: border-box;
   background-color: #ffffff;
   font-family: inherit;
@@ -137,19 +145,39 @@ input[type="radio"] {
 
 /* seat selection styles */
 .rows {
-  margin: 5px;
-  background-color: grey;
-}
-
-.row {
-  display: block;
-  background-color: red;
+  display: inline-block;
   width: 100%;
 }
 
+.row {
+  margin: 5px 0;
+}
+
 .seats {
-  display: block;
+  display: flex;
+  justify-content: space-evenly;
+  /* what rhe hell */
   background-color: pink;
-  width: 25%;
-  float: left;
+}
+
+.last a {
+  display: flex;
+  justify-content: space-between;
+}
+
+.seats a {
+  display: block;
+  padding: 10px;
+}
+
+.seats a:hover {
+  background-color: yellow;
+}
+
+.seats a.unavailable {
+
+}
+
+.seats a.selected {
+
 }
