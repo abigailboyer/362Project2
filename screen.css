@@ -49,6 +49,9 @@ h2 {
   font-size: 28.43px;
   line-height: 30px;
   font-weight: 600;
+
+  margin: 0 5%;
+  margin-bottom: 10px;
 }
 
 a {
@@ -84,11 +87,6 @@ header a {
 
 header a:hover {
   color: #FFC05E;
-}
-
-#flightsearch h2 {
-  margin: 0 5%;
-  margin-bottom: 10px;
 }
 
 /* form styles */
@@ -136,3 +134,22 @@ input[type="radio"] {
 
 /* todo: make radio buttons touch accessible make the stupid button more clickable */
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
+
+/* seat selection styles */
+.rows {
+  margin: 5px;
+  background-color: grey;
+}
+
+.row {
+  display: block;
+  background-color: red;
+  width: 100%;
+}
+
+.seats {
+  display: block;
+  background-color: pink;
+  width: 25%;
+  float: left;
+}
