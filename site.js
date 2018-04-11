@@ -51,11 +51,17 @@ $('#flightselection').on('submit', function(d)
   })
     $('#paymentinformation').on('submit', function(d)
     {
-    if(document.getElementById("cardnumber").value === '' && document.getElementById("expmonth").value === ''){
+    if(document.getElementById("cardnumber").value === '' || document.getElementById("expmonth").value === ''
+     || document.getElementById("expyear").value === '' || document.getElementById("username").value === ''
+    || document.getElementById("address").value === '' || document.getElementById("city").value === ''
+    || document.getElementById("zipcode").value === '' || document.getElementById("state").value === '' ){
       d.preventDefault();
       $('#h2card').after('<li id="error2">There is missing information</li>');
     }
-      if(document.getElementById("cardnumber").value !== '' && document.getElementById("expmonth").value !== '') {
+    if(document.getElementById("cardnumber").value !== '' && document.getElementById("expmonth").value !== ''
+    && document.getElementById("expyear").value !== '' && document.getElementById("username").value !== ''
+    && document.getElementById("address").value !== '' && document.getElementById("city").value !== ''
+    && document.getElementById("zipcode").value !== '' && document.getElementById("state").value !== '' ) {
       if(d.target instanceof HTMLAnchorElement) d.preventDefault();
       var cardnum = $('#cardnumber').val();
       var expmonth = $('#expmonth').val();
