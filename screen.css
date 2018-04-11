@@ -126,16 +126,17 @@ input {
 }
 
 input[type="submit"] {
+  cursor: pointer;
   color: #ffffff;
   font-weight: bold;
-  background-color: #004EA6;
+  background-color: #FFC05E;
   width: 100%;
   padding: 10px 0;
   margin-top: 10px;
 }
 
 input[type="submit"]:hover {
-  background-color: #FFC05E;
+  background-color: #004EA6;
   transition: .2s;
 }
 
@@ -147,13 +148,17 @@ input[type="radio"] {
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
 /* seat selection styles */
+form {
+  background-color: none;
+}
+
 .rows {
   display: inline-block;
   width: 100%;
 }
 
 .row {
-  margin: 5px 0;
+  padding: 5px 0;
 }
 
 .seats {
