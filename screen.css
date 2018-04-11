@@ -122,6 +122,33 @@ input {
 input[type="submit"] {
   color: #ffffff;
   background-color: #004EA6;
+
+  cursor: pointer;
+  padding: 0.611em;
+  border-radius: 1em;
+  float: inherit;
+}
+
+/* todo: make radio buttons touch accessible */
+/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
+
+#departflights ul {
+  display: inline-block;
+  padding-right: 50px;
+}
+
+#returnFlights ul{
+  display: inline-block;
+    padding-right: 50px;
+}
+
+#ftwo label{
+  width: 30%;
+  float: left;
+}
+
+#trip ul {
+
   width: 100%;
   padding: 10px 0;
 }
