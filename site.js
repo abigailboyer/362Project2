@@ -1,4 +1,8 @@
+$('html').removeClass('nojs').addClass('js');
 $.noConflict();
+var docCookies={getItem:function(e){return e?decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null:null},setItem:function(e,o,n,t,r,c){if(!e||/^(?:expires|max\-age|path|domain|secure)$/i.test(e))return!1;var s="";if(n)switch(n.constructor){case Number:s=n===1/0?"; expires=Fri, 31 Dec 9999 23:59:59 GMT":"; max-age="+n;break;case String:s="; expires="+n;break;case Date:s="; expires="+n.toUTCString()}return document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(o)+s+(r?"; domain="+r:"")+(t?"; path="+t:"")+(c?"; secure":""),!0},removeItem:function(e,o,n){return this.hasItem(e)?(document.cookie=encodeURIComponent(e)+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT"+(n?"; domain="+n:"")+(o?"; path="+o:""),!0):!1},hasItem:function(e){return!e||/^(?:expires|max\-age|path|domain|secure)$/i.test(e)?!1:new RegExp("(?:^|;\\s*)"+encodeURIComponent(e).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=").test(document.cookie)},keys:function(){for(var e=document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g,"").split(/\s*(?:\=[^;]*)?;\s*/),o=e.length,n=0;o>n;n++)e[n]=decodeURIComponent(e[n]);return e}};"undefined"!=typeof module&&"undefined"!=typeof module.exports&&(module.exports=docCookies);
+
+
 (function($) {
   var fname = $('#fname').val();
   var lname = $('#lname').val();
@@ -24,6 +28,16 @@ $.noConflict();
           console.log('form sub, data ' + 'first name ' + fname + ' last name ' + lname + ' phone number ' + number + ' Email ' + email + ' Gender ' + gender + ' Birthday ' + birthday);
      }
   })
+  $('#zipcode').on('keyup', function(e) {
+    var zip = $('#zipcode').val();
+    if(zip.length === 5){
+      console.log("looks good to me!");}
+      $.get('http://api.zippopotam.us/us/' + zip,
+      function(data){
+        $('#state').val(data.places[0]["state abbreviation"]);
+        $('#city').val(data.places[0]["place name"])
+      })
+  })
     $('#paymentinformation').on('submit', function(d)
     {
     if(document.getElementById("cardnumber").value === '' || document.getElementById("expmonth").value === ''
@@ -48,9 +62,14 @@ $.noConflict();
       var state = $('#state').val();
       var yesopt = $('#yesopt').val();
       var noopt = $('#noopt').val();
-      $("showtickets").append("<p>Congratulations " + fname + " Your flight is going to</p>");
       $('#error2').remove();
-        console.log('form is done, data ' + cardnum);
-    }
+      docCookies.setItem('username', username);
+  }
+  window.location.href = $(this).attr('action');
 });
+
+if(docCookies.hasItem('username')){
+  $('.printconfirm').append('<p>Congratulations ' + /*docCookies.getItem('username') +*/ '.</p>');
+  console.log(docCookies.getItem('username'));
+}
 })(jQuery);
