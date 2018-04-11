@@ -69,7 +69,7 @@ var docCookies={getItem:function(e){return e?decodeURIComponent(document.cookie.
 });
 
 if(docCookies.hasItem('username')){
-  $('.printconfirm').append('<p>Congratulations ' + /*docCookies.getItem('username') +*/ '.</p>');
+  $('.printconfirm').append('<p>Congratulations ' + docCookies.getItem('username') + '.</p>');
   console.log(docCookies.getItem('username'));
 }
 })(jQuery);
