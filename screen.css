@@ -26,7 +26,7 @@ html {
 
 body {
   color: #222;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
@@ -36,20 +36,19 @@ h2,
 h3,
 h4 {
   color: #003773;
+  font-family: 'Tajawal', sans-serif;
 }
 
 h1 {
   font-size: 37.897px;
   line-height: 50px;
-}
-
-h1 a {
-    color: #003773;
+  font-weight: 700;
 }
 
 h2 {
   font-size: 28.43px;
   line-height: 30px;
+  font-weight: 600;
 }
 
 a {
@@ -57,8 +56,10 @@ a {
   text-decoration: none;
 }
 
+/* todo: transition out & in */
+
 a:hover {
-  color: #ADD4FF;
+  color: #6BB1FF;
   transition: 0.4s;
 }
 
@@ -69,8 +70,20 @@ a:focus {
 /* todo: change margins later */
 
 header {
-  margin: 10px 5%;
+  margin: 10px 5% 10px 0;
   margin-bottom: 20px;
+}
+
+header h1 {
+  margin-left: 5%;
+}
+
+header a {
+  color: #003773;
+}
+
+header a:hover {
+  color: #FFC05E;
 }
 
 #flightsearch h2 {
@@ -84,15 +97,13 @@ header {
 form {
   background-color: #ADD4FF;
   margin: 0 5%;
-}
-
-#searchone {
+  margin-bottom: 40px;
   padding: 10px 10px;
 }
 
 label {
-  font-size: 21.328px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 20px;
   margin: 0 0 10px 0;
   display: block;
 }
@@ -105,28 +116,23 @@ input {
   font-size: 16px;
   line-height: 20px;
   margin: 0 0 10px 0;
+  width: 100%;
 }
 
 input[type="submit"] {
   color: #ffffff;
   background-color: #004EA6;
-}
-
-/* todo: make radio buttons touch accessible */
-/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
-
-#trip ul {
   width: 100%;
+  padding: 10px 0;
 }
 
-#trip input[type="radio"] {
-  height: 30px;
-  margin: 0 10px;
+input[type="submit"]:hover {
+  background-color: #FFC05E;
 }
 
-
-#trip label {
-  float: left;
-  margin: 0;
-  padding: 0;
+input[type="radio"] {
+  width: auto;
 }
+
+/* todo: make radio buttons touch accessible make the stupid button more clickable */
+/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
