@@ -4,7 +4,6 @@
   <title>Flight Booking: Search Results</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
-  <link rel="stylesheet" href="screen.css" />
   <link rel="stylesheet" href="http://basehold.it/20" />
   <link rel="stylesheet" href="../screen.css" />
 </head>
@@ -12,43 +11,73 @@
   <main>
     <h1>Search Results</h1>
     <form id="Fligtupdate" action="#null" method="get">
-      <ol>
+      <ol id="searchone">
+        <ul id="trip">
+          <li>
+            <label for="oneway">One-Way</label>
+            <input type="radio" id="oneway" name="trip" value="One-Way" />
+          </li>
+          <li>
+            <label for="round">Round Trip</label>
+            <input type="radio" id="round" name="trip" value="Round Trip" checked />
+          </li>
+        </ul>
+        <!-- todo: change placeholders -->
         <li>
-          <label for="DepartureLocation" class="labels"> Please enter your Departure Location: </label>
-          <input type="text" name="departloc" id="departloc" placeholder="Chicago, IL" />
+          <label for="departloc">Departing Location</label>
+          <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
+        </li>
+          <label for="arriveloc">Arriving Location</label>
+          <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
+        <li>
+          <label for="departdate">Departure Date</label>
+          <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
+        </li>
+        <!-- todo: only show return date when round trip is selected -->
+        <li>
+          <label for="returndate">Return Date</label>
+          <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
         </li>
         <li>
-          <label for="ArrivalLocation" class="labels">Please select your arrival destination: </label>
-          <select name="Cities">
-            <option value="New York">New York City, New York</option>
-            <option value="Orlando">Orlando, Florida</option>
-            <option value="Dallas, Texas">Dallas, Texas</option>
-            <option value="San Fancisco">San Francisco, California</option>
-          </select>
+          <ul>
+            <li>
+            <label for="tickets">Tickets</label>
+            </li>
+            <li>
+              <label for="adult">Adults</label>
+              <input type="number" name="tickets" id="adult" value="1" />
+            </li>
+            <li>
+              <label for="senior">Seniors</label>
+              <input type="number" name="tickets" id="senior" value="0" />
+            </li>
+            <li>
+              <label for="children">Children</label>
+              <input type="number" name="tickets" id="child" value="0" />
+            </li>
+            <li>
+              <label for="infant">Infants</label>
+              <input type="number" name="tickets" id="infant" value="0" />
+            </li>
+          </ul>
         </li>
         <li>
-          <label for="departure" class="labels">Enter your Departure date: </label>
-           <input type="date" id="ddate" name="departuredate"/>
+          <label for="nonstop">Nonstop</label>
+          <input type="checkbox" id="nonstop" name="nonstop" />
         </li>
         <li>
-          <label for="return" class="labels">Enter your Return Date: </label>
-           <input type="date" id="rdate" name="returndate"/>
-        </li>
-        <li>
-         <input type="submit" name="update" value="Update!" id="update"/>
-       </li>
-        <li>
-          <p id="confirmation"> ..................</p>
+          <input type="submit" id="submit" name="submit" value="Search for flights" />
         </li>
       </ol>
     </form>
     <form id="flightselection" action="../seats/index.html" method="get">
       <h2>Departing Flight</h2>
   <!-- select departing flight -->
-  <ol id='Departflights'>
+  <ol id='departflights'>
         <ul>
           <li>
-            <label>Flight One:<input type="radio" name="departflight" id="flightone"/></label>
+            <label for="flightone">Flight One</label>
+            <input type="radio" id="flightone" name="departflight" />
           </li>
           <li>
             Depature Time 7:30 am
@@ -70,94 +99,98 @@
   <!-- put the p inside of the value attribute instead??? -->
         <ul>
           <li>
-          <label>Flight Two:<input type="radio" name="departflight" id="flighttwo"/></label>
+            <label for="flighttwo">Flight Two</label>
+          <input type="radio" id="flighttwo" name="departflight" />
           </li>
           <li>
-            Depature Time
+            Depature Time 5:30 am
           </li>
           <li>
-            Arrival Time
+            Arrival Time 7:45 am
           </li>
           <li>
-            Flight Duration
+            Flight Duration 2 hours and 15 min
           </li>
           <li>
-            Stops
+            Stops 0
           </li>
           <li>
-            Price
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <label>Flight Three:<input type="radio" name="departflight" id="flightthree"/></label>
-          </li>
-          <li>
-            Depature Time
-          </li>
-          <li>
-            Arrival Time
-          </li>
-          <li>
-            Flight Duration
-          </li>
-          <li>
-            Stops
-          </li>
-          <li>
-            Price
+            Price 460
           </li>
         </ul>
         <ul>
           <li>
-          <label>Flight Four:<input type="radio" name="departflight" id="flightfour"/></label>
+            <label for="flightthree">Flight Three</label>
+        <input type="radio" id="flightthree" name="departflight" />
           </li>
           <li>
-            Depature Time
+            Depature Time 7:30 am
           </li>
           <li>
-            Arrival Time
+            Arrival Time 9:45 am
           </li>
           <li>
-            Flight Duration
+            Flight Duration 2 hours and 15 min
           </li>
           <li>
-            Stops
+            Stops 0
           </li>
           <li>
-            Price
+            Price 540
           </li>
         </ul>
-      </li>
-    </ol>
-
-    <h2>Return Flight</h2>
-    <ol id='ReturnFlights'>
         <ul>
           <li>
-            <label>Flight One:<input type="radio" name="returnflight" id="fone"/></label>
+            <label for="flightfour">Flight Four</label>
+            <input type="radio" id="flightfour" name="departflight" />
           </li>
           <li>
-            Depature Time 3:45
+            Depature Time 7:30 pm
           </li>
           <li>
-            Arrival Time 9:45
+            Arrival Time 10:45 pm
           </li>
           <li>
-            Flight Duration 5 hours
+            Flight Duration 3 hours and 15 min
           </li>
           <li>
             Stops 2
           </li>
           <li>
-            Price 340
+            Price 540
+          </li>
+        </ul>
+    </ol>
+
+    <h2>Return Flight</h2>
+    <ol id='returnFlights'>
+        <ul>
+          <li>
+            <label for="fone">Flight One</label>
+            <input type="radio" id="fone" name="returnflight" />
+          </li>
+          <li>
+            Depature Time 7:30 am
+          </li>
+          <li>
+            Arrival Time 9:45 am
+          </li>
+          <li>
+            Flight Duration 2 hours and 15 min
+          </li>
+          <li>
+            Stops 0
+          </li>
+          <li>
+            Price 540
           </li>
         </ul>
 
   <!-- put the p inside of the value attribute instead??? -->
         <ul>
           <li>
-            <label>Flight Two:<input type="radio" name="returnflight" id="ftwo"/></label>
+            <label for="ftwo">Flight Two</label>
+            <input type="radio" id="ftwo" name="returnflight" />
           </li>
           <li>
             Depature Time 4:30 pm
@@ -178,7 +211,8 @@
 
         <ul>
           <li>
-              <label>Flight Three:<input type="radio" name="returnflight" id="fthree"/></label>
+            <label for="fthree">Flight Three</label>
+      <input type="radio" id="fthree" name="returnflight" />
           </li>
           <li>
             Depature Time 5:45 am
@@ -198,7 +232,8 @@
         </ul>
         <ul>
           <li>
-              <label>Flight Four:<input type="radio" name="returnflight" id="ffour"/></label>
+              <label>Flight Four:</label>
+              <input type="radio" name="returnflight" id="ffour"/>
           </li>
           <li>
             Depature Time 9:30 am
