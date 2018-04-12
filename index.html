@@ -5,21 +5,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   <link rel="stylesheet" href="http://basehold.it/20" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Tajawal" rel="stylesheet" />
   <link rel="stylesheet" href="screen.css" />
 </head>
 <body>
-  <header>
-<<<<<<< HEAD
-    <h1><a href="" rel="home"> Dominator Flight Booking</a></h1>
-      <!-- nav ?-->
-=======
-    <h1><a href="" rel="home">Flight Booking</a></h1>
->>>>>>> 867f3f8fe7d2cb3d891e4a3362ec352ce6fe00ed
+  <header id="headtitle">
+    <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
   </header>
   <main>
     <section id="flightsearch">
       <h2>Find a flight!</h2>
-     <form action="../searchresults/index.html" method="get" id="flightsearch" novalidate>
+      <form action="../searchresults/index.html" method="get" id="flightsearch" novalidate>
         <ol id="searchone">
           <ul id="trip">
             <li>
@@ -32,21 +28,27 @@
             </li>
           </ul>
           <!-- todo: change placeholders -->
-          <li>
-            <label for="departloc">Departing Location</label>
-            <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
-          </li>
-            <label for="arriveloc">Arriving Location</label>
-            <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
-          <li>
-            <label for="departdate">Departure Date</label>
-            <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
-          </li>
-          <!-- todo: only show return date when round trip is selected -->
-          <li>
-            <label for="returndate">Return Date</label>
-            <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
-          </li>
+          <ul id="loc">
+            <li>
+              <label for="departloc">Departing Location</label>
+              <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
+            </li>
+            <li>
+              <label for="arriveloc">Arriving Location</label>
+              <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
+            </li>
+          </ul>
+          <ul id="dates">
+            <li>
+              <label for="departdate">Departure Date</label>
+              <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
+            </li>
+            <!-- todo: only show return date when round trip is selected -->
+            <li>
+              <label for="returndate">Return Date</label>
+              <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
+            </li>
+          </ul>
           <li>
             <ul>
               <li>
@@ -81,13 +83,7 @@
       </form>
     </section>
   </main>
-<<<<<<< HEAD
-  <footer>
-    <p> @Copyright Dominator Airlines!.......#DominateFlights.....</p>
-  </footer>
-=======
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../site.js"></script>
->>>>>>> 867f3f8fe7d2cb3d891e4a3362ec352ce6fe00ed
 </body>
 </html>

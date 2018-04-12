@@ -1,93 +1,3 @@
-<<<<<<< HEAD
-/* stylelint-disable */
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,
-nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,
-menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
-/* stylelint-enable */
-
-/*
-COLOR PALETTE
-  http://paletton.com/#uid=13D0u0k7UUa3cZA5wXlaiQ5cFL3
-  http://paletton.com/#uid=13D0u0kleqtbzEKgVuIpcmGtdhZ
-*/
-
-/*
-MODULAR SCALE
-ratio 1.333 @ 16px and 20px
-16px  1em
-20px  1.25em
-21.328px
-26.66px
-28.43px
-35.538px
-37.897px
-*/
-
-html {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #E4EEFB;
-}
-
-body {
-  color: #23252A;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-h1 {
-  color: #21477;
-  font-size: 35.538px;
-  line-height: 50px;
-}
-
-h2 {
-  font-size: 21.328px;
-  line-height: 30px;
-}
-
-a {
-  color: #384665;
-}
-
-form {
-  background-color: #87A8D3;
-}
-
-label {
-  font-size: 25px;
-  line-height: 29px;
-}
-
-input {
-  border: none;
-  box-sizing: border-box;
-  background-color: #CEDFF5;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 20px;
-  padding-bottom: 10px;
-}
-
-footer{
-  margin-left: 45%;
-}
-
-ol{
-  margin-left: 1.5em;
-}
-
-input[type="submit"] {
-  color: #E4EEFB;
-  background-color: #5375A1;
-  cursor: pointer;
-  padding: 0.611em;
-  border-radius: 1em;
-  float: inherit;
-}
-=======
 /* stylelint-disable */
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,
 nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,
@@ -116,7 +26,7 @@ html {
 
 body {
   color: #222;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
@@ -126,20 +36,19 @@ h2,
 h3,
 h4 {
   color: #003773;
+  font-family: 'Tajawal', sans-serif;
 }
 
 h1 {
   font-size: 37.897px;
   line-height: 50px;
-}
-
-h1 a {
-    color: #003773;
+  font-weight: 700;
 }
 
 h2 {
   font-size: 28.43px;
   line-height: 30px;
+  font-weight: 600;
 }
 
 a {
@@ -147,8 +56,10 @@ a {
   text-decoration: none;
 }
 
+/* todo: transition out & in */
+
 a:hover {
-  color: #ADD4FF;
+  color: #6BB1FF;
   transition: 0.4s;
 }
 
@@ -159,8 +70,20 @@ a:focus {
 /* todo: change margins later */
 
 header {
-  margin: 10px 5%;
+  margin: 10px 5% 10px 0;
   margin-bottom: 20px;
+}
+
+header h1 {
+  margin-left: 5%;
+}
+
+header a {
+  color: #003773;
+}
+
+header a:hover {
+  color: #FFC05E;
 }
 
 #flightsearch h2 {
@@ -174,15 +97,13 @@ header {
 form {
   background-color: #ADD4FF;
   margin: 0 5%;
-}
-
-#searchone {
+  margin-bottom: 40px;
   padding: 10px 10px;
 }
 
 label {
-  font-size: 21.328px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 20px;
   margin: 0 0 10px 0;
   display: block;
 }
@@ -195,29 +116,50 @@ input {
   font-size: 16px;
   line-height: 20px;
   margin: 0 0 10px 0;
+  width: 100%;
 }
 
 input[type="submit"] {
   color: #ffffff;
   background-color: #004EA6;
+
+  cursor: pointer;
+  padding: 0.611em;
+  border-radius: 1em;
+  float: inherit;
 }
 
 /* todo: make radio buttons touch accessible */
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
-#trip ul {
-  width: 100%;
+#departflights ul {
+  display: inline-block;
+  padding-right: 50px;
 }
 
-#trip input[type="radio"] {
-  height: 30px;
-  margin: 0 10px;
+#returnFlights ul{
+  display: inline-block;
+    padding-right: 50px;
 }
 
-
-#trip label {
+#ftwo label{
+  width: 30%;
   float: left;
-  margin: 0;
-  padding: 0;
 }
->>>>>>> 9ae1c975c6216a7c4fe431c7f3d4f503333733ce
+
+#trip ul {
+
+  width: 100%;
+  padding: 10px 0;
+}
+
+input[type="submit"]:hover {
+  background-color: #FFC05E;
+}
+
+input[type="radio"] {
+  width: auto;
+}
+
+/* todo: make radio buttons touch accessible make the stupid button more clickable */
+/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */

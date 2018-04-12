@@ -2,6 +2,31 @@ $.noConflict();
 (function($) {
   var fname = $('#fname').val();
   var lname = $('#lname').val();
+$('#flightselection').on('submit', function(d)
+{
+    var departflights = document.getElementsByName("departflight");
+    var returnflights = document.getElementsByName("returnflight");
+    var formValid = false;
+    var formValid2 = false;
+    var j = 0;
+    var i = 0;
+
+    while (!formValid && i < departflights.length) {
+      if (departflights[i].checked) formValid = true;
+          i++;
+      }
+      while (!formValid2 && j < returnflights.length) {
+        if (returnflights[j].checked) formValid2 = true;
+          j++;
+      }
+      if (!formValid || !formValid2){
+        d.preventDefault();
+      }
+      return formValid;
+})
+
+
+
   $('#uinformation').on('submit', function(d)
  {
    if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
