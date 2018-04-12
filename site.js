@@ -123,6 +123,11 @@ $.noConflict();
 
   /* page three: seat selection */
 
+  var unavailable = ["A1", "A2"];
+  $.each(unavailable, function(i,v) {
+    $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.');
+  });
+
 
 
   /* page whatever: user information */
