@@ -4,6 +4,8 @@ nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,su
 menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
+/* http://paletton.com/#uid=23B0N0ktSSEbc++k9++++vV++mb */
+
 /*
 MODULAR SCALE
 ratio 1.333 @ 16px and 20px
@@ -49,6 +51,9 @@ h2 {
   font-size: 28.43px;
   line-height: 30px;
   font-weight: 600;
+
+  margin: 0 5%;
+  margin-bottom: 10px;
 }
 
 a {
@@ -65,6 +70,12 @@ a:hover {
 
 a:focus {
   border: 1px grey dotted;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
 }
 
 /* todo: change margins later */
@@ -86,11 +97,6 @@ header a:hover {
   color: #FFC05E;
 }
 
-#flightsearch h2 {
-  margin: 0 5%;
-  margin-bottom: 10px;
-}
-
 /* form styles */
 /* todo: add form reset later */
 
@@ -109,7 +115,7 @@ label {
 }
 
 input {
-  border: none;
+  border: 0;
   box-sizing: border-box;
   background-color: #ffffff;
   font-family: inherit;
@@ -120,6 +126,7 @@ input {
 }
 
 input[type="submit"] {
+  cursor: pointer;
   color: #ffffff;
   background-color: #004EA6;
 
@@ -151,10 +158,12 @@ input[type="submit"] {
 
   width: 100%;
   padding: 10px 0;
+  margin-top: 10px;
 }
 
 input[type="submit"]:hover {
-  background-color: #FFC05E;
+  background-color: #004EA6;
+  transition: .2s;
 }
 
 input[type="radio"] {
@@ -163,3 +172,50 @@ input[type="radio"] {
 
 /* todo: make radio buttons touch accessible make the stupid button more clickable */
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
+
+/* seat selection styles */
+form {
+  background-color: none;
+}
+
+.rows {
+  display: inline-block;
+  width: 100%;
+}
+
+.row {
+  padding: 5px 0;
+}
+
+.seats {
+  display: flex;
+  justify-content: space-evenly;
+  /* what rhe hell */
+}
+
+.seats a {
+  display: block;
+  padding: 15px;
+  background-color: #004EA6;
+  color: white;
+}
+/*
+ADD4FF
+6BB1FF
+004EA6
+003773
+217FE8*/
+
+.seats a:hover {
+  background-color: #FFC05E;
+}
+
+.seats a.unavailable {
+
+  background-color: #6BB1FF;
+
+}
+
+.seats a.selected {
+
+}
