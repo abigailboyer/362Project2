@@ -17,38 +17,9 @@ $.noConflict();
     $.each(formOneData, function(i, field) {
       console.log(field.name, field.value);
 
-      /* idk what the hell this is for */
-      switch(field.name) {
-        case 'trip':
-        // use this value to decide # of forms to show up elsewhere
-        console.log("TWO: " + field.name + " " + field.value);
-        break;
-        case 'departing location':
-        console.log("dloc: " + field.name + " " + field.value);
-        break;
-        case 'arriving location':
-        console.log("aloc: " + field.name + " " + field.value);
-        break;
-        case 'departure date':
-        console.log("ddate: " + field.name + " " + field.value);
-        break;
-        case 'return date':
-        console.log("rdate: " + field.name + " " + field.value);
-        break;
-        case 'tickets':
-        console.log("ONE " + field.name + " " + field.value);
-        break;
-      }
-      /* i dont know */
-      i++;
+      docCookies.setItem(field.name, field.value);
+      console.log(field.name + ": " + docCookies.getItem(field.name));
     });
-
-    /* create cookie */
-    /* use array formOneData */
-
-
-
-
 
     /* get numeric value for ticket quantity */
 /*    var adult = document.getElementById("adult").valueAsNumber;
@@ -122,7 +93,7 @@ $.noConflict();
           d.preventDefault();
         }
         return formValid;
-  })
+  });
 
   /* page three: seat selection */
 
