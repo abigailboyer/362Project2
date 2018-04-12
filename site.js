@@ -3,6 +3,41 @@ $.noConflict();
   var fname = $('#fname').val();
   var lname = $('#lname').val();
 
+  /* page one: search */
+
+  $('#flightsearch').on('submit', function() {
+  /*  e.preventDefault(); */
+
+    /* if ticket quantity is 1+ then continue */
+
+    var adult = document.getElementById("adult").value;
+    var senior = document.getElementById("senior").value;
+    var children = document.getElementById("child").value;
+    var infant = document.getElementById("infant").value;
+
+    var quanitity = adult + senior + children + infant;
+    console.log(quantity);
+
+    if() {
+      if(document.getElementById("deparloc").value === '' ||
+        document.getElementById("arriveloc").value === '' ||
+        document.getElementById("departdate").value === '' ||
+        document.getElementById("returndate").value === ''
+      ) {
+        /* ur wrong code */
+        return;
+      } else {
+
+      }
+    }
+
+
+
+
+
+
+  })
+
   $('#flightselection').on('submit', function(d)
   {
       var departflights = document.getElementsByName("departflight");
