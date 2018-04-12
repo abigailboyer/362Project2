@@ -22,8 +22,7 @@ $.noConflict();
 
 
   /* page one: search */
-  $('#flightsearch').on('submit', function(e) {
-    console.log("submit clicked");
+  $('#flightsearch').on('submit', function(e)
 
     /* serialize array for form inputs */
     var formOneData = $(this).serializeArray();
@@ -107,7 +106,7 @@ $.noConflict();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
-  //e.preventDefault();
+  e.preventDefault();
   });
   /* page two: search results */
 
@@ -275,6 +274,6 @@ $('#seatSelection').on('submit', function(e) {
 
       console.log("here");
 
-      $('.firstName').append("name");
+      $('.firstName').append(docCookies.getItem('username'));
 
 })(jQuery);
