@@ -4,11 +4,7 @@ nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,su
 menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
-/*
-COLOR PALETTE
-  http://paletton.com/#uid=13D0u0k7UUa3cZA5wXlaiQ5cFL3
-  http://paletton.com/#uid=13D0u0kleqtbzEKgVuIpcmGtdhZ
-*/
+/* http://paletton.com/#uid=23B0N0ktSSEbc++k9++++vV++mb */
 
 /*
 MODULAR SCALE
@@ -27,51 +23,199 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #E4EEFB;
+  background-color: #ffffff;
 }
 
 body {
-  color: #23252A;
+  color: #222;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  color: #003773;
+  font-family: 'Tajawal', sans-serif;
+}
+
 h1 {
-  color: #21477;
-  font-size: 35.538px;
+  font-size: 37.897px;
   line-height: 50px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 21.328px;
+  font-size: 28.43px;
   line-height: 30px;
+  font-weight: 600;
+
+  margin: 0 5%;
+  margin-bottom: 10px;
 }
 
 a {
-  color: #384665;
+  color: #217FE8;
+  text-decoration: none;
 }
 
+/* todo: transition out & in */
+
+a:hover {
+  color: #6BB1FF;
+  transition: 0.4s;
+}
+
+a:focus {
+  border: 1px grey dotted;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+/* todo: change margins later */
+
+header {
+  margin: 10px 5% 10px 0;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin-left: 5%;
+}
+
+header a {
+  color: #003773;
+}
+
+header a:hover {
+  color: #FFC05E;
+}
+
+/* form styles */
+/* todo: add form reset later */
+
 form {
-  background-color: #87A8D3;
+  background-color: #ADD4FF;
+  margin: 0 5%;
+  margin-bottom: 40px;
+  padding: 10px 10px;
 }
 
 label {
   font-size: 16px;
   line-height: 20px;
+  margin: 0 0 10px 0;
+  display: block;
 }
 
 input {
-  border: none;
+  border: 0;
   box-sizing: border-box;
-  background-color: #CEDFF5;
+  background-color: #ffffff;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
-
-  padding-bottom: 10px;
+  margin: 0 0 10px 0;
+  width: 100%;
 }
 
 input[type="submit"] {
-  color: #E4EEFB;
-  background-color: #5375A1;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #004EA6;
+
+  cursor: pointer;
+  padding: 0.611em;
+  border-radius: 1em;
+  float: inherit;
+}
+
+/* todo: make radio buttons touch accessible */
+/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
+
+#departflights ul {
+  display: inline-block;
+  padding-right: 50px;
+}
+
+#returnFlights ul{
+  display: inline-block;
+    padding-right: 50px;
+}
+
+#ftwo label{
+  width: 30%;
+  float: left;
+}
+
+#trip ul {
+
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #004EA6;
+  transition: .2s;
+}
+
+input[type="radio"] {
+  width: auto;
+}
+
+/* todo: make radio buttons touch accessible make the stupid button more clickable */
+/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
+
+/* seat selection styles */
+form {
+  background-color: none;
+}
+
+.rows {
+  display: inline-block;
+  width: 100%;
+}
+
+.row {
+  padding: 5px 0;
+}
+
+.seats {
+  display: flex;
+  justify-content: space-evenly;
+  /* what rhe hell */
+}
+
+.seats a {
+  display: block;
+  padding: 15px;
+  background-color: #004EA6;
+  color: white;
+}
+/*
+ADD4FF
+6BB1FF
+004EA6
+003773
+217FE8*/
+
+.seats a:hover {
+  background-color: #FFC05E;
+}
+
+.seats a.unavailable {
+
+  background-color: #6BB1FF;
+
+}
+
+.seats a.selected {
+
 }
