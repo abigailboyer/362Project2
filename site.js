@@ -17,6 +17,7 @@ $.noConflict();
     $.each(formOneData, function(i, field) {
       console.log(field.name, field.value);
 
+      /* idk what the hell this is for */
       switch(field.name) {
         case 'trip':
         // use this value to decide # of forms to show up elsewhere
@@ -38,11 +39,17 @@ $.noConflict();
         console.log("ONE " + field.name + " " + field.value);
         break;
       }
+      /* i dont know */
       i++;
     });
 
+    /* create cookie */
+    /*  */
 
 
+
+
+    /* get numeric value for ticket quantity */
 /*    var adult = document.getElementById("adult").valueAsNumber;
     var senior = document.getElementById("senior").valueAsNumber;
     var children = document.getElementById("children").valueAsNumber;
