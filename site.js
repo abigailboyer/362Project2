@@ -56,14 +56,17 @@ $.noConflict();
       /* if values are null, then display error message */
         switch('') {
           case $("#deparloc").val():
+            $(".error").remove();
             $(".loc").before("<li class=error>Please enter your departure location!</li>");
             console.log("Please enter your departure location!");
             break;
           case $("#arriveloc").val():
+            $(".error").remove();
             $(".loc").before("<li class=error>Please enter your arrival location!</li>");
             console.log("Please enter your arrival location!");
             break;
           case $("#departdate").val():
+            $(".error").remove();
             $(".dates").before("<li class=error>Please enter your departure date!</li>");
             console.log("Please enter your departure date!");
             break;
@@ -72,6 +75,7 @@ $.noConflict();
           if(document.getElementById('roundtrip').checked){
             switch('') {
               case $("#returndate").val():
+                $(".error").remove();
                 $(".dates").before("<li class=error>Please enter your return date!</li>");
                 console.log("Please enter your return date!");
                 break;
@@ -80,10 +84,12 @@ $.noConflict();
             /* todo: hide the return date entirely when not selected */
           }
         } else {
+          $(".error").remove();
           $(".tickets").before("<li class=error>You must have at least one adult or senior ticket.</li>");
         console.log("You must have at least one adult or senior ticket per order.");
       }
     } else {
+      $(".error").remove();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
