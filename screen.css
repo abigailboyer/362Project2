@@ -56,6 +56,11 @@ h2 {
   margin-bottom: 10px;
 }
 
+h3 {
+  font-size: 21.328px;
+  line-height: 20px;
+}
+
 a {
   color: #217FE8;
   text-decoration: none;
@@ -76,6 +81,11 @@ ul,
 ol,
 li {
   list-style: none;
+}
+
+figcaption {
+  margin: -100vw;
+  position: absolute;
 }
 
 /* todo: change margins later */
@@ -174,6 +184,18 @@ input[type="radio"] {
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
 /* seat selection styles */
+
+#airplane {
+  margin: 0 5%;
+}
+
+.one,
+.two {
+  background-color: #ADD4FF;
+  padding: 10px;
+  margin: 20px 0;
+}
+
 .rows {
   display: inline-block;
   width: 100%;
@@ -199,14 +221,19 @@ input[type="radio"] {
 }
 
 .seats a:hover {
-  background-color: #FFC05E;
+  background-color: #FFA111;
+  opacity: .9;
 }
 
 .seats a.unavailable {
-  background-color: #6BB1FF;
+  opacity: .45;
+}
 
+a.unavailable:hover {
+  background-color: #004EA6;
+  cursor: default;
 }
 
 .seats a.selected {
-
+  background-color: #FFC05E;
 }
