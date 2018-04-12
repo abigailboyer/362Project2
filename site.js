@@ -93,7 +93,7 @@ $.noConflict();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
-  //  e.preventDefault();
+    e.preventDefault();
   });
 
   /* page two: search results */
@@ -123,10 +123,35 @@ $.noConflict();
 
   /* page three: seat selection */
 
-  var unavailable = ["A1", "A2"];
+/*  var unavailable = ["A1", "A2"];
   $.each(unavailable, function(i,v) {
     $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.</h6>');
-  });
+  }); */
+
+  $('.one a').on('click', function(e) {
+    var selected = [];
+    var seats;
+
+    e.preventDefault();
+
+    if($(this).hasClass('unavailable')) {
+      return;
+    }
+
+    $(this).toggleClass('selected');
+    $('.selected', '.rows').each(function() {
+      console.log("here");
+      var seat = $(this).attr('href').substring(1);
+      selected.push(seat);
+    });
+
+    seats = selected.join(",");
+    $('#seats').val(seats);
+    docCookies.setItem('seats', seats);
+    console.log(docCookies.getItem('seats'));
+
+  }); /* end .one function */
+
 
 
 
