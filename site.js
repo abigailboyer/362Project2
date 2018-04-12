@@ -100,6 +100,20 @@ $.noConflict();
 
   $('#flightselection').on('submit', function(d)
   {
+      console.log("submit clicked");
+
+    /* serialize array for form inputs */
+    var formTwoData = $(this).serializeArray();
+    console.log(formTwoData);
+
+    $.each(formTwoData, function(i, field) {
+      console.log(field.name, field.value);
+
+      docCookies.setItem(field.name, field.value);
+      console.log(field.name + ": " + docCookies.getItem(field.name));
+    });
+
+
       var departflights = document.getElementsByName("departflight");
       var returnflights = document.getElementsByName("returnflight");
       var formValid = false;
