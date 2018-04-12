@@ -114,6 +114,20 @@ $.noConflict();
 
   $('#flightselection').on('submit', function(d)
   {
+      console.log("submit clicked");
+
+    /* serialize array for form inputs */
+    var formTwoData = $(this).serializeArray();
+    console.log(formTwoData);
+
+    $.each(formTwoData, function(i, field) {
+      console.log(field.name, field.value);
+
+      docCookies.setItem(field.name, field.value);
+      console.log(field.name + ": " + docCookies.getItem(field.name));
+    });
+
+
       var departflights = document.getElementsByName("departflight");
       var returnflights = document.getElementsByName("returnflight");
       var formValid = false;
@@ -131,6 +145,7 @@ $.noConflict();
         }
         if (!formValid || !formValid2){
           d.preventDefault();
+          $('#searchsubmit').after('<li id="error">You have information missing! Please select your flight/flights!</li>');
         }
         return formValid;
   //})
@@ -237,8 +252,11 @@ $.noConflict();
         //$('.firstentry').append('<b>DATA - Your whole name: ' + docCookies.getItem('username') + '</b>');
       }
 
-   if (docCookies.hasItem('username')) {
-      $('#firstentry').append('<b>Here is your data: ' + docCookies.getItem('username') + '.</b>');
-    }
   });
+
+    /* (window) */
+      console.log("here");
+
+      $('.firstName').append("name");
+
 })(jQuery);
