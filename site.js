@@ -33,10 +33,15 @@ $.noConflict();
     children = +children;
     infant = +infant;
 
-    console.log(adult);
-    console.log(senior);
-    console.log(children);
-    console.log(infant);
+    docCookies.setItem("adult", adult);
+    docCookies.setItem("senior", senior);
+    docCookies.setItem("children", children);
+    docCookies.setItem("infant", infant);
+
+    console.log(docCookies.getItem("adult"));
+    console.log(docCookies.getItem("senior"));
+    console.log(docCookies.getItem("children"));
+    console.log(docCookies.getItem("infant"));
 
     var quantity = (adult + senior + children + infant);
     console.log("total tickets: " + quantity);
@@ -60,9 +65,6 @@ $.noConflict();
           case $("#departdate").val():
             console.log("Please enter your departure date!");
             break;
-          case $("#returndate").val():
-            console.log("Please enter your return date!");
-            break;
           }
 
           if(document.getElementById('roundtrip').checked){
@@ -74,14 +76,12 @@ $.noConflict();
           } else {
             /* todo: hide the return date entirely when not selected */
           }
-          
         } else {
         console.log("You must have at least one adult or senior ticket per order.");
       }
     } else {
       console.log("No more than 12 tickets per customer.");
     }
-
     e.preventDefault();
   });
 
