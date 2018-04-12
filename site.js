@@ -160,12 +160,44 @@ $.noConflict();
       selected.push(seat);
     });
 
-    seats = selected.join(",");
-    $('#seats').val(seats);
-    docCookies.setItem('seats', seats);
-    console.log(docCookies.getItem('seats'));
+    /* make string of array to put inside input */
+    seats = selected.join(", ");
+    $('#seatsFlightOne').val(seats);
+    console.log(selected);
+    console.log(seatsFlightOne);
+    docCookies.setItem('seatsFlightOne', seats);
+    console.log("flight one seats cookie: " + docCookies.getItem('seatsFlightOne'));
 
   }); /* end .one function */
+
+  $('.two a').on('click', function(e) {
+    var selected = [];
+    var seats;
+
+    e.preventDefault();
+
+    if($(this).hasClass('unavailable')) {
+      return;
+    }
+
+    $(this).toggleClass('selected');
+    $('.selected', '.rows').each(function() {
+      console.log("here");
+      var seat = $(this).attr('href').substring(1);
+      selected.push(seat);
+    });
+
+    /* make string of array to put inside input */
+    seats = selected.join(", ");
+    $('#seatsFlightTwo').val(seats);
+    console.log(selected);
+    console.log(seatsFlightTwo);
+    docCookies.setItem('seatsFlightTwo', seats);
+    console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
+  });
+
+
+
 
 
 
@@ -239,7 +271,6 @@ $.noConflict();
 
   });
 
-    /* (window) */
       console.log("here");
 
       $('.firstName').append("name");
