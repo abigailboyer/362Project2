@@ -67,9 +67,42 @@ var docCookies={getItem:function(e){return e?decodeURIComponent(document.cookie.
       console.log(docCookies.getItem('username'));
     }
   });
+  
+  
+  
   $('#paymentinformation').on('submit', function(d) {
   if (docCookies.hasItem('username')) {
     $('#confirmationpg').append('<b>Congratulations ' + docCookies.getItem('username') + '.</b>');
   }
-})
+});
+  
+  $('#flightselection').on('submit', function(d)
+  {
+      var departflights = document.getElementsByName("departflight");
+      var returnflights = document.getElementsByName("returnflight");
+      var formValid = false;
+      var formValid2 = false;
+      var j = 0;
+      var i = 0;
+
+      while (!formValid && i < departflights.length) {
+        if (departflights[i].checked) formValid = true;
+            i++;
+        }
+        while (!formValid2 && j < returnflights.length) {
+          if (returnflights[j].checked) formValid2 = true;
+            j++;
+        }
+        if (!formValid || !formValid2){
+          d.preventDefault();
+        }
+        return formValid;
+  })
+
+  $('#uinformation').on('submit', function(d)
+   {
+     if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
+    d.preventDefault();
+     $('#header2').after('<li id="error">You have information missing!</li>');
+     }
 })(jQuery);
