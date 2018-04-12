@@ -67,15 +67,17 @@ var docCookies={getItem:function(e){return e?decodeURIComponent(document.cookie.
       console.log(docCookies.getItem('username'));
     }
   });
-  
-  
-  
-  $('#paymentinformation').on('submit', function(d) {
+
+  //$('#paymentinformation').on('submit', function(d) {
   if (docCookies.hasItem('username')) {
     $('#confirmationpg').append('<b>Congratulations ' + docCookies.getItem('username') + '.</b>');
   }
-});
-  
+//});
+    $('#btn1').on('click', function(d){
+      /*var cookieCrumb = docCookies.getItem('username');
+      $('#fname').val(cookieCrumb);*/
+      d.preventDefault();
+    })
   $('#flightselection').on('submit', function(d)
   {
       var departflights = document.getElementsByName("departflight");
@@ -98,11 +100,4 @@ var docCookies={getItem:function(e){return e?decodeURIComponent(document.cookie.
         }
         return formValid;
   })
-
-  $('#uinformation').on('submit', function(d)
-   {
-     if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
-    d.preventDefault();
-     $('#header2').after('<li id="error">You have information missing!</li>');
-     }
 })(jQuery);
