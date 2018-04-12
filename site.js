@@ -4,39 +4,91 @@ $.noConflict();
   var lname = $('#lname').val();
 
   /* page one: search */
+  $('#flightsearch').on('submit', function(e) {
+    console.log("submit clicked");
 
-  $('#flightsearch').on('submit', function() {
-  /*  e.preventDefault(); */
+    /* serialize array for form inputs */
+    var formOneData = $(this).serializeArray();
+    console.log(formOneData);
 
-    /* if ticket quantity is 1+ then continue */
+    $.each(formOneData, function(i, field) {
+      console.log(field.name, field.value);
 
-    var adult = document.getElementById("adult").value;
-    var senior = document.getElementById("senior").value;
-    var children = document.getElementById("child").value;
-    var infant = document.getElementById("infant").value;
-
-    var quanitity = adult + senior + children + infant;
-    console.log(quantity);
-
-    if() {
-      if(document.getElementById("deparloc").value === '' ||
-        document.getElementById("arriveloc").value === '' ||
-        document.getElementById("departdate").value === '' ||
-        document.getElementById("returndate").value === ''
-      ) {
-        /* ur wrong code */
-        return;
-      } else {
-
+      switch(field.name) {
+        case 'trip':
+        // use this value to decide # of forms to show up elsewhere
+        console.log("TWO: " + field.name + " " + field.value);
+        break;
+        case 'departing location':
+        console.log("dloc: " + field.name + " " + field.value);
+        break;
+        case 'arriving location':
+        console.log("aloc: " + field.name + " " + field.value);
+        break;
+        case 'departure date':
+        console.log("ddate: " + field.name + " " + field.value);
+        break;
+        case 'return date':
+        console.log("rdate: " + field.name + " " + field.value);
+        break;
+        case 'tickets':
+        console.log("ONE " + field.name + " " + field.value);
+        break;
       }
+      i++;
+    });
+
+
+
+/*    var adult = document.getElementById("adult").valueAsNumber;
+    var senior = document.getElementById("senior").valueAsNumber;
+    var children = document.getElementById("children").valueAsNumber;
+    var infant = document.getElementById("infant").valueAsNumber;
+    console.log(adult);
+    console.log(senior);
+    console.log(children);
+    console.log(infant);
+
+    var quantity = 0;
+    var quanitity = adult + senior + children + infant;
+    console.log("total tickets:" + quantity); */
+
+
+    /* something like this */
+    /* if there is one or more adult or senior ticket,
+    and more than one ticket in general (? maybe unnecessary)
+    and then if each value is not empty, allow submission */
+    if(adult >= 1 || senior >= 1) {
+      if(quantity >= 1) {
+        if(document.getElementById("deparloc").value === '') {
+          /* append message */
+          console.log("No departure location entered.");
+
+        } else if (document.getElementById("arriveloc").value === '') {
+
+          console.log("No arrival location entered.");
+
+        } else if (document.getElementById("departdate").value === '') {
+
+          console.log("No depart date entered.");
+
+        } else if (document.getElementById("returndate").value === '') {
+
+          console.log("No return date entered.");
+
+        } else {
+          /* submit form */
+          console.log("ur gucci. form submitted")
+        }
+      }
+    } else {
+      /* at least one adult ticket is required! */
     }
 
+    e.preventDefault();
+  });
 
-
-
-
-
-  })
+  /* page two: search results */
 
   $('#flightselection').on('submit', function(d)
   {
@@ -61,6 +113,12 @@ $.noConflict();
         return formValid;
   })
 
+  /* page three: seat selection */
+
+
+
+  /* page whatever: user information */
+
   $('#uinformation').on('submit', function(d)
    {
      if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
@@ -82,8 +140,11 @@ $.noConflict();
          $('#error').remove();
             console.log('form sub, data ' + 'first name ' + fname + ' last name ' + lname + ' phone number ' + number + ' Email ' + email + ' Gender ' + gender + ' Birthday ' + birthday);
        }
-    })
-      $('#paymentinformation').on('submit', function(d)
+    });
+
+    /* page whatever: payment information */
+
+    $('#paymentinformation').on('submit', function(d)
       {
       if(document.getElementById("cardnumber").value === '' || document.getElementById("expmonth").value === ''
        || document.getElementById("expyear").value === '' || document.getElementById("username").value === ''
@@ -111,5 +172,5 @@ $.noConflict();
         $('#error2').remove();
           console.log('form is done, data ' + cardnum);
       }
-});
+    });
 })(jQuery);
