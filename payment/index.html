@@ -17,28 +17,18 @@
       <h2 id="h2card">Card Information</h2>
       <form action="../362Project2/confirmeditinerary/index.html" method="get" id="paymentinformation">
         <ol>
-          <li>
-            <section id="insurance">
-              <h3 id="insure">Flight Insurance</h3>
-              <p>Here we have the option for you to cover your flight with our
-                insurance plan. If you choose to protect your tickets, you are guaranteed a refund
-                if you are unable to make your flight. It will also protect you from
-                any lost baggage fees, for only $25.00.
-              </p>
               <ol class="insurance">
                 <li>
-                  <input type="radio" id="yesopt" name="insurance" value="yes" >
-                  <label for="yesopt">Yes, I want to protect my flight for $25.00.</label>
+                 <input type="radio" id="yesinsurance" name="yesopt" value="yes" />
+                 <label for="yesinsurance">Yes, I want to protect my flight for $25.00.</label>
                 </li>
                 <li>
-                  <input type="radio" id="noopt" name="insurance" value="no" >
-                  <label for="noopt">No, I dont want to protect my flight.</label>
+                 <input type="radio" id="noinsurance" name="noopt" value="no" />
+                 <label for="noinsurance">No, I dont want to protect my flight.</label>
                 </li>
               </ol>
-            </section>
-          </li>
           <li>
-            <label for="cardinfo">Credit/Debit card number</label>
+            <label for="cardnumber">Credit/Debit card number</label>
             <input id="cardnumber" name="cardnumber" type="number" placeholder="1000200030004000" />
           </li>
           <li>
@@ -70,14 +60,7 @@
             <input name="state" id="state" type="text" placeholder="IL" />
           </li>
           <li>
-            <label for="country">Country</label>
-            <select id="country">
-              <option>US</option>
-              <option>UK</option>
-            </select>
-          </li>
-          <li>
-            <input id="submit" name="submit" value="Purchase" type="submit" />
+            <input id="submit" name="submit" value="Purchase" type="submit"/>
           </li>
         </ol>
       </form>

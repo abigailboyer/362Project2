@@ -44,7 +44,8 @@ $.noConflict();
     });
 
     /* create cookie */
-    /*  */
+    /* use array formOneData */
+
 
 
 
