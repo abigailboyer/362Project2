@@ -191,12 +191,12 @@ $.noConflict();
           username: docCookies.setItem('username', username)
         };
 
-        /*var billing = {
-          address:
-          city:
-          state:
-          zipcode:
-        }*/
+        var billing = {
+          address: docCookies.setItem('address', address),
+          city: docCookies.setItem('city', city),
+          state: docCookies.setItem('state', state),
+          zipcode: docCookies.setItem('zipcode', zipcode)
+        };
         /*docCookies.setItem('username', username);
         //docCookies.setItem('cardnum', cardnum);
         docCookies.setItem('expmonth', expmonth);*/
@@ -204,7 +204,10 @@ $.noConflict();
         console.log(docCookies.getItem('username'));
         console.log(docCookies.getItem('expmonth'));
         console.log(docCookies.getItem('expyear'));
-        console.log('Your DATA '+ zipcode);
+        console.log(docCookies.getItem('address'));
+        console.log(docCookies.getItem('city'));
+        console.log(docCookies.getItem('state'));
+        console.log(docCookies.getItem('zipcode'));
         //$('.firstentry').append('<b>DATA - Your whole name: ' + docCookies.getItem('username') + '</b>');
       }
 
