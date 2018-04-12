@@ -197,9 +197,7 @@ $.noConflict();
           state: docCookies.setItem('state', state),
           zipcode: docCookies.setItem('zipcode', zipcode)
         };
-        /*docCookies.setItem('username', username);
-        //docCookies.setItem('cardnum', cardnum);
-        docCookies.setItem('expmonth', expmonth);*/
+
         console.log(docCookies.getItem('cardnum'));
         console.log(docCookies.getItem('username'));
         console.log(docCookies.getItem('expmonth'));
@@ -208,11 +206,10 @@ $.noConflict();
         console.log(docCookies.getItem('city'));
         console.log(docCookies.getItem('state'));
         console.log(docCookies.getItem('zipcode'));
-        //$('.firstentry').append('<b>DATA - Your whole name: ' + docCookies.getItem('username') + '</b>');
       }
 
-   if (docCookies.hasItem('username')) {
-      $('#firstentry').append('<b>Here is your data: ' + docCookies.getItem('username') + '.</b>');
+      if (docCookies.hasItem('username')) {
+        $('body').append('<b>Here is your data: ' + docCookies.getItem('username') + '.</b>');
     }
   });
 })(jQuery);
