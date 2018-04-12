@@ -22,19 +22,28 @@ $.noConflict();
     });
 
     /* get numeric value for ticket quantity */
-/*    var adult = document.getElementById("adult").valueAsNumber;
-    var senior = document.getElementById("senior").valueAsNumber;
-    var children = document.getElementById("children").valueAsNumber;
-    var infant = document.getElementById("infant").valueAsNumber;
+
+    var adult = $("#adult").val();
+    var senior = $("#senior").val();
+    var children = $("#children").val();
+    var infant = $("#infant").val();
+
+    adult = +adult;
+    senior = +senior;
+    children = +children;
+    infant = +infant;
+
     console.log(adult);
     console.log(senior);
     console.log(children);
     console.log(infant);
 
-    var quantity = 0;
-    var quanitity = adult + senior + children + infant;
-    console.log("total tickets:" + quantity); */
+    var quantity = (adult + senior + children + infant);
+    console.log("total tickets: " + quantity);
 
+    /* add quantity cookie */
+    docCookies.setItem("quantity", quantity);
+    console.log("cookie: " + docCookies.getItem("quantity"));
 
     /* something like this */
     /* if there is one or more adult or senior ticket,
