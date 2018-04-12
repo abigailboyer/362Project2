@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="../screen.css" />
 </head>
 <body>
+  <header id="headtitle">
+    <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
+  </header>
   <main>
     <h1>Search Results</h1>
     <form id="Fligtupdate" action="#null" method="get">
@@ -23,26 +26,6 @@
             <input type="radio" id="round" name="trip" value="Round Trip" checked />
           </li>
         </ul>
-        <!-- todo: change placeholders -->
-    <header id="headtitle">
-      <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
-    </header>
-    <!-- todo: add form that replicates inputs from
-    the first form and allows editing -->
-
-  <!--  <form id="userform" action="#null" method="get">
-      <ol>
-
-        <li>
-          <label for="departloc">Departing Location</label>
-          <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
-        </li>
-          <label for="arriveloc">Arriving Location</label>
-          <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
-        <li>
-          <label for="departdate">Departure Date</label>
-          <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
-        </li>
         <!-- todo: only show return date when round trip is selected -->
         <li>
           <label for="returndate">Return Date</label>
@@ -81,9 +64,28 @@
       </ol>
     </form>
     <form id="flightselection" action="../seats/index.html" method="get">
-      <h2>Departing Flight</h2>
-  <!-- select departing flight -->
   <ol id='departflights'>
+    <h2 id="titledepart">Departing Flight</h2>
+    <ul id="searchtitles">
+      <li>
+        Flights
+      </li>
+      <li>
+        Departure Times
+      </li>
+      <li>
+           Arrival Times
+      </li>
+      <li id="duration">
+           Duration
+      </li>
+      <li id="stops">
+           Stops
+      </li>
+      <li id="price">
+           Price
+      </li>
+    </ul>
         <ul>
           <li>
             <label for="flightone">Flight One</label>
@@ -172,8 +174,28 @@
         </ul>
     </ol>
 
-    <h2>Return Flight</h2>
+    <h2 id="titlereturn">Return Flight</h2>
     <ol id='returnFlights'>
+      <ul id="searchtitles">
+        <li>
+          Flights
+        </li>
+        <li>
+          Departure Times
+        </li>
+        <li>
+             Arrival Times
+        </li>
+        <li id="duration">
+             Duration
+        </li>
+        <li id="stops">
+             Stops
+        </li>
+        <li id="price">
+             Price
+        </li>
+      </ul>
         <ul>
           <li>
             <label for="fone">Flight One</label>
@@ -252,7 +274,7 @@
             Arrival Time  12:30pm
           </li>
           <li>
-            Flight Duration 3 hours
+            Flight Duration 3 hours 0 minutes
           </li>
           <li>
             Stops: 0
@@ -261,8 +283,7 @@
             Price: 450
           </li>
         </ul>
-      </li>
-      <li>
+      <li id="searchsubmit">
         <input type="submit" id="submit" name="submit" value="Select Flights" />
       </li>
     </ol>
