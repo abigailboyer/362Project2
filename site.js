@@ -252,8 +252,11 @@ $.noConflict();
         //$('.firstentry').append('<b>DATA - Your whole name: ' + docCookies.getItem('username') + '</b>');
       }
 
-   if (docCookies.hasItem('username')) {
-      $('#firstentry').append('<b>Here is your data: ' + docCookies.getItem('username') + '.</b>');
-    }
   });
+
+    /* (window) */
+      console.log("here");
+
+      $('.firstName').append("name");
+
 })(jQuery);
