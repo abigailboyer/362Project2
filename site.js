@@ -182,7 +182,7 @@ $.noConflict();
 
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
-      console.log("here");
+      console.log("here2");
       var seat = $(this).attr('href').substring(1);
       selected.push(seat);
     });
@@ -196,7 +196,9 @@ $.noConflict();
     console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
   });
 
-
+$('#seatSelection').on('submit', function(e) {
+  var seatSelectionData = $(this).serializeArray();
+})
 
 
 
