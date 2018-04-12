@@ -49,6 +49,30 @@ $.noConflict();
     /* if there is one or more adult or senior ticket,
     and more than one ticket in general (? maybe unnecessary)
     and then if each value is not empty, allow submission */
+    /* if tickets < 12
+    if adult / senior < 1
+    if each value is not empty */
+
+    if(quantity < 13){
+      if(adult >= 1 || senior >= 1) {
+
+        switch('') {
+          case $("#deparloc").val():
+            console.log("Please enter your departure location!");
+            break;
+          case $("#arriveloc").val():
+            console.log("Please enter your arrival location!");
+            break;
+        }
+
+      } else {
+        console.log("You must have at least one adult or senior ticket per order.");
+      }
+    } else {
+      console.log("No more than 12 tickets per customer.");
+    }
+
+
     if(adult >= 1 || senior >= 1) {
       if(quantity >= 1) {
         if(document.getElementById("deparloc").value === '') {
