@@ -174,10 +174,6 @@ input[type="radio"] {
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
 /* seat selection styles */
-form {
-  background-color: none;
-}
-
 .rows {
   display: inline-block;
   width: 100%;

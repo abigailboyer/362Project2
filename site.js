@@ -51,7 +51,7 @@ $.noConflict();
     console.log("cookie: " + docCookies.getItem("quantity"));
 
     /* validation */
-    if(quantity < 6){
+    if(quantity < 7){
       if(adult >= 1 || senior >= 1) {
       /* if values are null, then display error message */
         switch('') {
@@ -93,7 +93,7 @@ $.noConflict();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
-    e.preventDefault();
+  //  e.preventDefault();
   });
 
   /* page two: search results */
