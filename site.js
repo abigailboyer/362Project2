@@ -5,6 +5,21 @@ $.noConflict();
 (function($) {
   var fname = $('#fname').val();
   var lname = $('#lname').val();
+  var number = $('#number').val();
+  var email = $('#email').val();
+  var gender = $('#gender').val();
+  var birthday = $('#birthday').val();
+  var cardnum = $('#cardnumber').val();
+  var expmonth = $('#expmonth').val();
+  var expyear = $('#expyear').val();
+  var username = $('#username').val();
+  var address = $('#address').val();
+  var city = $('#city').val();
+  var zipcode = $('#zipcode').val();
+  var state = $('#state').val();
+  var yesopt = $('#yesopt').val();
+  var noopt = $('#noopt').val();
+
 
   /* page one: search */
   $('#flightsearch').on('submit', function(e) {
@@ -71,7 +86,6 @@ $.noConflict();
             console.log("Please enter your departure date!");
             break;
           }
-
           if(document.getElementById('roundtrip').checked){
             switch('') {
               case $("#returndate").val():
@@ -93,10 +107,10 @@ $.noConflict();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
-    e.preventDefault();
+  //e.preventDefault();
   });
-
   /* page two: search results */
+
 
   $('#flightselection').on('submit', function(d)
   {
@@ -119,6 +133,7 @@ $.noConflict();
           d.preventDefault();
         }
         return formValid;
+  //})
   });
 
   /* page three: seat selection */
@@ -156,34 +171,35 @@ $.noConflict();
 
 
   /* page whatever: user information */
-
   $('#uinformation').on('submit', function(d)
-   {
-     if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
-    d.preventDefault();
-     $('#header2').after('<li id="error">You have information missing!</li>');
-     }
-
-      // check if first name input box is empty
+    {
+      if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
+        d.preventDefault();
+        $('#header2').after('<li id="error">You have information missing!</li>');
+      }
+      // check if input boxes are empty
       if(document.getElementById("fname").value !== '' && document.getElementById("lname").value !== '' && document.getElementById("number").value !== '' && document.getElementById("email").value !== '')
-       {
-          if(d.target instanceof HTMLAnchorElement) d.preventDefault();
-         //var fname = $('#fname').val();
-        // var lname = $('#lname').val();
-         var number = $('#number').val();
-         var email = $('#email').val();
-        var gender = $('#gender').val();
-        var birthday = $('#birthday').val();
-         // remove the error messages
-         $('#error').remove();
-            console.log('form sub, data ' + 'first name ' + fname + ' last name ' + lname + ' phone number ' + number + ' Email ' + email + ' Gender ' + gender + ' Birthday ' + birthday);
-       }
+      {
+        if(d.target instanceof HTMLAnchorElement) d.preventDefault();
+        // remove the error messages
+        $('#error').remove();
+        console.log('form sub, data ' + 'first name ' + fname + ' last name ' + lname + ' phone number ' + number + ' Email ' + email + ' Gender ' + gender + ' Birthday ' + birthday);
+      }
     });
 
-    /* page whatever: payment information */
+    $('#zipcode').on('keyup', function(e) {
+      var zip = $('#zipcode').val();
+      if(zip.length === 5){
+        console.log("looks good to me!");}
+      $.get('http://api.zippopotam.us/us/' + zip,
+        function(data){
+          $('#state').val(data.places[0]["state abbreviation"]);
+          $('#city').val(data.places[0]["place name"]);
+        });
+    });
 
     $('#paymentinformation').on('submit', function(d)
-      {
+    {
       if(document.getElementById("cardnumber").value === '' || document.getElementById("expmonth").value === ''
        || document.getElementById("expyear").value === '' || document.getElementById("username").value === ''
       || document.getElementById("address").value === '' || document.getElementById("city").value === ''
@@ -196,19 +212,33 @@ $.noConflict();
       && document.getElementById("address").value !== '' && document.getElementById("city").value !== ''
       && document.getElementById("zipcode").value !== '' && document.getElementById("state").value !== '' ) {
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
-        var cardnum = $('#cardnumber').val();
-        var expmonth = $('#expmonth').val();
-        var expyear = $('#expyear').val();
-        var username = $('#username').val();
-        var address = $('#address').val();
-        var city = $('#city').val();
-        var zipcode = $('#zipcode').val();
-        var state = $('#state').val();
-        var yesopt = $('#yesopt').val();
-        var noopt = $('#noopt').val();
-        $("showtickets").append("<p>Congratulations " + fname + " Your flight is going to</p>");
         $('#error2').remove();
-          console.log('form is done, data ' + cardnum);
+        var cardinfo = {
+          number: docCookies.setItem('cardnum', cardnum),
+          expmonth: docCookies.setItem('expmonth', expmonth),
+          expyear: docCookies.setItem('expyear', expyear),
+          username: docCookies.setItem('username', username)
+        };
+
+        /*var billing = {
+          address:
+          city:
+          state:
+          zipcode:
+        }*/
+        /*docCookies.setItem('username', username);
+        //docCookies.setItem('cardnum', cardnum);
+        docCookies.setItem('expmonth', expmonth);*/
+        console.log(docCookies.getItem('cardnum'));
+        console.log(docCookies.getItem('username'));
+        console.log(docCookies.getItem('expmonth'));
+        console.log(docCookies.getItem('expyear'));
+        console.log('Your DATA '+ zipcode);
+        //$('.firstentry').append('<b>DATA - Your whole name: ' + docCookies.getItem('username') + '</b>');
       }
-    });
+
+   if (docCookies.hasItem('username')) {
+      $('#firstentry').append('<b>Here is your data: ' + docCookies.getItem('username') + '.</b>');
+    }
+  });
 })(jQuery);
