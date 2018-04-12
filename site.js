@@ -66,8 +66,7 @@ $.noConflict();
     console.log("cookie: " + docCookies.getItem("quantity"));
 
     /* validation */
-    if(quantity < 6){
-    //e.preventDefault();
+    if(quantity < 7){
       if(adult >= 1 || senior >= 1) {
       /* if values are null, then display error message */
         switch('') {
@@ -138,6 +137,36 @@ $.noConflict();
   });
 
   /* page three: seat selection */
+
+/*  var unavailable = ["A1", "A2"];
+  $.each(unavailable, function(i,v) {
+    $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.</h6>');
+  }); */
+
+  $('.one a').on('click', function(e) {
+    var selected = [];
+    var seats;
+
+    e.preventDefault();
+
+    if($(this).hasClass('unavailable')) {
+      return;
+    }
+
+    $(this).toggleClass('selected');
+    $('.selected', '.rows').each(function() {
+      console.log("here");
+      var seat = $(this).attr('href').substring(1);
+      selected.push(seat);
+    });
+
+    seats = selected.join(",");
+    $('#seats').val(seats);
+    docCookies.setItem('seats', seats);
+    console.log(docCookies.getItem('seats'));
+
+  }); /* end .one function */
+
 
 
 
