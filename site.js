@@ -1,42 +1,102 @@
+/* https://github.com/madmurphy/cookies.js (GPL3) */
+var docCookies={getItem:function(e){return e?decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null:null},setItem:function(e,o,n,t,r,c){if(!e||/^(?:expires|max\-age|path|domain|secure)$/i.test(e))return!1;var s="";if(n)switch(n.constructor){case Number:s=n===1/0?"; expires=Fri, 31 Dec 9999 23:59:59 GMT":"; max-age="+n;break;case String:s="; expires="+n;break;case Date:s="; expires="+n.toUTCString()}return document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(o)+s+(r?"; domain="+r:"")+(t?"; path="+t:"")+(c?"; secure":""),!0},removeItem:function(e,o,n){return this.hasItem(e)?(document.cookie=encodeURIComponent(e)+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT"+(n?"; domain="+n:"")+(o?"; path="+o:""),!0):!1},hasItem:function(e){return!e||/^(?:expires|max\-age|path|domain|secure)$/i.test(e)?!1:new RegExp("(?:^|;\\s*)"+encodeURIComponent(e).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=").test(document.cookie)},keys:function(){for(var e=document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g,"").split(/\s*(?:\=[^;]*)?;\s*/),o=e.length,n=0;o>n;n++)e[n]=decodeURIComponent(e[n]);return e}};"undefined"!=typeof module&&"undefined"!=typeof module.exports&&(module.exports=docCookies);
+
 $.noConflict();
 (function($) {
   var fname = $('#fname').val();
   var lname = $('#lname').val();
 
   /* page one: search */
+  $('#flightsearch').on('submit', function(e) {
+    console.log("submit clicked");
 
-  $('#flightsearch').on('submit', function() {
-  /*  e.preventDefault(); */
+    /* serialize array for form inputs */
+    var formOneData = $(this).serializeArray();
+    console.log(formOneData);
 
-    /* if ticket quantity is 1+ then continue */
+    $.each(formOneData, function(i, field) {
+      console.log(field.name, field.value);
 
-    var adult = document.getElementById("adult").value;
-    var senior = document.getElementById("senior").value;
-    var children = document.getElementById("child").value;
-    var infant = document.getElementById("infant").value;
+      docCookies.setItem(field.name, field.value);
+      console.log(field.name + ": " + docCookies.getItem(field.name));
+    });
 
-    var quanitity = adult + senior + children + infant;
-    console.log(quantity);
+    /* get numeric value for ticket quantity */
 
-    if() {
-      if(document.getElementById("deparloc").value === '' ||
-        document.getElementById("arriveloc").value === '' ||
-        document.getElementById("departdate").value === '' ||
-        document.getElementById("returndate").value === ''
-      ) {
-        /* ur wrong code */
-        return;
-      } else {
+    var adult = $("#adult").val();
+    var senior = $("#senior").val();
+    var children = $("#children").val();
+    var infant = $("#infant").val();
 
+    adult = +adult;
+    senior = +senior;
+    children = +children;
+    infant = +infant;
+
+    docCookies.setItem("adult", adult);
+    docCookies.setItem("senior", senior);
+    docCookies.setItem("children", children);
+    docCookies.setItem("infant", infant);
+
+    console.log(docCookies.getItem("adult"));
+    console.log(docCookies.getItem("senior"));
+    console.log(docCookies.getItem("children"));
+    console.log(docCookies.getItem("infant"));
+
+    var quantity = (adult + senior + children + infant);
+    console.log("total tickets: " + quantity);
+
+    /* add quantity cookie */
+    docCookies.setItem("quantity", quantity);
+    console.log("cookie: " + docCookies.getItem("quantity"));
+
+    /* validation */
+    if(quantity < 6){
+      if(adult >= 1 || senior >= 1) {
+      /* if values are null, then display error message */
+        switch('') {
+          case $("#deparloc").val():
+            $(".error").remove();
+            $(".loc").before("<li class=error>Please enter your departure location!</li>");
+            console.log("Please enter your departure location!");
+            break;
+          case $("#arriveloc").val():
+            $(".error").remove();
+            $(".loc").before("<li class=error>Please enter your arrival location!</li>");
+            console.log("Please enter your arrival location!");
+            break;
+          case $("#departdate").val():
+            $(".error").remove();
+            $(".dates").before("<li class=error>Please enter your departure date!</li>");
+            console.log("Please enter your departure date!");
+            break;
+          }
+
+          if(document.getElementById('roundtrip').checked){
+            switch('') {
+              case $("#returndate").val():
+                $(".error").remove();
+                $(".dates").before("<li class=error>Please enter your return date!</li>");
+                console.log("Please enter your return date!");
+                break;
+            }
+          } else {
+            /* todo: hide the return date entirely when not selected */
+          }
+        } else {
+          $(".error").remove();
+          $(".tickets").before("<li class=error>You must have at least one adult or senior ticket.</li>");
+        console.log("You must have at least one adult or senior ticket per order.");
       }
+    } else {
+      $(".error").remove();
+      $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
+      console.log("No more than 6 tickets per customer.");
     }
+    e.preventDefault();
+  });
 
-
-
-
-
-
-  })
+  /* page two: search results */
 
   $('#flightselection').on('submit', function(d)
   {
@@ -59,7 +119,13 @@ $.noConflict();
           d.preventDefault();
         }
         return formValid;
-  })
+  });
+
+  /* page three: seat selection */
+
+
+
+  /* page whatever: user information */
 
   $('#uinformation').on('submit', function(d)
    {
@@ -82,8 +148,11 @@ $.noConflict();
          $('#error').remove();
             console.log('form sub, data ' + 'first name ' + fname + ' last name ' + lname + ' phone number ' + number + ' Email ' + email + ' Gender ' + gender + ' Birthday ' + birthday);
        }
-    })
-      $('#paymentinformation').on('submit', function(d)
+    });
+
+    /* page whatever: payment information */
+
+    $('#paymentinformation').on('submit', function(d)
       {
       if(document.getElementById("cardnumber").value === '' || document.getElementById("expmonth").value === ''
        || document.getElementById("expyear").value === '' || document.getElementById("username").value === ''
@@ -111,5 +180,5 @@ $.noConflict();
         $('#error2').remove();
           console.log('form is done, data ' + cardnum);
       }
-});
+    });
 })(jQuery);
