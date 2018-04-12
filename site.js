@@ -45,17 +45,10 @@ $.noConflict();
     docCookies.setItem("quantity", quantity);
     console.log("cookie: " + docCookies.getItem("quantity"));
 
-    /* something like this */
-    /* if there is one or more adult or senior ticket,
-    and more than one ticket in general (? maybe unnecessary)
-    and then if each value is not empty, allow submission */
-    /* if tickets < 12
-    if adult / senior < 1
-    if each value is not empty */
-
+    /* validation */
     if(quantity < 13){
       if(adult >= 1 || senior >= 1) {
-
+        /* if values are null, then display error message */
         switch('') {
           case $("#deparloc").val():
             console.log("Please enter your departure location!");
@@ -63,43 +56,19 @@ $.noConflict();
           case $("#arriveloc").val():
             console.log("Please enter your arrival location!");
             break;
+          case $("#departdate").val():
+            console.log("Please enter your departure date!");
+            break
+          case $("#returndate").val():
+            console.log("Please enter your return date!");
+            break;
         }
-
       } else {
         console.log("You must have at least one adult or senior ticket per order.");
       }
     } else {
       console.log("No more than 12 tickets per customer.");
     }
-
-
-    if(adult >= 1 || senior >= 1) {
-      if(quantity >= 1) {
-        if(document.getElementById("deparloc").value === '') {
-          /* append message */
-          console.log("No departure location entered.");
-
-        } else if (document.getElementById("arriveloc").value === '') {
-
-          console.log("No arrival location entered.");
-
-        } else if (document.getElementById("departdate").value === '') {
-
-          console.log("No depart date entered.");
-
-        } else if (document.getElementById("returndate").value === '') {
-
-          console.log("No return date entered.");
-
-        } else {
-          /* submit form */
-          console.log("ur gucci. form submitted")
-        }
-      }
-    } else {
-      /* at least one adult ticket is required! */
-    }
-
     e.preventDefault();
   });
 
