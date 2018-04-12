@@ -196,22 +196,17 @@ form {
 .seats a {
   display: block;
   padding: 15px;
+  width: 20px;
   background-color: #004EA6;
   color: white;
+  text-align: center;
 }
-/*
-ADD4FF
-6BB1FF
-004EA6
-003773
-217FE8*/
 
 .seats a:hover {
   background-color: #FFC05E;
 }
 
 .seats a.unavailable {
-
   background-color: #6BB1FF;
 
 }
