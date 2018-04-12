@@ -13,9 +13,9 @@
     <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
   </header>
   <main>
-    <section id="flightsearch">
+    <section id="searchf">
       <h2>Find a flight!</h2>
-      <form action="../searchresults/index.html" method="get" id="flightsearch" novalidate>
+      <form action="searchresults/index.html" method="get" id="flightsearch" novalidate>
         <ol id="searchone">
           <ul id="trip">
             <li>
@@ -24,11 +24,11 @@
             </li>
             <li>
               <label for="round">Round Trip</label>
-              <input type="radio" id="round" name="trip" value="Round Trip" checked />
+              <input type="radio" id="roundtrip" name="trip" value="Round Trip" checked />
             </li>
           </ul>
           <!-- todo: change placeholders -->
-          <ul id="loc">
+          <ul class="loc">
             <li>
               <label for="departloc">Departing Location</label>
               <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
@@ -38,7 +38,7 @@
               <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
             </li>
           </ul>
-          <ul id="dates">
+          <ul class="dates">
             <li>
               <label for="departdate">Departure Date</label>
               <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
@@ -50,7 +50,7 @@
             </li>
           </ul>
           <li>
-            <ul>
+            <ul class="tickets">
               <li>
               <label for="tickets">Tickets</label>
               </li>
@@ -64,7 +64,7 @@
               </li>
               <li>
                 <label for="children">Children</label>
-                <input type="number" name="tickets" id="child" value="0" />
+                <input type="number" name="tickets" id="children" value="0" />
               </li>
               <li>
                 <label for="infant">Infants</label>
@@ -76,7 +76,7 @@
             <label for="nonstop">Nonstop</label>
             <input type="checkbox" id="nonstop" name="nonstop" />
           </li>
-          <li>
+          <li class="submitB">
             <input type="submit" id="submit" name="submit" value="Search for flights" />
           </li>
         </ol>
@@ -84,6 +84,6 @@
     </section>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../site.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
