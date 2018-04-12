@@ -125,7 +125,7 @@ $.noConflict();
 
   var unavailable = ["A1", "A2"];
   $.each(unavailable, function(i,v) {
-    $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.');
+    $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.</h6>');
   });
 
 
