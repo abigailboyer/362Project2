@@ -100,7 +100,6 @@ $.noConflict();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
-
   //e.preventDefault();
 
   });
@@ -160,7 +159,9 @@ $.noConflict();
   $.each(unavailable, function(i,v) {
     $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.</h6>');
   }); */
-
+  $('#seatSelection').on('submit', function(e) {
+    var seatSelectionData = $(this).serializeArray();
+  })
   $('.one a').on('click', function(e) {
     var selected = [];
     var seats;
@@ -213,13 +214,6 @@ $.noConflict();
     docCookies.setItem('seatsFlightTwo', seats);
     console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
   });
-
-$('#seatSelection').on('submit', function(e) {
-  var seatSelectionData = $(this).serializeArray();
-})
-
-
-
 
 
   /* page whatever: user information */
@@ -336,7 +330,6 @@ $('#seatSelection').on('submit', function(e) {
   });
  departdate = $('#departdate').val()
   console.log(document.cookie);
-  $('.firstName').append(docCookies.getItem('fname'));
   $('#confirmationpg').append('<b>This is your quantity of tickets: ' + docCookies.getItem('quantity') + ' Adults: ' + docCookies.getItem('adult') + ' Seniors: ' +
    docCookies.getItem('senior') + ' Children: ' + docCookies.getItem('children') + ' Have a safe and enjoyable trip!!</b>');
 })(jQuery);
