@@ -12,7 +12,7 @@ $.noConflict();
   /* page one: search */
 
   $('#flightsearch').on('submit', function(e)
-
+{
 
     /* serialize array for form inputs */
     var formOneData = $(this).serializeArray();
@@ -101,24 +101,19 @@ $.noConflict();
       console.log("No more than 6 tickets per customer.");
     }
 
-  e.preventDefault();
+  //e.preventDefault();
 
   });
 
   /* prettier, easier buttons
-
   $('#adult').after('<a id="more" href="#null">+</a>');
   $('#adult').before('<a id="less" href="#null">-</a>');
-
   $('#senior').after('<a id="more" href="#null">+</a>');
   $('#senior').before('<a id="less" href="#null">-</a>');
-
   $('#children').after('<a id="more" href="#null">+</a>');
   $('#children').before('<a id="less" href="#null">-</a>');
-
   $('#infant').after('<a id="more" href="#null">+</a>');
   $('#infant').before('<a id="less" href="#null">-</a>');
-
   /* page two: search results */
 
 
@@ -255,6 +250,7 @@ $('#seatSelection').on('submit', function(e) {
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         // remove the error messages
         $('#error').remove();
+        $('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
 
         docCookies.setItem("fname", fname, "/traveler/index.html");
         docCookies.setItem("lname", lname, "/traveler/index.html");
@@ -308,7 +304,7 @@ $('#seatSelection').on('submit', function(e) {
       || document.getElementById("zipcode").value === '' || document.getElementById("state").value === '' ){
         d.preventDefault();
         $('#h2card').after('<li id="error2">There is missing information</li>');
-        $('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
+        //$('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
       }
 
       if(document.getElementById("cardnumber").value !== '' && document.getElementById("expmonth").value !== ''
