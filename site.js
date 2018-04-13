@@ -10,9 +10,9 @@ $.noConflict();
   var birthday = $('#birthday').val();
 
   /* page one: search */
-  $('#flightsearch').on('submit', function(e) {
 
-    console.log("submit clicked");
+  $('#flightsearch').on('submit', function(e)
+
 
     /* serialize array for form inputs */
     var formOneData = $(this).serializeArray();
@@ -55,7 +55,7 @@ $.noConflict();
     console.log("cookie: " + docCookies.getItem("quantity"));
 
     /* validation */
-    if(quantity < 6){
+    if(quantity < 7){
       if(adult >= 1 || senior >= 1) {
       /* if values are null, then display error message */
     //  e.preventDefault();
@@ -100,12 +100,44 @@ $.noConflict();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
+
+  e.preventDefault();
+
   });
+
+  /* prettier, easier buttons
+
+  $('#adult').after('<a id="more" href="#null">+</a>');
+  $('#adult').before('<a id="less" href="#null">-</a>');
+
+  $('#senior').after('<a id="more" href="#null">+</a>');
+  $('#senior').before('<a id="less" href="#null">-</a>');
+
+  $('#children').after('<a id="more" href="#null">+</a>');
+  $('#children').before('<a id="less" href="#null">-</a>');
+
+  $('#infant').after('<a id="more" href="#null">+</a>');
+  $('#infant').before('<a id="less" href="#null">-</a>');
+
   /* page two: search results */
 
 
   $('#flightselection').on('submit', function(d)
   {
+      console.log("submit clicked");
+
+    /* serialize array for form inputs */
+    var formTwoData = $(this).serializeArray();
+    console.log(formTwoData);
+
+    $.each(formTwoData, function(i, field) {
+      console.log(field.name, field.value);
+
+      docCookies.setItem(field.name, field.value);
+      console.log(field.name + ": " + docCookies.getItem(field.name));
+    });
+
+
       var departflights = document.getElementsByName("departflight");
       var returnflights = document.getElementsByName("returnflight");
       var formValid = false;
@@ -123,12 +155,75 @@ $.noConflict();
         }
         if (!formValid || !formValid2){
           d.preventDefault();
+          $('#searchsubmit').after('<li id="error">You have information missing! Please select your flight/flights!</li>');
         }
-        return formValid;
-  //})
   });
 
   /* page three: seat selection */
+
+/*  var unavailable = ["A1", "A2"];
+  $.each(unavailable, function(i,v) {
+    $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.</h6>');
+  }); */
+
+  $('.one a').on('click', function(e) {
+    var selected = [];
+    var seats;
+
+    e.preventDefault();
+
+    if($(this).hasClass('unavailable')) {
+      return;
+    }
+
+    $(this).toggleClass('selected');
+    $('.selected', '.rows').each(function() {
+      console.log("here");
+      var seat = $(this).attr('href').substring(1);
+      selected.push(seat);
+    });
+
+    /* make string of array to put inside input */
+    seats = selected.join(", ");
+    $('#seatsFlightOne').val(seats);
+    console.log(selected);
+    console.log(seatsFlightOne);
+    docCookies.setItem('seatsFlightOne', seats);
+    console.log("flight one seats cookie: " + docCookies.getItem('seatsFlightOne'));
+
+  }); /* end .one function */
+
+  $('.two a').on('click', function(e) {
+    var selected = [];
+    var seats;
+
+    e.preventDefault();
+
+    if($(this).hasClass('unavailable')) {
+      return;
+    }
+
+    $(this).toggleClass('selected');
+    $('.selected', '.rows').each(function() {
+      console.log("here2");
+      var seat = $(this).attr('href').substring(1);
+      selected.push(seat);
+    });
+
+    /* make string of array to put inside input */
+    seats = selected.join(", ");
+    $('#seatsFlightTwo').val(seats);
+    console.log(selected);
+    console.log(seatsFlightTwo);
+    docCookies.setItem('seatsFlightTwo', seats);
+    console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
+  });
+
+$('#seatSelection').on('submit', function(e) {
+  var seatSelectionData = $(this).serializeArray();
+})
+
+
 
 
 
@@ -241,7 +336,7 @@ $.noConflict();
         console.log(docCookies.getItem('state'));
         console.log(docCookies.getItem('zipcode'));
 
-      }
+    }
   });
  departdate = $('#departdate').val()
   console.log(document.cookie);

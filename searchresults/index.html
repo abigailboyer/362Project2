@@ -13,53 +13,31 @@
     <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
   </header>
   <main>
-    <h1>Search Results</h1>
-    <form id="Fligtupdate" action="#null" method="get">
-      <ol id="searchone">
-        <ul id="trip">
-          <li>
-            <label for="oneway">One-Way</label>
-            <input type="radio" id="oneway" name="trip" value="One-Way" />
-          </li>
-          <li>
-            <label for="round">Round Trip</label>
-            <input type="radio" id="round" name="trip" value="Round Trip" checked />
-          </li>
-        </ul>
-        <!-- todo: only show return date when round trip is selected -->
+    <h2>Search Results</h2>
+    <form id="flightselection" action="../seats/index.html" method="get">
+    <ol id='departflights'>
+      <li>
+        <h2 id="noM">Departing Flight</h2>
+      </li>
+      <li>
+      <ul id="searchtitles2">
         <li>
-          <label for="returndate">Return Date</label>
-          <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
+          Flights
         </li>
         <li>
-          <ul>
-            <li>
-            <label for="tickets">Tickets</label>
-            </li>
-            <li>
-              <label for="adult">Adults</label>
-              <input type="number" name="tickets" id="adult" value="1" />
-            </li>
-            <li>
-              <label for="senior">Seniors</label>
-              <input type="number" name="tickets" id="senior" value="0" />
-            </li>
-            <li>
-              <label for="children">Children</label>
-              <input type="number" name="tickets" id="child" value="0" />
-            </li>
-            <li>
-              <label for="infant">Infants</label>
-              <input type="number" name="tickets" id="infant" value="0" />
-            </li>
-          </ul>
+          Departure Times
         </li>
         <li>
-          <label for="nonstop">Nonstop</label>
-          <input type="checkbox" id="nonstop" name="nonstop" />
+             Arrival Times
         </li>
-        <li>
-          <input type="submit" id="submit" name="submit" value="Search for flights" />
+        <li id="duration">
+             Duration
+        </li>
+        <li id="stops">
+             Stops
+        </li>
+        <li id="price">
+             Price
         </li>
       </ol>
     </form>
@@ -107,8 +85,8 @@
             Price 540
           </li>
         </ul>
-
-  <!-- put the p inside of the value attribute instead??? -->
+      </li>
+  <li>
         <ul>
           <li>
             <label for="flighttwo">Flight Two</label>
@@ -130,6 +108,8 @@
             Price 460
           </li>
         </ul>
+      </li>
+      <li>
         <ul>
           <li>
             <label for="flightthree">Flight Three</label>
@@ -151,6 +131,8 @@
             Price 540
           </li>
         </ul>
+      </li>
+      <li>
         <ul>
           <li>
             <label for="flightfour">Flight Four</label>
@@ -172,10 +154,13 @@
             Price 540
           </li>
         </ul>
+      </li>
     </ol>
-
-    <h2 id="titlereturn">Return Flight</h2>
     <ol id='returnFlights'>
+      <li>
+        <h2 id="titlereturn" class="noM">Return Flight</h2>
+      </li>
+      <li>
       <ul id="searchtitles">
         <li>
           Flights
@@ -196,6 +181,8 @@
              Price
         </li>
       </ul>
+    </li>
+    <li>
         <ul>
           <li>
             <label for="fone">Flight One</label>
@@ -217,8 +204,10 @@
             Price 540
           </li>
         </ul>
+      </li>
 
   <!-- put the p inside of the value attribute instead??? -->
+  <li>
         <ul>
           <li>
             <label for="ftwo">Flight Two</label>
@@ -240,7 +229,8 @@
             Price 390
           </li>
         </ul>
-
+      </li>
+      <li>
         <ul>
           <li>
             <label for="fthree">Flight Three</label>
@@ -262,6 +252,8 @@
             Price 560
           </li>
         </ul>
+      </li>
+      <li>
         <ul>
           <li>
               <label>Flight Four:</label>
@@ -283,8 +275,77 @@
             Price: 450
           </li>
         </ul>
+      </li>
       <li id="searchsubmit">
         <input type="submit" id="submit" name="submit" value="Select Flights" />
+      </li>
+    </ol>
+  </form>
+
+  <h2>Search Update</h2>
+  <form action="" method="get" id="searchUpdate" novalidate>
+    <ol id="searchone">
+      <li>
+      <ul class="trip">
+        <li>
+          <label for="oneway">One-Way</label>
+          <input type="radio" id="oneway" name="trip" value="One-Way" />
+        </li>
+        <li>
+          <label for="round">Round Trip</label>
+          <input type="radio" id="roundtrip" name="trip" value="Round Trip" checked />
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul class="loc">
+        <li>
+          <label for="departloc">Departing Location</label>
+          <input type="text" id="deparloc" name="departing location" placeholder="Chicago, IL" />
+        </li>
+        <li>
+          <label for="arriveloc">Arriving Location</label>
+          <input type="text" id="arriveloc" name="arriving location" placeholder="Orlando, FL" />
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul class="dates">
+        <li>
+          <label for="departdate">Departure Date</label>
+          <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
+        </li>
+        <li>
+          <label for="returndate">Return Date</label>
+          <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
+        </li>
+      </ul>
+    </li>
+      <li>
+        <ul class="tickets">
+          <li class="ti">
+            <label for="tickets">Tickets</label>
+          </li>
+          <li>
+            <label for="adult">Adults</label>
+            <input type="number" name="tickets" id="adult" value="1" />
+          </li>
+          <li>
+            <label for="senior">Seniors</label>
+            <input type="number" name="tickets" id="senior" value="0" />
+          </li>
+          <li>
+            <label for="children">Children</label>
+            <input type="number" name="tickets" id="children" value="0" />
+          </li>
+          <li>
+            <label for="infant">Infants</label>
+            <input type="number" name="tickets" id="infant" value="0" />
+          </li>
+        </ul>
+      </li>
+      <li class="submitB">
+        <input type="submit" id="submit" name="submit" value="Update Flight Search" />
       </li>
     </ol>
   </form>
