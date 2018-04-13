@@ -447,6 +447,18 @@ a.unavailable:hover {
   background-color: #FFC05E;
 }
 
+#confirmingdata {
+  background-color: #ADD4FF;
+  margin: 0 5%;
+}
+
+#confirmingdata form {
+  border: none;
+}
+
+
+
+
 /* State Styles  */
 
 @media screen and (min-width:350px) {
