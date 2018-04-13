@@ -466,10 +466,33 @@ a.unavailable:hover {
   header {
     margin-top: 30px;
     margin-left: 15%;
+    width: 20%;
   }
 
   h2 {
     margin-left: 15%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  form {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  header {
+    margin-top: 5%;
+    margin-left: 16%;
+    margin-right: 15%;
+    width: auto;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  h2 {
+    margin-left: 20%;
   }
 }
 
