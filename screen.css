@@ -315,15 +315,41 @@ input[type="submit"] {
 /* todo: make radio buttons touch accessible */
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
-#departflights ul {
-  display: inline-block;
-  padding-right: 50px;
+#flightselection ul li {
+  display: inline;
+
 }
 
-#returnFlights ul{
-  display: inline-block;
+#flightselection li {
+  padding-right: 120px;
+}
+
+#searchtitles li {
+    font-size: 28px;
+    line-height: 50px;
+    font-weight: 700;
     padding-right: 50px;
 }
+
+#flightselection{
+  background-color: white;
+}
+#returnFlights li, #departflights li{
+  background-color: #ADD4FF;
+}
+
+ #duration{
+  padding-left: 50px;
+}
+
+#stops{
+  padding-left: 200px;
+}
+
+#price{
+  padding-left: 50px;
+}
+
 
 #ftwo label{
   width: 30%;
@@ -413,9 +439,35 @@ a.unavailable:hover {
   background-color: #FFC05E;
 }
 
+/* State Styles  */
 
-/* State Styles */
-
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 900px) {
+#flightselection{
+  display: block;
+}
 
 }
+@media screen and (max-width: 500px){
+  #flightselection{
+   display: block;
+    background-color: #ADD4FF;
+  }
+  #searchtitles{
+    display: none;
+  }
+  #flightselection ul li {
+    display: block;
+
+  }
+
+  #flightselection li {
+    padding-right: 60px;
+  }
+
+}
+@media screen and (min-width: 1000px){
+  #flightselection{
+    display: block;
+
+  }
+  }
