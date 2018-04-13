@@ -475,6 +475,9 @@ a.unavailable:hover {
 }
 
 @media screen and (min-width:450px) {
+/* to do: change the margins of body so that i dont have to
+do all this Extra work */
+
   form {
     margin-left: 10%;
     margin-right: 10%;
@@ -487,6 +490,11 @@ a.unavailable:hover {
 
   h2 {
     margin-left: 10%;
+  }
+
+  #titledepart {
+    margin: 0 10%;
+    margin-bottom: 0.625rem; /* 10 / 16 = .625rem */
   }
 
   #airplane {
@@ -532,6 +540,11 @@ a.unavailable:hover {
   .seats a {
     padding: 27px; /* 27 / 16 = 1.6875 */
   }
+
+  #titledepart {
+    margin: 0 15%;
+    margin-bottom: 0.625rem; /* 10 / 16 = .625rem */
+  }
 }
 
 @media screen and (min-width:800px) {
@@ -563,6 +576,7 @@ a.unavailable:hover {
   .ft2 {
     /* i literally dont know */
   }
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -584,6 +598,10 @@ a.unavailable:hover {
 
   h2 {
     margin-left: 20%;
+  }
+
+  #titledepart {
+    margin: 0 20%;
   }
 
   #airplane {
