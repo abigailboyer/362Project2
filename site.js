@@ -7,22 +7,11 @@ $.noConflict();
   var lname = $('#lname').val();
   var number = $('#number').val();
   var email = $('#email').val();
-  var gender = $('#gender').val();
   var birthday = $('#birthday').val();
-  var cardnum = $('#cardnumber').val();
-  var expmonth = $('#expmonth').val();
-  var expyear = $('#expyear').val();
-  var username = $('#username').val();
-  var address = $('#address').val();
-  var city = $('#city').val();
-  var zipcode = $('#zipcode').val();
-  var state = $('#state').val();
-  var yesopt = $('#yesopt').val();
-  var noopt = $('#noopt').val();
-
 
   /* page one: search */
   $('#flightsearch').on('submit', function(e) {
+
     console.log("submit clicked");
 
     /* serialize array for form inputs */
@@ -67,9 +56,9 @@ $.noConflict();
 
     /* validation */
     if(quantity < 6){
-    //e.preventDefault();
       if(adult >= 1 || senior >= 1) {
       /* if values are null, then display error message */
+    //  e.preventDefault();
         switch('') {
           case $("#deparloc").val():
             $(".error").remove();
@@ -88,6 +77,7 @@ $.noConflict();
             break;
           }
           if(document.getElementById('roundtrip').checked){
+
             switch('') {
               case $("#returndate").val():
                 $(".error").remove();
@@ -99,16 +89,17 @@ $.noConflict();
             /* todo: hide the return date entirely when not selected */
           }
         } else {
+
           $(".error").remove();
           $(".tickets").before("<li class=error>You must have at least one adult or senior ticket.</li>");
         console.log("You must have at least one adult or senior ticket per order.");
       }
     } else {
+
       $(".error").remove();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
-  //e.preventDefault();
   });
   /* page two: search results */
 
@@ -144,6 +135,21 @@ $.noConflict();
   /* page whatever: user information */
   $('#uinformation').on('submit', function(d)
     {
+      var fname = $('#fname').val();
+      var lname = $('#lname').val();
+      var number = $('#number').val();
+      var email = $('#email').val();
+      var birthday = $('#birthday').val();
+      var uinformation = $(this).serializeArray();
+      console.log(uinformation);
+
+      $.each(uinformation, function(i, field) {
+        console.log(field.name, field.value);
+        docCookies.setItem(field.name, field.value);
+        console.log(field.name + ": " + docCookies.getItem(field.name));
+      });
+
+
       if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
         d.preventDefault();
         $('#header2').after('<li id="error">You have information missing!</li>');
@@ -154,7 +160,18 @@ $.noConflict();
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         // remove the error messages
         $('#error').remove();
-        console.log('form sub, data ' + 'first name ' + fname + ' last name ' + lname + ' phone number ' + number + ' Email ' + email + ' Gender ' + gender + ' Birthday ' + birthday);
+
+        docCookies.setItem("fname", fname);
+        docCookies.setItem("lname", lname);
+        docCookies.setItem("number", number);
+        docCookies.setItem("email", email);
+        docCookies.setItem("birthday", birthday);
+
+        console.log(docCookies.getItem("lname"));
+        console.log(docCookies.getItem("fname"));
+        console.log(docCookies.getItem("number"));
+        console.log(docCookies.getItem("email"));
+        console.log(docCookies.getItem("birthday"));
       }
     });
 
@@ -171,6 +188,25 @@ $.noConflict();
 
     $('#paymentinformation').on('submit', function(d)
     {
+      var paymentInformation = $(this).serializeArray();
+      console.log(paymentInformation);
+
+      $.each(paymentInformation, function(i, field) {
+        console.log(field.name, field.value);
+        docCookies.setItem(field.name, field.value);
+        console.log(field.name + ": " + docCookies.getItem(field.name));
+      });
+
+
+
+      var cardnum = $('#cardnumber').val();
+      var expmonth = $('#expmonth').val();
+      var expyear = $('#expyear').val();
+      var username = $('#username').val();
+      var address = $('#address').val();
+      var city = $('#city').val();
+      var zipcode = $('#zipcode').val();
+      var state = $('#state').val();
       if(document.getElementById("cardnumber").value === '' || document.getElementById("expmonth").value === ''
        || document.getElementById("expyear").value === '' || document.getElementById("username").value === ''
       || document.getElementById("address").value === '' || document.getElementById("city").value === ''
@@ -184,19 +220,16 @@ $.noConflict();
       && document.getElementById("zipcode").value !== '' && document.getElementById("state").value !== '' ) {
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         $('#error2').remove();
-        var cardinfo = {
-          number: docCookies.setItem('cardnum', cardnum),
-          expmonth: docCookies.setItem('expmonth', expmonth),
-          expyear: docCookies.setItem('expyear', expyear),
-          username: docCookies.setItem('username', username)
-        };
+        docCookies.setItem('cardnum', cardnum);
+        docCookies.setItem('expmonth', expmonth);
+        docCookies.setItem('expyear', expyear);
+        docCookies.setItem('address', address);
+        docCookies.setItem('state', state);
+        docCookies.setItem('zipcode', zipcode);
+        docCookies.setItem('city', city);
+        docCookies.setItem('username', username);
 
-        var billing = {
-          address: docCookies.setItem('address', address),
-          city: docCookies.setItem('city', city),
-          state: docCookies.setItem('state', state),
-          zipcode: docCookies.setItem('zipcode', zipcode)
-        };
+
 
         console.log(docCookies.getItem('cardnum'));
         console.log(docCookies.getItem('username'));
@@ -206,10 +239,11 @@ $.noConflict();
         console.log(docCookies.getItem('city'));
         console.log(docCookies.getItem('state'));
         console.log(docCookies.getItem('zipcode'));
-      }
 
-      if (docCookies.hasItem('username')) {
-        $('body').append('<b>Here is your data: ' + docCookies.getItem('username') + '.</b>');
-    }
+      }
   });
+
+  console.log(document.cookie);
+  $('.firstName').append(docCookies.getItem('quantity'));
+
 })(jQuery);
