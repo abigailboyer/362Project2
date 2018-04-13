@@ -10,14 +10,14 @@
 </head>
 <body>
   <header id="headtitle">
-    <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
+    <h1><a href="" rel="home">Dominator Flight&nbsp;Booking</a></h1>
   </header>
   <main>
     <section id="searchf">
       <h2>Find a flight!</h2>
-      <form action="searchresults/index.html" method="get" id="flightsearch" novalidate>
+      <form action="362Project2/searchresults/index.html" method="get" id="flightsearch" novalidate>
         <ol id="searchone">
-          <ul id="trip">
+          <ul class="trip">
             <li>
               <label for="oneway">One-Way</label>
               <input type="radio" id="oneway" name="trip" value="One-Way" />
@@ -27,15 +27,14 @@
               <input type="radio" id="roundtrip" name="trip" value="Round Trip" checked />
             </li>
           </ul>
-          <!-- todo: change placeholders -->
           <ul class="loc">
             <li>
               <label for="departloc">Departing Location</label>
-              <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
+              <input type="text" id="deparloc" name="departing location" placeholder="Chicago, IL" />
             </li>
             <li>
               <label for="arriveloc">Arriving Location</label>
-              <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
+              <input type="text" id="arriveloc" name="arriving location" placeholder="Orlando, FL" />
             </li>
           </ul>
           <ul class="dates">
@@ -43,17 +42,15 @@
               <label for="departdate">Departure Date</label>
               <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
             </li>
-            <!-- todo: only show return date when round trip is selected -->
             <li>
               <label for="returndate">Return Date</label>
               <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
             </li>
           </ul>
-          <li>
+          <li class="ti">
+            <label for="tickets">Tickets</label>
+          </li>
             <ul class="tickets">
-              <li>
-              <label for="tickets">Tickets</label>
-              </li>
               <li>
                 <label for="adult">Adults</label>
                 <input type="number" name="tickets" id="adult" value="1" />
@@ -71,11 +68,6 @@
                 <input type="number" name="tickets" id="infant" value="0" />
               </li>
             </ul>
-          </li>
-          <li>
-            <label for="nonstop">Nonstop</label>
-            <input type="checkbox" id="nonstop" name="nonstop" />
-          </li>
           <li class="submitB">
             <input type="submit" id="submit" name="submit" value="Search for flights" />
           </li>
