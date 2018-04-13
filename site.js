@@ -22,8 +22,7 @@ $.noConflict();
 
 
   /* page one: search */
-  $('#flightsearch').on('submit', function(e) {
-    console.log("submit clicked");
+  $('#flightsearch').on('submit', function(e)
 
     /* serialize array for form inputs */
     var formOneData = $(this).serializeArray();
@@ -107,7 +106,7 @@ $.noConflict();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
-  //e.preventDefault();
+  e.preventDefault();
   });
   /* page two: search results */
 
@@ -173,12 +172,46 @@ $.noConflict();
       selected.push(seat);
     });
 
-    seats = selected.join(",");
-    $('#seats').val(seats);
-    docCookies.setItem('seats', seats);
-    console.log(docCookies.getItem('seats'));
+    /* make string of array to put inside input */
+    seats = selected.join(", ");
+    $('#seatsFlightOne').val(seats);
+    console.log(selected);
+    console.log(seatsFlightOne);
+    docCookies.setItem('seatsFlightOne', seats);
+    console.log("flight one seats cookie: " + docCookies.getItem('seatsFlightOne'));
 
   }); /* end .one function */
+
+  $('.two a').on('click', function(e) {
+    var selected = [];
+    var seats;
+
+    e.preventDefault();
+
+    if($(this).hasClass('unavailable')) {
+      return;
+    }
+
+    $(this).toggleClass('selected');
+    $('.selected', '.rows').each(function() {
+      console.log("here2");
+      var seat = $(this).attr('href').substring(1);
+      selected.push(seat);
+    });
+
+    /* make string of array to put inside input */
+    seats = selected.join(", ");
+    $('#seatsFlightTwo').val(seats);
+    console.log(selected);
+    console.log(seatsFlightTwo);
+    docCookies.setItem('seatsFlightTwo', seats);
+    console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
+  });
+
+$('#seatSelection').on('submit', function(e) {
+  var seatSelectionData = $(this).serializeArray();
+})
+
 
 
 
@@ -252,9 +285,8 @@ $.noConflict();
 
   });
 
-    /* (window) */
       console.log("here");
 
-      $('.firstName').append("name");
+      $('.firstName').append(docCookies.getItem('username'));
 
 })(jQuery);
