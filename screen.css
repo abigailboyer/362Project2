@@ -316,39 +316,20 @@ input[type="submit"] {
 /* todo: make radio buttons touch accessible */
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
+#flightselection{
+ display: block;
+  background-color: #ADD4FF;
+}
+#searchtitles{
+  display: none;
+}
 #flightselection ul li {
-  display: inline;
+  display: block;
 
 }
 
 #flightselection li {
-  padding-right: 7.5rem;
-} /* 120 / 16 = 7.5  */
-
-#searchtitles li {
-    font-size: 1.75rem; /* 28 / 16 = 1.75 */
-    line-height: 3.125rem; /* 50 / 26 = 3.125 */
-    font-weight: 700;
-    padding-right: 3.125rem; /* 50 / 16 = 3.125 */
-}
-
-#flightselection{
-  background-color: white;
-}
-#returnFlights li, #departflights li{
-  background-color: #ADD4FF;
-}
-
- #duration{
-  padding-left: 3.125rem; /* 50 / 16 = 3.125 */
-}
-
-#stops{
-  padding-left: 12.5rem; /* 200 / 16 = 12.5 */
-}
-
-#price{
-  padding-left: 3.125rem; /* 50 / 16 = 3.125 */
+  padding-right: 3.75rem; /* 60 / 16 = 3.75 */
 }
 
 
@@ -585,7 +566,7 @@ a.unavailable:hover {
 }
 
 }
-@media screen and (max-width: 500px){
+@media screen and (min-width: 500px){
   #flightselection{
    display: block;
     background-color: #ADD4FF;
@@ -603,10 +584,44 @@ a.unavailable:hover {
   }
 
 }
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1300px){
   #flightselection{
     display: block;
 
+  }
+  #flightselection ul li {
+    display: inline;
+
+  }
+
+  #flightselection li {
+    padding-right: 2rem;
+  } /* 120 / 16 = 7.5  */
+
+  #searchtitles li, #searchtitles2 li {
+      font-size: 1.50rem;
+      line-height: 3.125rem; /* 50 / 26 = 3.125 */
+      font-weight: 700;
+      padding-right: 2rem;
+  }
+
+  #flightselection{
+    background-color: white;
+  }
+  #returnFlights li, #departflights li{
+    background-color: #ADD4FF;
+  }
+
+   #duration{
+    padding-left: 1rem; 
+  }
+
+  #stops{
+    padding-left: 1rem;
+  }
+
+  #price{
+    padding-left: .5rem;
   }
 
 }
