@@ -283,6 +283,8 @@ form {
   margin: 0 5%;
   margin-bottom: 40px;
   padding: 10px 10px;
+
+  border-top: #004EA6 solid 1px;
 }
 
 label {
@@ -381,6 +383,10 @@ input[type="radio"] {
   margin-left: 0;
 }
 
+.noM {
+  margin-left: 0;
+}
+
 /* todo: make radio buttons touch accessible make the stupid button more clickable */
 /* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
@@ -388,6 +394,7 @@ input[type="radio"] {
 
 #airplane {
   margin: 0 5%;
+
 }
 
 .one,
@@ -395,6 +402,8 @@ input[type="radio"] {
   background-color: #ADD4FF;
   padding: 10px;
   margin: 20px 0;
+
+  border-top: #004EA6 solid 2px;
 }
 
 .rows {
@@ -471,10 +480,18 @@ a.unavailable:hover {
   }
 }
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:550px) {
+
+  #airplane {
+    margin: 0 20%;
+  }
+
   .seats a {
-    padding: 25px;
-    margin: 5px;
+    padding: 22px;
+  }
+
+  h2 {
+    margin-left: 11%;
   }
 }
 
@@ -486,12 +503,47 @@ a.unavailable:hover {
 
   header {
     margin-top: 30px;
-    margin-left: 15%;
+    margin-left: 14%;
     width: 20%;
   }
 
   h2 {
     margin-left: 15%;
+  }
+
+  .seats a {
+    padding: 27px;
+  }
+}
+
+@media screen and (min-width:800px) {
+  #airplane {
+    margin-left: 15%;
+    width: 72%;
+    display: inline-block;
+  }
+
+  .seats a {
+    padding: 10px;
+  }
+
+  .one,
+  .two {
+    float: left;
+  }
+  .one {
+    width: 40%;
+  }
+
+  .two {
+    margin-top: 0;
+    margin-left: 10%;
+    width: 40%;
+    position: relative;
+  }
+
+  .ft2 {
+    /* i literally dont know */
   }
 }
 
