@@ -456,6 +456,13 @@ a.unavailable:hover {
   border: none;
 }
 
+/* search results styles */
+
+#titledepart {
+  margin: 0 5%;
+  margin-bottom: 0.625rem; /* 10 / 16 = .625rem */
+}
+
 
 
 
