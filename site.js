@@ -7,19 +7,7 @@ $.noConflict();
   var lname = $('#lname').val();
   var number = $('#number').val();
   var email = $('#email').val();
-  var gender = $('#gender').val();
   var birthday = $('#birthday').val();
-  var cardnum = $('#cardnumber').val();
-  var expmonth = $('#expmonth').val();
-  var expyear = $('#expyear').val();
-  var username = $('#username').val();
-  var address = $('#address').val();
-  var city = $('#city').val();
-  var zipcode = $('#zipcode').val();
-  var state = $('#state').val();
-  var yesopt = $('#yesopt').val();
-  var noopt = $('#noopt').val();
-
 
   /* page one: search */
   $('#flightsearch').on('submit', function(e) {
@@ -68,6 +56,7 @@ $.noConflict();
     if(quantity < 7){
       if(adult >= 1 || senior >= 1) {
       /* if values are null, then display error message */
+    //  e.preventDefault();
         switch('') {
           case $("#deparloc").val():
             $(".error").remove();
@@ -86,6 +75,7 @@ $.noConflict();
             break;
           }
           if(document.getElementById('roundtrip').checked){
+
             switch('') {
               case $("#returndate").val():
                 $(".error").remove();
@@ -97,32 +87,30 @@ $.noConflict();
             /* todo: hide the return date entirely when not selected */
           }
         } else {
+
           $(".error").remove();
           $(".tickets").before("<li class=error>You must have at least one adult or senior ticket.</li>");
         console.log("You must have at least one adult or senior ticket per order.");
       }
     } else {
+
       $(".error").remove();
       $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
-  e.preventDefault();
+  //e.preventDefault();
+
   });
 
   /* prettier, easier buttons
-
   $('#adult').after('<a id="more" href="#null">+</a>');
   $('#adult').before('<a id="less" href="#null">-</a>');
-
   $('#senior').after('<a id="more" href="#null">+</a>');
   $('#senior').before('<a id="less" href="#null">-</a>');
-
   $('#children').after('<a id="more" href="#null">+</a>');
   $('#children').before('<a id="less" href="#null">-</a>');
-
   $('#infant').after('<a id="more" href="#null">+</a>');
   $('#infant').before('<a id="less" href="#null">-</a>');
-
   /* page two: search results */
 
 
@@ -169,7 +157,9 @@ $.noConflict();
   $.each(unavailable, function(i,v) {
     $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.</h6>');
   }); */
-
+  $('#seatSelection').on('submit', function(e) {
+    var seatSelectionData = $(this).serializeArray();
+  })
   $('.one a').on('click', function(e) {
     var selected = [];
     var seats;
@@ -223,17 +213,25 @@ $.noConflict();
     console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
   });
 
-$('#seatSelection').on('submit', function(e) {
-  var seatSelectionData = $(this).serializeArray();
-})
-
-
-
-
 
   /* page whatever: user information */
   $('#uinformation').on('submit', function(d)
     {
+      var fname = $('#fname').val();
+      var lname = $('#lname').val();
+      var number = $('#number').val();
+      var email = $('#email').val();
+      var birthday = $('#birthday').val();
+      var uinformation = $(this).serializeArray();
+      console.log(uinformation);
+
+      $.each(uinformation, function(i, field) {
+        console.log(field.name, field.value);
+        docCookies.setItem(field.name, field.value);
+        console.log(field.name + ": " + docCookies.getItem(field.name));
+      });
+
+
       if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
         d.preventDefault();
         $('#header2').after('<li id="error">You have information missing!</li>');
@@ -244,7 +242,19 @@ $('#seatSelection').on('submit', function(e) {
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         // remove the error messages
         $('#error').remove();
-        console.log('form sub, data ' + 'first name ' + fname + ' last name ' + lname + ' phone number ' + number + ' Email ' + email + ' Gender ' + gender + ' Birthday ' + birthday);
+        $('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
+
+        docCookies.setItem("fname", fname, "/traveler/index.html");
+        docCookies.setItem("lname", lname, "/traveler/index.html");
+        docCookies.setItem("number", number, "/traveler/index.html");
+        docCookies.setItem("email", email, "/traveler/index.html");
+        docCookies.setItem("birthday", birthday, "/traveler/index.html");
+
+        console.log(docCookies.getItem("lname"));
+        console.log(docCookies.getItem("fname"));
+        console.log(docCookies.getItem("number"));
+        console.log(docCookies.getItem("email"));
+        console.log(docCookies.getItem("birthday"));
       }
     });
 
@@ -261,47 +271,63 @@ $('#seatSelection').on('submit', function(e) {
 
     $('#paymentinformation').on('submit', function(d)
     {
+
+      var paymentInformation = $(this).serializeArray();
+      console.log(paymentInformation);
+
+      $.each(paymentInformation, function(i, field) {
+        console.log(field.name, field.value);
+        docCookies.setItem(field.name, field.value);
+        console.log(field.name + ": " + docCookies.getItem(field.name));
+      });
+
+      var cardnum = $('#cardnumber').val();
+      var expmonth = $('#expmonth').val();
+      var expyear = $('#expyear').val();
+      var username = $('#username').val();
+      var address = $('#address').val();
+      var city = $('#city').val();
+      var zipcode = $('#zipcode').val();
+      var state = $('#state').val();
+
       if(document.getElementById("cardnumber").value === '' || document.getElementById("expmonth").value === ''
        || document.getElementById("expyear").value === '' || document.getElementById("username").value === ''
       || document.getElementById("address").value === '' || document.getElementById("city").value === ''
       || document.getElementById("zipcode").value === '' || document.getElementById("state").value === '' ){
         d.preventDefault();
         $('#h2card').after('<li id="error2">There is missing information</li>');
+        //$('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
       }
+
       if(document.getElementById("cardnumber").value !== '' && document.getElementById("expmonth").value !== ''
       && document.getElementById("expyear").value !== '' && document.getElementById("username").value !== ''
       && document.getElementById("address").value !== '' && document.getElementById("city").value !== ''
       && document.getElementById("zipcode").value !== '' && document.getElementById("state").value !== '' ) {
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         $('#error2').remove();
-        var cardinfo = {
-          number: docCookies.setItem('cardnum', cardnum),
-          expmonth: docCookies.setItem('expmonth', expmonth),
-          expyear: docCookies.setItem('expyear', expyear),
-          username: docCookies.setItem('username', username)
-        };
 
-        /*var billing = {
-          address:
-          city:
-          state:
-          zipcode:
-        }*/
-        /*docCookies.setItem('username', username);
-        //docCookies.setItem('cardnum', cardnum);
-        docCookies.setItem('expmonth', expmonth);*/
+        docCookies.setItem('cardnum', cardnum, "/payment/index.html");
+        docCookies.setItem('expmonth', expmonth, "/payment/index.html");
+        docCookies.setItem('expyear', expyear, "/payment/index.html");
+        docCookies.setItem('address', address, "/payment/index.html");
+        docCookies.setItem('state', state, "/payment/index.html");
+        docCookies.setItem('zipcode', zipcode, "/payment/index.html");
+        docCookies.setItem('city', city, "/payment/index.html");
+        docCookies.setItem('username', username, "/payment/index.html");
+
         console.log(docCookies.getItem('cardnum'));
         console.log(docCookies.getItem('username'));
         console.log(docCookies.getItem('expmonth'));
         console.log(docCookies.getItem('expyear'));
-        console.log('Your DATA '+ zipcode);
-        //$('.firstentry').append('<b>DATA - Your whole name: ' + docCookies.getItem('username') + '</b>');
-      }
+        console.log(docCookies.getItem('address'));
+        console.log(docCookies.getItem('city'));
+        console.log(docCookies.getItem('state'));
+        console.log(docCookies.getItem('zipcode'));
 
+    }
   });
-
-      console.log("here");
-
-      $('.firstName').append(docCookies.getItem('username'));
-
+ departdate = $('#departdate').val()
+  console.log(document.cookie);
+  $('#confirmationpg').append('<b>This is your quantity of tickets: ' + docCookies.getItem('quantity') + ' Adults: ' + docCookies.getItem('adult') + ' Seniors: ' +
+   docCookies.getItem('senior') + ' Children: ' + docCookies.getItem('children') + ' Have a safe and enjoyable trip!!</b>');
 })(jQuery);
