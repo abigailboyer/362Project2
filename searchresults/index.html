@@ -9,48 +9,47 @@
   <link rel="stylesheet" href="../screen.css" />
 </head>
 <body>
+  <header id="headtitle">
+    <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
+  </header>
   <main>
-    <h1>Search Results</h1>
-    <form id="Fligtupdate" action="#null" method="get">
+    <form action="" method="get" id="searchUpdate" novalidate>
       <ol id="searchone">
-        <ul id="trip">
+        <ul class="trip">
           <li>
             <label for="oneway">One-Way</label>
             <input type="radio" id="oneway" name="trip" value="One-Way" />
           </li>
           <li>
             <label for="round">Round Trip</label>
-            <input type="radio" id="round" name="trip" value="Round Trip" checked />
+            <input type="radio" id="roundtrip" name="trip" value="Round Trip" checked />
           </li>
         </ul>
         <!-- todo: change placeholders -->
-    <header id="headtitle">
-      <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
-    </header>
-    <!-- todo: add form that replicates inputs from
-    the first form and allows editing -->
-
-  <!--  <form id="userform" action="#null" method="get">
-      <ol>
-
+        <ul class="loc">
+          <li>
+            <label for="departloc">Departing Location</label>
+            <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
+          </li>
+          <li>
+            <label for="arriveloc">Arriving Location</label>
+            <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
+          </li>
+        </ul>
+        <ul class="dates">
+          <li>
+            <label for="departdate">Departure Date</label>
+            <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
+          </li>
+          <!-- todo: only show return date when round trip is selected -->
+          <li>
+            <label for="returndate">Return Date</label>
+            <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
+          </li>
+        </ul>
         <li>
-          <label for="departloc">Departing Location</label>
-          <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
-        </li>
-          <label for="arriveloc">Arriving Location</label>
-          <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
-        <li>
-          <label for="departdate">Departure Date</label>
-          <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
-        </li>
-        <!-- todo: only show return date when round trip is selected -->
-        <li>
-          <label for="returndate">Return Date</label>
-          <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
-        </li>
-        <li>
-          <ul>
-            <li>
+          <ul class="tickets">
+            <li class="ti">
             <label for="tickets">Tickets</label>
             </li>
             <li>
@@ -63,7 +62,7 @@
             </li>
             <li>
               <label for="children">Children</label>
-              <input type="number" name="tickets" id="child" value="0" />
+              <input type="number" name="tickets" id="children" value="0" />
             </li>
             <li>
               <label for="infant">Infants</label>
@@ -71,11 +70,7 @@
             </li>
           </ul>
         </li>
-        <li>
-          <label for="nonstop">Nonstop</label>
-          <input type="checkbox" id="nonstop" name="nonstop" />
-        </li>
-        <li>
+        <li class="submitB">
           <input type="submit" id="submit" name="submit" value="Search for flights" />
         </li>
       </ol>
