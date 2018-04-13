@@ -17,6 +17,7 @@
       <h2>Find a flight!</h2>
       <form action="searchresults/index.html" method="get" id="flightsearch" novalidate>
         <ol id="searchone">
+          <li>
           <ul class="trip">
             <li>
               <label for="oneway">One-Way</label>
@@ -27,6 +28,8 @@
               <input type="radio" id="roundtrip" name="trip" value="Round Trip" checked />
             </li>
           </ul>
+        </li>
+        <li>
           <ul class="loc">
             <li>
               <label for="departloc">Departing Location</label>
@@ -37,6 +40,8 @@
               <input type="text" id="arriveloc" name="arriving location" placeholder="Orlando, FL" />
             </li>
           </ul>
+        </li>
+        <li>
           <ul class="dates">
             <li>
               <label for="departdate">Departure Date</label>
@@ -47,9 +52,11 @@
               <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
             </li>
           </ul>
+        </li>
           <li class="ti">
             <label for="tickets">Tickets</label>
           </li>
+          <li>
             <ul class="tickets">
               <li>
                 <label for="adult">Adults</label>
@@ -68,6 +75,7 @@
                 <input type="number" name="tickets" id="infant" value="0" />
               </li>
             </ul>
+          </li>
           <li class="submitB">
             <input type="submit" id="submit" name="submit" value="Search for flights" />
           </li>

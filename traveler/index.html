@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <title>Flight Booking: Search for Flights</title>
   <meta charset="utf-8" />
-  <title>Flight Booking: Personal Information</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Tajawal" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   <link rel="stylesheet" href="http://basehold.it/20" />
-  <link rel="stylesheet" href="../screen.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Tajawal" rel="stylesheet" />
+  <link rel="stylesheet" href="screen.css" />
 </head>
 <body>
   <header id="headtitle">
@@ -18,39 +18,48 @@
       <form action="../payment/index.html" method="get" id="uinformation">
         <ol>
           <li>
-            <label for="first name">First Name</label>
+            <label for="first_name">First Name</label>
             <input type="text" id="fname" name="fname" placeholder="Adam" />
           </li>
           <li>
-            <label for="last name">Last Name</label>
+            <label for="last_name">Last Name</label>
             <input type="text" id="lname" name="lname" placeholder="Smith" />
           </li>
           <li>
-            <label for="birthdate">Date of Birth</label>
-            <input type="date" id="birthday" name="birthday" />
+            <ul class="tickets">
+              <li>
+              <label for="tickets">Tickets</label>
+              </li>
+              <li>
+                <label for="adult">Adults</label>
+                <input type="number" name="tickets" id="adult" value="1" />
+              </li>
+              <li>
+                <label for="senior">Seniors</label>
+                <input type="number" name="tickets" id="senior" value="0" />
+              </li>
+              <li>
+                <label for="children">Children</label>
+                <input type="number" name="tickets" id="children" value="0" />
+              </li>
+              <li>
+                <label for="infant">Infants</label>
+                <input type="number" name="tickets" id="infant" value="0" />
+              </li>
+            </ul>
           </li>
           <li>
-            <input type="radio" id="mgender" name="mgender" value="male" />
-            <label for="mgender">Male</label>
-            <input type="radio" id="fgender" name="fgender" value="female" />
-            <label for="fgender">Female</label>
+            <label for="nonstop">Nonstop</label>
+            <input type="checkbox" id="nonstop" name="nonstop" />
           </li>
-          <li>
-            <label for="phonenumber">Phone Number</label>
-            <input type="tel" id="number" name="number" placeholder="708-111-2222" />
-          </li>
-          <li>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="johndoe@example.com" />
-          </li>
-          <li>
-            <input id="submit" name="submit" value="Submit" type="submit" />
+          <li class="submitB">
+            <input type="submit" id="submit" name="submit" value="Search for flights" />
           </li>
         </ol>
       </form>
     </section>
   </main>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="../site.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
