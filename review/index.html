@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Flight Booking: Confirmation</title>
+  <title>Flight Booking: Review</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   <link rel="stylesheet" href="http://basehold.it/20" />
@@ -21,59 +21,45 @@
             <li>
               <h3>Personal Information</h3>
             </li>
-            <li>
-              <p class="firstName">First Name: </p>
-            </li>
-
             <form action="../traveler/index.html" method="get" novalidate>
               <input type="submit" value="Edit personal information." />
             </form>
           </ul>
         </li>
         <li id="paymentInfo">
-
+          <ul>
+            <li>
+              <h3>Payment Information</h3>
+            </li>
+            <form action="../payment/index.html" method="get">
+              <input type="submit" value="Edit payment information." />
+            </form>
+          </ul>
         </li>
         <li id="ticketInfo">
-
+          <ul>
+            <li>
+              <h3>Flight Information</h3>
+            </li>
+            <form action="../searchresults/index.html" method="get">
+              <input type="submit" value="Edit flight information." />
+            </form>
+          </ul>
+        </li>
+        <li id="next">
+          <ul>
+            <li>
+              <h3>Finish and Pay</h3>
+            </li>
+            <form action="../confirmeditinerary/index.html" method="get" id="complete">
+              <input type="submit" value="Complete purchase." />
+            </form>
+          </ul>
         </li>
       </ul>
-<!--
-      <li>
-        <p id="firstentry">Click this button to go back to the personal information page</p>
-        <form action="../traveler/index.html">
-          <input type="submit" value="Go back to personal info page" />
-        </form>
-      </li>
-      <li>
-        <p>Click this button to go back to the flight search page</p>
-        <form action="index.html">
-          <input type="submit" value="Go back and search flights" />
-        </form>
-      </li>
-      <li>
-        <p>Click this button to go back to the tickets page</p>
-        <form action="../tickets/index.html">
-          <input type="submit" value="Go back to the tickets page" />
-        </form>
-      </li>
-      <li>
-        <p>Click this button to go back to the payment information page</p>
-        <form action="../paymentinformation/index.html">
-          <input type="submit" value="Go back to the payment page" />
-        </form>
-      </li>
-      <li>
-        <p>Click this button to select different seats</p>
-        <form action="../seats/idex.html">
-          <input type="submit" value="Go back and select different seats" />
-        </form>
-      </li>
-      <li>
-        <p>If you are completely finished, click this button to finish your transaction</p>
-        <form action="../confirmeditinerary/index.html">
-          <input type="submit" value="Finish!!" />
-        </form>
-    </ol>
+    </section>
   </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="../site.js"></script>
 </body>
 </html>
