@@ -108,6 +108,21 @@ $.noConflict();
     }
   e.preventDefault();
   });
+
+  /* prettier, easier buttons
+
+  $('#adult').after('<a id="more" href="#null">+</a>');
+  $('#adult').before('<a id="less" href="#null">-</a>');
+
+  $('#senior').after('<a id="more" href="#null">+</a>');
+  $('#senior').before('<a id="less" href="#null">-</a>');
+
+  $('#children').after('<a id="more" href="#null">+</a>');
+  $('#children').before('<a id="less" href="#null">-</a>');
+
+  $('#infant').after('<a id="more" href="#null">+</a>');
+  $('#infant').before('<a id="less" href="#null">-</a>');
+
   /* page two: search results */
 
 
