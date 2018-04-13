@@ -441,6 +441,12 @@ a.unavailable:hover {
 
 /* State Styles  */
 
+@media screen and (min-width:350px) {
+  .seats a {
+    padding: 20px;
+  }
+}
+
 @media screen and (min-width:450px) {
   form {
     margin-left: 10%;
@@ -448,12 +454,27 @@ a.unavailable:hover {
   }
 
   header {
-    width: 10%;
+    width: 20%;
     margin-left: 10%;
   }
 
   h2 {
     margin-left: 10%;
+  }
+
+  #airplane {
+    margin: 0 10%;
+  }
+
+  .seats a {
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width:500px) {
+  .seats a {
+    padding: 25px;
+    margin: 5px;
   }
 }
 
