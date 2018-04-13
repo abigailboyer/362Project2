@@ -210,7 +210,7 @@ h4 {
 }
 
 h1 {
-  font-size: 37.897px;
+  font-size: 2.3685625rems; /* 37.897 / 16 = 2.3685625 */
   line-height: 50px;
   font-weight: 700;
 }
@@ -305,6 +305,7 @@ input {
 
 input[type="submit"] {
   background-color: #004EA6;
+  color: white;
   padding: 0.611em;
   border-radius: 1em;
   float: inherit;
