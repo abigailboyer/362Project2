@@ -147,8 +147,6 @@ $.noConflict();
           d.preventDefault();
           $('#searchsubmit').after('<li id="error">You have information missing! Please select your flight/flights!</li>');
         }
-        return formValid;
-  //})
   });
 
   /* page three: seat selection */
