@@ -10,14 +10,14 @@
 </head>
 <body>
   <header id="headtitle">
-    <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
+    <h1><a href="" rel="home">Dominator Flight&nbsp;Booking</a></h1>
   </header>
   <main>
     <section id="searchf">
       <h2>Find a flight!</h2>
       <form action="searchresults/index.html" method="get" id="flightsearch" novalidate>
         <ol id="searchone">
-          <ul id="trip">
+          <ul class="trip">
             <li>
               <label for="oneway">One-Way</label>
               <input type="radio" id="oneway" name="trip" value="One-Way" />
@@ -51,7 +51,7 @@
           </ul>
           <li>
             <ul class="tickets">
-              <li>
+              <li class="ti">
               <label for="tickets">Tickets</label>
               </li>
               <li>
@@ -71,10 +71,6 @@
                 <input type="number" name="tickets" id="infant" value="0" />
               </li>
             </ul>
-          </li>
-          <li>
-            <label for="nonstop">Nonstop</label>
-            <input type="checkbox" id="nonstop" name="nonstop" />
           </li>
           <li class="submitB">
             <input type="submit" id="submit" name="submit" value="Search for flights" />
