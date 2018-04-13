@@ -1,56 +1,89 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <title>Flight Booking: Search for Flights</title>
   <meta charset="utf-8" />
-  <title>Flight Booking: Personal Information</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Tajawal" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   <link rel="stylesheet" href="http://basehold.it/20" />
-  <link rel="stylesheet" href="../screen.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Tajawal" rel="stylesheet" />
+  <link rel="stylesheet" href="screen.css" />
 </head>
 <body>
   <header id="headtitle">
     <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
   </header>
-  <main id="content">
-    <section id="userinfo">
-      <h2 id="header2">Personal Information</h2>
-      <form action="../payment/index.html" method="get" id="uinformation">
-        <ol>
+  <main>
+    <section id="searchf">
+      <h2>Find a flight!</h2>
+      <form action="searchresults/index.html" method="get" id="flightsearch" novalidate>
+        <ol id="searchone">
+          <ul id="trip">
+            <li>
+              <label for="oneway">One-Way</label>
+              <input type="radio" id="oneway" name="trip" value="One-Way" />
+            </li>
+            <li>
+              <label for="round">Round Trip</label>
+              <input type="radio" id="roundtrip" name="trip" value="Round Trip" checked />
+            </li>
+          </ul>
+          <!-- todo: change placeholders -->
+          <ul class="loc">
+            <li>
+              <label for="departloc">Departing Location</label>
+              <input type="text" id="deparloc" name="departing location" placeholder="Departing Location" />
+            </li>
+            <li>
+              <label for="arriveloc">Arriving Location</label>
+              <input type="text" id="arriveloc" name="arriving location" placeholder="Arriving Location" />
+            </li>
+          </ul>
+          <ul class="dates">
+            <li>
+              <label for="departdate">Departure Date</label>
+              <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
+            </li>
+            <!-- todo: only show return date when round trip is selected -->
+            <li>
+              <label for="returndate">Return Date</label>
+              <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
+            </li>
+          </ul>
           <li>
-            <label for="first name">First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Adam" />
+            <ul class="tickets">
+              <li>
+              <label for="tickets">Tickets</label>
+              </li>
+              <li>
+                <label for="adult">Adults</label>
+                <input type="number" name="tickets" id="adult" value="1" />
+              </li>
+              <li>
+                <label for="senior">Seniors</label>
+                <input type="number" name="tickets" id="senior" value="0" />
+              </li>
+              <li>
+                <label for="children">Children</label>
+                <input type="number" name="tickets" id="children" value="0" />
+              </li>
+              <li>
+                <label for="infant">Infants</label>
+                <input type="number" name="tickets" id="infant" value="0" />
+              </li>
+            </ul>
           </li>
           <li>
-            <label for="last name">Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Smith" />
+            <label for="nonstop">Nonstop</label>
+            <input type="checkbox" id="nonstop" name="nonstop" />
           </li>
-          <li>
-            <label for="birthdate">Date of Birth</label>
-            <input type="date" id="birthday" name="birthday" />
-          </li>
-          <li>
-            <input type="radio" id="mgender" name="mgender" value="male" />
-            <label for="mgender">Male</label>
-            <input type="radio" id="fgender" name="fgender" value="female" />
-            <label for="fgender">Female</label>
-          </li>
-          <li>
-            <label for="phonenumber">Phone Number</label>
-            <input type="tel" id="number" name="number" placeholder="708-111-2222" />
-          </li>
-          <li>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="johndoe@example.com" />
-          </li>
-          <li>
-            <input id="submit" name="submit" value="Submit" type="submit" />
+          <li class="submitB">
+            <input type="submit" id="submit" name="submit" value="Search for flights" />
           </li>
         </ol>
       </form>
     </section>
   </main>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="../site.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
