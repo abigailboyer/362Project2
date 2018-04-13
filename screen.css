@@ -211,22 +211,22 @@ h4 {
 
 h1 {
   font-size: 2.3685625rem; /* 37.897 / 16 = 2.3685625 */
-  line-height: 50px;
+  line-height: 3.125rem; /* 50 / 16 = 3.125 */
   font-weight: 700;
 }
 
 h2 {
-  font-size: 28.43px;
-  line-height: 30px;
+  font-size: 1.776875rem; /* 28.43 / 16 = 1.776875 */
+  line-height: 1.875rem; /* 30 / 16 = 1.875 */
   font-weight: 600;
 
   margin: 0 5%;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem; /* 10 / 16 =  */
 }
 
 h3 {
-  font-size: 21.328px;
-  line-height: 20px;
+  font-size: 1.333rem; /* 21.328 / 16 = 1.333 */
+  line-height: 1.25rem; /* 20 / 16 = 1.25 */
 }
 
 a {
@@ -234,15 +234,13 @@ a {
   text-decoration: none;
 }
 
-/* todo: transition out & in */
-
 a:hover {
   color: #6BB1FF;
   transition: 0.4s;
 }
 
 a:focus {
-  border: 1px grey dotted;
+  border: 0.0625rem grey dotted; /* 1 / 16 = .0625 */
 }
 
 ul,
@@ -259,8 +257,8 @@ figcaption {
 /* todo: change margins later */
 
 header {
-  margin: 10px 5% 10px 0;
-  margin-bottom: 20px;
+  margin: 0.625rem 5% 0.625rem 0; /* 10 / 16 = .625 */
+  margin-bottom: 1.25rem; /* 20 / 16 = 1.25 */
 }
 
 header h1 {
@@ -281,16 +279,16 @@ header a:hover {
 form {
   background-color: #ADD4FF;
   margin: 0 5%;
-  margin-bottom: 40px;
-  padding: 10px 10px;
+  margin-bottom: 2.5rem; /* 40 / 16 = 2.5 */
+  padding: 0.625rem 0.625rem; /* 10 / 16 = .625 */
 
   border-top: #004EA6 solid 1px;
 }
 
 label {
-  font-size: 16px;
-  line-height: 20px;
-  margin: 0 0 10px 0;
+  font-size: 1em; /* 16 / 16 = 1 */
+  line-height: 1.25rem; /* 20 / 16 = 1.25 */
+  margin: 0 0 0.625rem 0; /* 10 / 16 = .625 */
   display: inline-block;
 }
 
@@ -299,9 +297,9 @@ input {
   box-sizing: border-box;
   background-color: #ffffff;
   font-family: inherit;
-  font-size: 16px;
-  line-height: 20px;
-  margin: 0 0 10px 0;
+  font-size: 1em; /* 16 / 16 = 1 */
+  line-height: 1.25rem; /* 20 / 16 = 1.25 */
+  margin: 0 0 0.625rem 0;/* 10 / 16 = .625 */
   width: 100%;
 }
 
@@ -311,7 +309,7 @@ input[type="submit"] {
   padding: 0.611em;
   border-radius: 1em;
   float: inherit;
-  margin-top: 10px;
+  margin-top: 0.625rem; /* 10 / 16 = .625 */
   cursor: pointer;
 }
 
@@ -324,14 +322,14 @@ input[type="submit"] {
 }
 
 #flightselection li {
-  padding-right: 120px;
-}
+  padding-right: 7.5rem;
+} /* 120 / 16 = 7.5  */
 
 #searchtitles li {
-    font-size: 28px;
-    line-height: 50px;
+    font-size: 1.75rem; /* 28 / 16 = 1.75 */
+    line-height: 3.125rem; /* 50 / 26 = 3.125 */
     font-weight: 700;
-    padding-right: 50px;
+    padding-right: 3.125rem; /* 50 / 16 = 3.125 */
 }
 
 #flightselection{
@@ -342,15 +340,15 @@ input[type="submit"] {
 }
 
  #duration{
-  padding-left: 50px;
+  padding-left: 3.125rem; /* 50 / 16 = 3.125 */
 }
 
 #stops{
-  padding-left: 200px;
+  padding-left: 12.5rem; /* 200 / 16 = 12.5 */
 }
 
 #price{
-  padding-left: 50px;
+  padding-left: 3.125rem; /* 50 / 16 = 3.125 */
 }
 
 
@@ -365,18 +363,18 @@ input[type="submit"]:hover {
 }
 
 input[type="radio"] {
-  width: 25px;
+  width: 1.5625rem; /* 25 / 16 = 1.5625 */
   display: inline;
 }
 
 .ti{
   font-weight: 900;
-  width: 400px;
+  width: 25rem; /* 400 / 16 = 25 */
 }
 
 .tickets {
   display: flex;
-  padding: 3px;
+  padding: 0.1875rem; /* 3 / 16 = .1875 */
   align-content: space-between;
 }
 
@@ -401,10 +399,10 @@ input[type="radio"] {
 .one,
 .two {
   background-color: #ADD4FF;
-  padding: 10px;
-  margin: 20px 0;
+  padding: 0.625rem; /* 10 / 16 = .625 */
+  margin: 1.25rem 0; /* 20 / 16 = 1.25 */
 
-  border-top: #004EA6 solid 2px;
+  border-top: #004EA6 solid 0.125rem; /* 2 / 16 = .125 */
 }
 
 .rows {
@@ -413,7 +411,7 @@ input[type="radio"] {
 }
 
 .row {
-  padding: 5px 0;
+  padding: 0.3125rem 0; /* 5 / 16 = .3125 */
 }
 
 .seats {
@@ -424,8 +422,8 @@ input[type="radio"] {
 
 .seats a {
   display: block;
-  padding: 15px;
-  width: 20px;
+  padding: 0.9375rem; /* 15 / 16 = .9375 */
+  width: 1.25rem; /* 20 / 16 = 1.25 */
   background-color: #004EA6;
   color: white;
   text-align: center;
@@ -453,7 +451,7 @@ a.unavailable:hover {
 
 @media screen and (min-width:350px) {
   .seats a {
-    padding: 20px;
+    padding: 1.25rem; /* 20 / 16 = 1.25 */
   }
 }
 
@@ -477,7 +475,7 @@ a.unavailable:hover {
   }
 
   .seats a {
-    padding: 20px;
+    padding: 1.25rem; /* 20 / 16 = 1.25 */
   }
 }
 
@@ -488,7 +486,7 @@ a.unavailable:hover {
   }
 
   .seats a {
-    padding: 22px;
+    padding: 1.375; /* 22/16 = 1.375  */
   }
 
   h2 {
@@ -503,7 +501,7 @@ a.unavailable:hover {
   }
 
   header {
-    margin-top: 30px;
+    margin-top: 1.875rem; /* 30 / 16 = 1.875 */
     margin-left: 14%;
     width: 20%;
   }
@@ -513,7 +511,7 @@ a.unavailable:hover {
   }
 
   .seats a {
-    padding: 27px;
+    padding: 27px; /* 27 / 16 = 1.6875 */
   }
 }
 
@@ -525,7 +523,7 @@ a.unavailable:hover {
   }
 
   .seats a {
-    padding: 10px;
+    padding: 0.625rem; /* 10 / 16 = .625 */
   }
 
   .one,
@@ -601,7 +599,7 @@ a.unavailable:hover {
   }
 
   #flightselection li {
-    padding-right: 60px;
+    padding-right: 3.75rem; /* 60 / 16 = 3.75 */
   }
 
 }
