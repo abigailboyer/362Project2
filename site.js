@@ -244,6 +244,6 @@ $.noConflict();
   });
 
   console.log(document.cookie);
-  $('.firstName').append(docCookies.getItem('quantity'));
+  $('.firstName').append(docCookies.getItem('fname'));
 
 })(jQuery);
