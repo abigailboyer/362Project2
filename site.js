@@ -161,11 +161,11 @@ $.noConflict();
         // remove the error messages
         $('#error').remove();
 
-        docCookies.setItem("fname", fname);
-        docCookies.setItem("lname", lname);
-        docCookies.setItem("number", number);
-        docCookies.setItem("email", email);
-        docCookies.setItem("birthday", birthday);
+        docCookies.setItem("fname", fname, "/traveler/index.html");
+        docCookies.setItem("lname", lname, "/traveler/index.html");
+        docCookies.setItem("number", number, "/traveler/index.html");
+        docCookies.setItem("email", email, "/traveler/index.html");
+        docCookies.setItem("birthday", birthday, "/traveler/index.html");
 
         console.log(docCookies.getItem("lname"));
         console.log(docCookies.getItem("fname"));
@@ -188,6 +188,7 @@ $.noConflict();
 
     $('#paymentinformation').on('submit', function(d)
     {
+
       var paymentInformation = $(this).serializeArray();
       console.log(paymentInformation);
 
@@ -197,8 +198,6 @@ $.noConflict();
         console.log(field.name + ": " + docCookies.getItem(field.name));
       });
 
-
-
       var cardnum = $('#cardnumber').val();
       var expmonth = $('#expmonth').val();
       var expyear = $('#expyear').val();
@@ -207,29 +206,31 @@ $.noConflict();
       var city = $('#city').val();
       var zipcode = $('#zipcode').val();
       var state = $('#state').val();
+
       if(document.getElementById("cardnumber").value === '' || document.getElementById("expmonth").value === ''
        || document.getElementById("expyear").value === '' || document.getElementById("username").value === ''
       || document.getElementById("address").value === '' || document.getElementById("city").value === ''
       || document.getElementById("zipcode").value === '' || document.getElementById("state").value === '' ){
         d.preventDefault();
         $('#h2card').after('<li id="error2">There is missing information</li>');
+        $('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
       }
+
       if(document.getElementById("cardnumber").value !== '' && document.getElementById("expmonth").value !== ''
       && document.getElementById("expyear").value !== '' && document.getElementById("username").value !== ''
       && document.getElementById("address").value !== '' && document.getElementById("city").value !== ''
       && document.getElementById("zipcode").value !== '' && document.getElementById("state").value !== '' ) {
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         $('#error2').remove();
-        docCookies.setItem('cardnum', cardnum);
-        docCookies.setItem('expmonth', expmonth);
-        docCookies.setItem('expyear', expyear);
-        docCookies.setItem('address', address);
-        docCookies.setItem('state', state);
-        docCookies.setItem('zipcode', zipcode);
-        docCookies.setItem('city', city);
-        docCookies.setItem('username', username);
 
-
+        docCookies.setItem('cardnum', cardnum, "/payment/index.html");
+        docCookies.setItem('expmonth', expmonth, "/payment/index.html");
+        docCookies.setItem('expyear', expyear, "/payment/index.html");
+        docCookies.setItem('address', address, "/payment/index.html");
+        docCookies.setItem('state', state, "/payment/index.html");
+        docCookies.setItem('zipcode', zipcode, "/payment/index.html");
+        docCookies.setItem('city', city, "/payment/index.html");
+        docCookies.setItem('username', username, "/payment/index.html");
 
         console.log(docCookies.getItem('cardnum'));
         console.log(docCookies.getItem('username'));
@@ -242,8 +243,9 @@ $.noConflict();
 
       }
   });
-
+ departdate = $('#departdate').val()
   console.log(document.cookie);
   $('.firstName').append(docCookies.getItem('fname'));
-
+  $('#confirmationpg').append('<b>This is your quantity of tickets: ' + docCookies.getItem('quantity') + ' Adults: ' + docCookies.getItem('adult') + ' Seniors: ' +
+   docCookies.getItem('senior') + ' Children: ' + docCookies.getItem('children') + ' Have a safe and enjoyable trip!!</b>');
 })(jQuery);
