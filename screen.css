@@ -84,7 +84,7 @@ li {
 }
 
 figcaption {
-  margin: -100vw;
+  left: -700vw;
   position: absolute;
 }
 
@@ -121,7 +121,7 @@ label {
   font-size: 16px;
   line-height: 20px;
   margin: 0 0 10px 0;
-  display: block;
+  display: inline-block;
 }
 
 input {
@@ -164,20 +164,22 @@ input[type="submit"] {
   float: left;
 }
 
-#trip ul {
-
-  width: 100%;
-  padding: 10px 0;
-  margin-top: 10px;
-}
-
 input[type="submit"]:hover {
   background-color: #004EA6;
   transition: .2s;
 }
 
 input[type="radio"] {
-  width: auto;
+  width: 25px;
+  display: inline;
+}
+
+li .ti{
+  font-weight: 900;
+}
+
+input[type="number"] {
+  width: 25px;
 }
 
 /* todo: make radio buttons touch accessible make the stupid button more clickable */
