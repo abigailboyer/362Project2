@@ -22,7 +22,7 @@ $.noConflict();
 
 
   /* page one: search */
-  $('#flightsearch').on('submit', function(e)
+  $('#flightsearch').on('submit', function(e) {
 
     /* serialize array for form inputs */
     var formOneData = $(this).serializeArray();
