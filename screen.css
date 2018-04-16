@@ -288,7 +288,7 @@ form {
 label {
   font-size: 1em; /* 16 / 16 = 1 */
   line-height: 1.25rem; /* 20 / 16 = 1.25 */
-  margin: 0 0 0.625rem 0; /* 10 / 16 = .625 */
+  margin-bottom: 0.625rem;/* 10 / 16 = .625 */
   display: inline-block;
 }
 
@@ -299,7 +299,6 @@ input {
   font-family: inherit;
   font-size: 1em; /* 16 / 16 = 1 */
   line-height: 30px; /* 20 / 16 = 1.25 */
-  margin: 0 0 0.625rem 0;/* 10 / 16 = .625 */
   width: 100%;
 }
 
@@ -323,11 +322,14 @@ input[type="radio"] {
   display: inline;
 }
 
+/*  */
+
 /* ticket number selection */
 
 .ti{
   font-weight: 900;
   width: 25rem; /* 400 / 16 = 25 */
+  margin-top: 10px;
 }
 
 .tickets {
@@ -346,7 +348,11 @@ input[type="radio"] {
 
 /* error messages */
 
-/* to do: all of this */
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
 
 
 /* todo: make radio buttons touch accessible */
