@@ -372,6 +372,8 @@ input[type="radio"] {
   display: inline;
 }
 
+/* ticket number selection */
+
 .ti{
   font-weight: 900;
   width: 25rem; /* 400 / 16 = 25 */
@@ -379,9 +381,15 @@ input[type="radio"] {
 
 .tickets {
   display: flex;
-  padding: 0.1875rem; /* 3 / 16 = .1875 */
-  align-content: space-between;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+.tickets li {
+  width: 70px;
+}
+
+/* add lil buttons for adding or subtracting tickets */
 
 #noM {
   margin-left: 0;
