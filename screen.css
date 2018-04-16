@@ -298,7 +298,7 @@ input {
   background-color: #ffffff;
   font-family: inherit;
   font-size: 1em; /* 16 / 16 = 1 */
-  line-height: 1.25rem; /* 20 / 16 = 1.25 */
+  line-height: 30px; /* 20 / 16 = 1.25 */
   margin: 0 0 0.625rem 0;/* 10 / 16 = .625 */
   width: 100%;
 }
