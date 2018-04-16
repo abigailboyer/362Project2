@@ -355,8 +355,6 @@ input[type="radio"] {
 
 
 
-/* todo: make radio buttons touch accessible */
-/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
 #flightselection ul li {
   display: inline;
@@ -407,14 +405,10 @@ input[type="radio"] {
   margin-left: 0;
 }
 
-/* todo: make radio buttons touch accessible make the stupid button more clickable */
-/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
-
 /* seat selection styles */
 
 #airplane {
   margin: 0 5%;
-
 }
 
 .one,
