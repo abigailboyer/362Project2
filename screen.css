@@ -313,6 +313,37 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+input[type="submit"]:hover {
+  background-color: #004EA6;
+  transition: .2s;
+}
+
+input[type="radio"] {
+  width: 1.5625rem; /* 25 / 16 = 1.5625 */
+  display: inline;
+}
+
+/* ticket number selection */
+
+.ti{
+  font-weight: 900;
+  width: 25rem; /* 400 / 16 = 25 */
+}
+
+.tickets {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tickets li {
+  width: 70px;
+}
+
+/* add lil buttons for adding or subtracting tickets */
+
+
+
 /* error messages */
 
 /* to do: all of this */
@@ -356,40 +387,11 @@ input[type="submit"] {
   padding-left: 3.125rem; /* 50 / 16 = 3.125 */
 }
 
-
 #ftwo label{
   width: 30%;
   float: left;
 }
 
-input[type="submit"]:hover {
-  background-color: #004EA6;
-  transition: .2s;
-}
-
-input[type="radio"] {
-  width: 1.5625rem; /* 25 / 16 = 1.5625 */
-  display: inline;
-}
-
-/* ticket number selection */
-
-.ti{
-  font-weight: 900;
-  width: 25rem; /* 400 / 16 = 25 */
-}
-
-.tickets {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.tickets li {
-  width: 70px;
-}
-
-/* add lil buttons for adding or subtracting tickets */
 
 #noM {
   margin-left: 0;
