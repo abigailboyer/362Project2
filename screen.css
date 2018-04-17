@@ -299,6 +299,7 @@ input {
   font-family: inherit;
   font-size: 1em; /* 16 / 16 = 1 */
   line-height: 30px; /* 20 / 16 = 1.25 */
+  margin-bottom: 0.625rem;/* 10 / 16 = .625 */
   width: 100%;
 }
 
