@@ -337,10 +337,15 @@ input[type="radio"] {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .tickets li {
-  width: 70px;
+  flex-grow: 1;
+}
+
+.tickets input {
+  width: 100%;
 }
 
 /* add lil buttons for adding or subtracting tickets */
