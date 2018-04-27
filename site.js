@@ -10,6 +10,42 @@ $.noConflict();
   var birthday = $('#birthday').val();
 
   /* page one: search */
+
+  /* search form: page one and two */
+  /* prettier, easier buttons */
+  /* this is 99% stolley's code so
+      https://github.com/itmd-362-2018/demos/blob/master/03-07/site.js
+    here's some credit i guess
+   */
+  $('#adult').after('<a id="more" href="#null">+</a>');
+  $('#adult').before('<a id="less" href="#null">-</a>');
+  $('#senior').after('<a id="more" href="#null">+</a>');
+  $('#senior').before('<a id="less" href="#null">-</a>');
+  $('#children').after('<a id="more" href="#null">+</a>');
+  $('#children').before('<a id="less" href="#null">-</a>');
+  $('#infant').after('<a id="more" href="#null">+</a>');
+  $('#infant').before('<a id="less" href="#null">-</a>');
+
+  $('#more').on('click', function(e) {
+    var adultValue = $('#adult').val();
+    var newAdultValue = parseInt(adultValue, 10) + 1;
+    $('#adult').val(newAdultValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#less').on('click', function(e) {
+    var adultValue = $('#adult').val();
+    var newAdultValue = parseInt(adultValue, 10) - 1;
+    if(newAdultValue < 0) {
+      newAdultValue = 0;
+    }
+    $('#adult').val(newAdultValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+
   $('#flightsearch').on('submit', function(e) {
 
     /* serialize array for form inputs */
@@ -102,17 +138,8 @@ $.noConflict();
 
   });
 
-  /* prettier, easier buttons
-  $('#adult').after('<a id="more" href="#null">+</a>');
-  $('#adult').before('<a id="less" href="#null">-</a>');
-  $('#senior').after('<a id="more" href="#null">+</a>');
-  $('#senior').before('<a id="less" href="#null">-</a>');
-  $('#children').after('<a id="more" href="#null">+</a>');
-  $('#children').before('<a id="less" href="#null">-</a>');
-  $('#infant').after('<a id="more" href="#null">+</a>');
-  $('#infant').before('<a id="less" href="#null">-</a>');
-  /* page two: search results */
 
+  /* page two: search results */
 
   $('#flightselection').on('submit', function(d)
   {
