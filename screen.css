@@ -273,7 +273,6 @@ header a:hover {
   color: #FFC05E;
 }
 
-
 /* form styles */
 /* todo: add form reset later */
 
@@ -319,11 +318,6 @@ input[type="submit"] {
   color: red;
   font-weight: bold;
 }
-/* to do: all of this */
-
-
-/* todo: make radio buttons touch accessible */
-/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
 
 #flightselection ul li {
   display: inline;
