@@ -273,6 +273,7 @@ header a:hover {
   color: #FFC05E;
 }
 
+
 /* form styles */
 /* todo: add form reset later */
 
@@ -314,7 +315,10 @@ input[type="submit"] {
 }
 
 /* error messages */
-
+#errormessage {
+  color: red;
+  font-weight: bold;
+}
 /* to do: all of this */
 
 

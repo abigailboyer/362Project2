@@ -29,6 +29,7 @@ $.noConflict();
     var senior = $("#senior").val();
     var children = $("#children").val();
     var infant = $("#infant").val();
+    var departlocation = $("#deparloc").val();
 
     adult = +adult;
     senior = +senior;
@@ -39,6 +40,7 @@ $.noConflict();
     docCookies.setItem("senior", senior);
     docCookies.setItem("children", children);
     docCookies.setItem("infant", infant);
+    docCookies.setItem("departlocation", departlocation);
 
     console.log(docCookies.getItem("adult"));
     console.log(docCookies.getItem("senior"));
@@ -59,18 +61,18 @@ $.noConflict();
     //  e.preventDefault();
         switch('') {
           case $("#deparloc").val():
-            $(".error").remove();
-            $(".loc").before("<li class=error>Please enter your departure location!</li>");
+            $(".errormessage").remove();
+            $(".loc").before("<li class=errormessage>Please enter your departure location!</li>");
             console.log("Please enter your departure location!");
             break;
           case $("#arriveloc").val():
-            $(".error").remove();
-            $(".loc").before("<li class=error>Please enter your arrival location!</li>");
+            $(".errormessage").remove();
+            $(".loc").before("<li class=errormessage>Please enter your arrival location!</li>");
             console.log("Please enter your arrival location!");
             break;
           case $("#departdate").val():
-            $(".error").remove();
-            $(".dates").before("<li class=error>Please enter your departure date!</li>");
+            $(".errormessage").remove();
+            $(".dates").before("<li class=errormessage>Please enter your departure date!</li>");
             console.log("Please enter your departure date!");
             break;
           }
@@ -78,8 +80,8 @@ $.noConflict();
 
             switch('') {
               case $("#returndate").val():
-                $(".error").remove();
-                $(".dates").before("<li class=error>Please enter your return date!</li>");
+                $(".errormessage").remove();
+                $(".dates").before("<li class=errormessage>Please enter your return date!</li>");
                 console.log("Please enter your return date!");
                 break;
             }
@@ -88,14 +90,14 @@ $.noConflict();
           }
         } else {
 
-          $(".error").remove();
-          $(".tickets").before("<li class=error>You must have at least one adult or senior ticket.</li>");
+          $(".errormessage").remove();
+          $(".tickets").before("<li class=errormessage>You must have at least one adult or senior ticket.</li>");
         console.log("You must have at least one adult or senior ticket per order.");
       }
     } else {
 
-      $(".error").remove();
-      $(".tickets").before("<li class=error>No more than six tickets per customer!</li>");
+      $(".errormessage").remove();
+      $(".tickets").before("<li class=errormessage>No more than six tickets per customer!</li>");
       console.log("No more than 6 tickets per customer.");
     }
   //e.preventDefault();
@@ -147,7 +149,7 @@ $.noConflict();
         }
         if (!formValid || !formValid2){
           d.preventDefault();
-          $('#searchsubmit').after('<li id="error">You have information missing! Please select your flight/flights!</li>');
+          $('#searchsubmit').after('<li id="errormessage">You have information missing! Please select your flight/flights!</li>');
         }
   });
 
@@ -234,14 +236,14 @@ $.noConflict();
 
       if(document.getElementById("fname").value === '' || document.getElementById("lname").value === '' || document.getElementById("number").value === '' || document.getElementById("email") === ''){
         d.preventDefault();
-        $('#header2').after('<li id="error">You have information missing!</li>');
+        $('#error2').before('<li id="errormessage">You have information missing!</li>');
       }
       // check if input boxes are empty
       if(document.getElementById("fname").value !== '' && document.getElementById("lname").value !== '' && document.getElementById("number").value !== '' && document.getElementById("email").value !== '')
       {
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         // remove the error messages
-        $('#error').remove();
+        $('#errormessage').remove();
         $('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
 
         docCookies.setItem("fname", fname, "/traveler/index.html");
@@ -295,7 +297,7 @@ $.noConflict();
       || document.getElementById("address").value === '' || document.getElementById("city").value === ''
       || document.getElementById("zipcode").value === '' || document.getElementById("state").value === '' ){
         d.preventDefault();
-        $('#h2card').after('<li id="error2">There is missing information</li>');
+        $('#error').before('<li id="errormessage">There is missing information</li>');
         //$('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
       }
 
@@ -304,7 +306,7 @@ $.noConflict();
       && document.getElementById("address").value !== '' && document.getElementById("city").value !== ''
       && document.getElementById("zipcode").value !== '' && document.getElementById("state").value !== '' ) {
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
-        $('#error2').remove();
+        $('#errormessage').remove();
 
         docCookies.setItem('cardnum', cardnum, "/payment/index.html");
         docCookies.setItem('expmonth', expmonth, "/payment/index.html");
@@ -328,6 +330,33 @@ $.noConflict();
   });
  departdate = $('#departdate').val()
   console.log(document.cookie);
-  $('#confirmationpg').append('<b>This is your quantity of tickets: ' + docCookies.getItem('quantity') + ' Adults: ' + docCookies.getItem('adult') + ' Seniors: ' +
-   docCookies.getItem('senior') + ' Children: ' + docCookies.getItem('children') + ' Have a safe and enjoyable trip!!</b>');
+  $('#personalinfo').append('<p> Your first name: ' + docCookies.getItem('fname') + '</p>' + '<p> Your last name: '
+  + docCookies.getItem('lname') + '</p>' + '<p> Your birthday is: ' + docCookies.getItem('birthday') + '</p>'
+  + '<p> Your number is: ' + docCookies.getItem('number') + '</p>' + '<p> Your email address is: ' + docCookies.getItem('email') + '</p>' );
+
+  $('#paymentinfo').append('<p> Your card number: ' + docCookies.getItem('cardnum') + '</p>' +
+  '<p> The expiration month is: ' + docCookies.getItem('expmonth') + '</p>' +
+   '<p> The expiration year is: ' + docCookies.getItem('expyear') + '</p>' +
+  '<p> The full name displayed on the card: ' + docCookies.getItem('username') + '</p>' +
+  '<p> The address: ' + docCookies.getItem('address') + '</p>' +
+  '<p> The city: ' + docCookies.getItem('city') + '</p>' +
+  '<p> The zipcode: ' + docCookies.getItem('zipcode') + '</p>' +
+  '<p> The state: ' + docCookies.getItem('state') + '</p>');
+
+  $('#flightinfo').append('<p> Your ticket quantity: ' + docCookies.getItem('quantity') + '</p>' +
+  '<p> The number of adult tickets: ' + docCookies.getItem('adult') + '</p>' +
+  '<p> The number of senior tickets: ' + docCookies.getItem('senior') + '</p>' +
+  '<p> The number of children tickets: ' + docCookies.getItem('children') + '</p>' +
+  '<p> The number of infant tickets: ' + docCookies.getItem('infant') + '</p>');
+
+  $('#ticketinfo').append('<p> Your departing flight is: ' + docCookies.getItem('departflight') + '</p>' +
+  '<p> Your arriving flight is: ' + docCookies.getItem('returnflight') + '</p>');
+
+  $('#seatinfo').append('<p> Your selected seats for flight one: ' + docCookies.getItem('seatsFlightOne') + '</p>' +
+  '<p> Your selected seats for flight two: ' + docCookies.getItem('seatsFlightTwo') + '</p>');
+
+  $('#confirmationpg').append('<p> Hello ' + docCookies.getItem('fname') + '</p>' +
+  '<p>Quantity of tickets: ' + docCookies.getItem('quantity') + '</p>' + '<p> Adults: ' + docCookies.getItem('adult') + '</p>' +
+  '<p> Seniors: ' + docCookies.getItem('senior') + '</p>' + '<p> Children: ' + docCookies.getItem('children') + '</p>' +
+  '<p> Have a safe and enjoyable trip!!</p>');
 })(jQuery);
