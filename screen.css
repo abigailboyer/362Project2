@@ -331,30 +331,31 @@ input[type="radio"] {
 }
 
 .tickets {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
+  display: inline;
 }
 
 .tickets li {
-  flex-grow: 1;
+}
+
+.tickets label {
+  display: block;
 }
 
 .tickets input {
-  width: 100%;
+  width: 50%;
 }
 
 /* buttons for tickets */
 
 #more,
 #less {
-  display: block;
+  display: inline-block;
   background-color: #004EA6;
   border-radius:50%;
   width: 20px;
   height: 20px;
   text-align:center;
+  margin: 0 10px;
 }
 
 
