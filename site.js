@@ -120,9 +120,8 @@ $.noConflict();
 
     if(total < 7) {
 
-    }*/
-
-  });
+    }
+  }); */
 
   $('#flightsearch').on('submit', function(e) {
 
