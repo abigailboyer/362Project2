@@ -17,16 +17,17 @@ $.noConflict();
       https://github.com/itmd-362-2018/demos/blob/master/03-07/site.js
     here's some credit i guess
    */
-  $('#adult').after('<a id="more" href="#null">+</a>');
-  $('#adult').before('<a id="less" href="#null">-</a>');
-  $('#senior').after('<a id="more" href="#null">+</a>');
-  $('#senior').before('<a id="less" href="#null">-</a>');
-  $('#children').after('<a id="more" href="#null">+</a>');
-  $('#children').before('<a id="less" href="#null">-</a>');
-  $('#infant').after('<a id="more" href="#null">+</a>');
-  $('#infant').before('<a id="less" href="#null">-</a>');
 
-  $('#more').on('click', function(e) {
+  $('#adult').after('<a class="ad" id="more" href="#null">+</a>');
+  $('#adult').before('<a class="ad" id="less" href="#null">-</a>');
+  $('#senior').after('<a class="se" id="more" href="#null">+</a>');
+  $('#senior').before('<a class="se" id="less" href="#null">-</a>');
+  $('#children').after('<a class="ch" id="more" href="#null">+</a>');
+  $('#children').before('<a class="ch" id="less" href="#null">-</a>');
+  $('#infant').after('<a class="inf" id="more" href="#null">+</a>');
+  $('#infant').before('<a class="inf" id="less" href="#null">-</a>');
+
+  $('#more.ad').on('click', function(e) {
     var adultValue = $('#adult').val();
     var newAdultValue = parseInt(adultValue, 10) + 1;
     $('#adult').val(newAdultValue);
@@ -34,7 +35,7 @@ $.noConflict();
     e.preventDefault();
   });
 
-  $('#less').on('click', function(e) {
+  $('#less.ad').on('click', function(e) {
     var adultValue = $('#adult').val();
     var newAdultValue = parseInt(adultValue, 10) - 1;
     if(newAdultValue < 0) {
@@ -45,6 +46,83 @@ $.noConflict();
     e.preventDefault();
   });
 
+  $('#more.se').on('click', function(e) {
+    var seniorValue = $('#senior').val();
+    var newSeniorValue = parseInt(seniorValue, 10) + 1;
+    $('#senior').val(newSeniorValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#less.se').on('click', function(e) {
+    var seniorValue = $('#senior').val();
+    var newSeniorValue = parseInt(seniorValue, 10) - 1;
+    if(newSeniorValue < 0) {
+      newSeniorValue = 0;
+    }
+    $('#senior').val(newSeniorValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#more.ch').on('click', function(e) {
+    var childrenValue = $('#children').val();
+    var newChildrenValue = parseInt(childrenValue, 10) + 1;
+    $('#children').val(newChildrenValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#less.ch').on('click', function(e) {
+    var childrenValue = $('#children').val();
+    var newChildrenValue = parseInt(childrenValue, 10) - 1;
+    if(newChildrenValue < 0) {
+      newChildrenValue = 0;
+    }
+    $('#children').val(newChildrenValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#more.inf').on('click', function(e) {
+    var infantValue = $('#infant').val();
+    var newInfantValue = parseInt(infantValue, 10) + 1;
+    $('#infant').val(newInfantValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#less.inf').on('click', function(e) {
+    var infantValue = $('#infant').val();
+    var newInfantValue = parseInt(infantValue, 10) - 1;
+    if(newInfantValue < 0) {
+      newInfantValue = 0;
+    }
+    $('#infant').val(newInfantValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  /* eventually find a way to do this less redundantly? */
+
+    /* this is so repetitive big yikes */
+/*  $('#more').on('click', function(e) {
+    var infantValue = $('#infant').val();
+    var newInfantValue = parseInt(infantValue, 10)
+    var childrenValue = $('#children').val();
+    var newChildrenValue = parseInt(childrenValue, 10);
+    var seniorValue = $('#senior').val();
+    var newSeniorValue = parseInt(seniorValue, 10);
+    var adultValue = $('#adult').val();
+    var newAdultValue = parseInt(adultValue, 10);
+
+    var total = newAdultValue + newseniorValue + newChildrenValue + newInfantValue;
+
+    if(total < 7) {
+
+    }*/
+
+  });
 
   $('#flightsearch').on('submit', function(e) {
 
