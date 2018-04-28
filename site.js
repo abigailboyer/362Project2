@@ -265,8 +265,8 @@ $.noConflict();
     var seatSelectionData = $(this).serializeArray();
   })
   $('.one a').on('click', function(e) {
-    var selected = [];
-    var seats;
+    var selected1 = [];
+    var seats1;
 
     e.preventDefault();
 
@@ -276,17 +276,17 @@ $.noConflict();
 
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
-      console.log("here");
+      console.log("seat1here");
       var seat = $(this).attr('href').substring(1);
-      selected.push(seat);
+      selected1.push(seat);
     });
 
     /* make string of array to put inside input */
-    seats = selected.join(", ");
-    $('#seatsFlightOne').val(seats);
-    console.log(selected);
+    seats1 = selected1.join(", ");
+    $('#seatsFlightOne').val(seats1);
+    console.log(selected1);
     console.log(seatsFlightOne);
-    docCookies.setItem('seatsFlightOne', seats);
+    docCookies.setItem('seatsFlightOne', seats1);
     console.log("flight one seats cookie: " + docCookies.getItem('seatsFlightOne'));
 
   }); /* end .one function */
