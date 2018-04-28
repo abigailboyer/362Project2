@@ -330,11 +330,11 @@ $.noConflict();
   });
  departdate = $('#departdate').val()
   console.log(document.cookie);
-  $('#personalinfo').append('<p> Your first name: ' + docCookies.getItem('fname') + '</p>' + '<p> Your last name: '
+  $('#personalinsert').append('<b> Your first name: ' + docCookies.getItem('fname') + '</b>' + '<p> Your last name: '
   + docCookies.getItem('lname') + '</p>' + '<p> Your birthday is: ' + docCookies.getItem('birthday') + '</p>'
   + '<p> Your number is: ' + docCookies.getItem('number') + '</p>' + '<p> Your email address is: ' + docCookies.getItem('email') + '</p>' );
 
-  $('#paymentinfo').append('<p> Your card number: ' + docCookies.getItem('cardnum') + '</p>' +
+  $('#paymentinsert').append('<p> Your card number: ' + docCookies.getItem('cardnum') + '</p>' +
   '<p> The expiration month is: ' + docCookies.getItem('expmonth') + '</p>' +
    '<p> The expiration year is: ' + docCookies.getItem('expyear') + '</p>' +
   '<p> The full name displayed on the card: ' + docCookies.getItem('username') + '</p>' +
@@ -343,16 +343,16 @@ $.noConflict();
   '<p> The zipcode: ' + docCookies.getItem('zipcode') + '</p>' +
   '<p> The state: ' + docCookies.getItem('state') + '</p>');
 
-  $('#flightinfo').append('<p> Your ticket quantity: ' + docCookies.getItem('quantity') + '</p>' +
+  $('#flightinsert').append('<p> Your ticket quantity: ' + docCookies.getItem('quantity') + '</p>' +
   '<p> The number of adult tickets: ' + docCookies.getItem('adult') + '</p>' +
   '<p> The number of senior tickets: ' + docCookies.getItem('senior') + '</p>' +
   '<p> The number of children tickets: ' + docCookies.getItem('children') + '</p>' +
   '<p> The number of infant tickets: ' + docCookies.getItem('infant') + '</p>');
 
-  $('#ticketinfo').append('<p> Your departing flight is: ' + docCookies.getItem('departflight') + '</p>' +
+  $('#ticketinsert').append('<p> Your departing flight is: ' + docCookies.getItem('departflight') + '</p>' +
   '<p> Your arriving flight is: ' + docCookies.getItem('returnflight') + '</p>');
 
-  $('#seatinfo').append('<p> Your selected seats for flight one: ' + docCookies.getItem('seatsFlightOne') + '</p>' +
+  $('#seatinsert').append('<p> Your selected seats for flight one: ' + docCookies.getItem('seatsFlightOne') + '</p>' +
   '<p> Your selected seats for flight two: ' + docCookies.getItem('seatsFlightTwo') + '</p>');
 
   $('#confirmationpg').append('<p> Hello ' + docCookies.getItem('fname') + '</p>' +
