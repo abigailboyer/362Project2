@@ -319,12 +319,18 @@ input[type="submit"]:hover {
 }
 
 input[type="radio"] {
-  width: 1.5625rem; /* 25 / 16 = 1.5625 */
+  width: 20px;
   display: inline;
 }
 
 #searchone {
   width: 100%;
+}
+
+/* radio button trip */
+
+.trip {
+  /* do this eventually */
 }
 
 /* ticket number selection */
