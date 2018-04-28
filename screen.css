@@ -323,6 +323,10 @@ input[type="radio"] {
   display: inline;
 }
 
+#searchone {
+  width: 100%;
+}
+
 /* ticket number selection */
 
 .ti{
@@ -331,33 +335,38 @@ input[type="radio"] {
 }
 
 .tickets {
-  display: inline;
-}
-
-.tickets li {
+  width: 100%;
 }
 
 .tickets label {
   display: block;
+  margin-bottom: 5px;
 }
 
 .tickets input {
-  width: 50%;
+  display: inline-block;
+  text-align: center;
+  margin: 5px auto;
+  width: 65%;
 }
 
 /* buttons for tickets */
-
+/* these need to go in a container set to 20% total width
+but i have no idea how !!! :)))  */
 #more,
 #less {
   display: inline-block;
   background-color: #004EA6;
-  border-radius:50%;
-  width: 20px;
-  height: 20px;
-  text-align:center;
-  margin: 0 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: auto;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: center;
+  margin: 0 2%;
 }
-
 
 /* error messages */
 
