@@ -257,16 +257,13 @@ $.noConflict();
 
   /* page three: seat selection */
 
-/*  var unavailable = ["A1", "A2"];
-  $.each(unavailable, function(i,v) {
-    $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.</h6>');
-  }); */
   $('#seatSelection').on('submit', function(e) {
     var seatSelectionData = $(this).serializeArray();
-  })
+  });
+
   $('.one a').on('click', function(e) {
-    var selected1 = [];
-    var seats1;
+    var selected = [];
+    var seats;
 
     e.preventDefault();
 
@@ -274,19 +271,38 @@ $.noConflict();
       return;
     }
 
+    /* deny the ability to select
+    if there are 6 selected already */
+
+    if($('.one .selected').length > 5) {
+      console.log("too manu");
+      return;
+    }
+
     $(this).toggleClass('selected');
+
     $('.selected', '.rows').each(function() {
-      console.log("seat1here");
-      var seat = $(this).attr('href').substring(1);
-      selected1.push(seat);
+      //console.log("Inside flight one seat selection.");
+
+      /* if a parent has the class two, don't add
+      to the array. otherwise, add to array. */
+
+      //  console.log("Checking parents of element.");
+        if($(this).parents('.two').length) {
+          return;
+          } else {
+              console.log("Has a parent with class one.");
+              var seat = $(this).attr('href').substring(1);
+              selected.push(seat);
+          }
     });
 
     /* make string of array to put inside input */
-    seats1 = selected1.join(", ");
-    $('#seatsFlightOne').val(seats1);
-    console.log(selected1);
-    console.log(seatsFlightOne);
-    docCookies.setItem('seatsFlightOne', seats1);
+    seats = selected.join(", ");
+    $('#seatsFlightOne').val(seats);
+  //  console.log(selected);
+    //console.log(seatsFlightOne);
+    docCookies.setItem('seatsFlightOne', seats);
     console.log("flight one seats cookie: " + docCookies.getItem('seatsFlightOne'));
 
   }); /* end .one function */
@@ -301,11 +317,32 @@ $.noConflict();
       return;
     }
 
+    /* deny the ability to select
+    if there are 6 selected already */
+
+    if($('.two .selected').length > 5) {
+      console.log("too manu");
+      return;
+    }
+
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
-      console.log("here2");
-      var seat = $(this).attr('href').substring(1);
-      selected.push(seat);
+      console.log("Inside flight two seat selection.");
+
+      /* if a parent has the class one, don't add
+      to the array. otherwise, add to array. */
+
+      console.log("Checking parents of element.");
+      if($(this).parents('.one').length) {
+        console.log("Has a parent with class one.");
+        console.log("Selected: " + (selected));
+        console.log("Seats two: " + (seatsFlightTwo));
+
+      } else {
+        console.log("Has a parent with class two.");
+        var seat = $(this).attr('href').substring(1);
+        selected.push(seat);
+      }
     });
 
     /* make string of array to put inside input */
@@ -315,7 +352,10 @@ $.noConflict();
     console.log(seatsFlightTwo);
     docCookies.setItem('seatsFlightTwo', seats);
     console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
-  });
+
+  }); /* end flight two function */
+
+  /* end seat selection */
 
 
   /* page whatever: user information */
