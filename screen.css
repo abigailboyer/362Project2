@@ -626,9 +626,6 @@ do all this Extra work */
     width: 70%;
     margin-left: 20%;
   }
-  #finalpage {
-    background-color: #ADD4FF;
-  }
   #personalsec2, #paymentsec2, #seatsec2, #flightsec2, #ticketsec2 {
     width: 30%;
     float:left;

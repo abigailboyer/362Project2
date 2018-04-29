@@ -127,7 +127,7 @@ $.noConflict();
     $.each(formTwoData, function(i, field) {
       console.log(field.name, field.value);
 
-      docCookies.setItem(field.name, field.value);
+      docCookies.setItem(field.name, field.value, null, '/');
       console.log(field.name + ": " + docCookies.getItem(field.name));
     });
 
@@ -184,7 +184,7 @@ $.noConflict();
     $('#seatsFlightOne').val(seats);
     console.log(selected);
     console.log(seatsFlightOne);
-    docCookies.setItem('seatsFlightOne', seats);
+    docCookies.setItem('seatsFlightOne', seats, null, '/');
     console.log("flight one seats cookie: " + docCookies.getItem('seatsFlightOne'));
 
   }); /* end .one function */
@@ -211,7 +211,7 @@ $.noConflict();
     $('#seatsFlightTwo').val(seats);
     console.log(selected);
     console.log(seatsFlightTwo);
-    docCookies.setItem('seatsFlightTwo', seats);
+    docCookies.setItem('seatsFlightTwo', seats, null, '/');
     console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
   });
 
@@ -246,11 +246,11 @@ $.noConflict();
         $('#errormessage').remove();
         $('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
 
-        docCookies.setItem("fname", fname, "/traveler/index.html");
-        docCookies.setItem("lname", lname, "/traveler/index.html");
-        docCookies.setItem("number", number, "/traveler/index.html");
-        docCookies.setItem("email", email, "/traveler/index.html");
-        docCookies.setItem("birthday", birthday, "/traveler/index.html");
+        docCookies.setItem("fname", fname, null, '/');
+        docCookies.setItem("lname", lname, null, '/');
+        docCookies.setItem("number", number, null, '/');
+        docCookies.setItem("email", email, null, '/');
+        docCookies.setItem("birthday", birthday, '/');
 
         console.log(docCookies.getItem("lname"));
         console.log(docCookies.getItem("fname"));
@@ -308,14 +308,14 @@ $.noConflict();
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         $('#errormessage').remove();
 
-        docCookies.setItem('cardnum', cardnum, "/payment/index.html");
-        docCookies.setItem('expmonth', expmonth, "/payment/index.html");
-        docCookies.setItem('expyear', expyear, "/payment/index.html");
-        docCookies.setItem('address', address, "/payment/index.html");
-        docCookies.setItem('state', state, "/payment/index.html");
-        docCookies.setItem('zipcode', zipcode, "/payment/index.html");
-        docCookies.setItem('city', city, "/payment/index.html");
-        docCookies.setItem('username', username, "/payment/index.html");
+        docCookies.setItem('cardnum', cardnum, null, '/');
+        docCookies.setItem('expmonth', expmonth, null, '/');
+        docCookies.setItem('expyear', expyear, null, '/');
+        docCookies.setItem('address', address, null, '/');
+        docCookies.setItem('state', state, null, '/');
+        docCookies.setItem('zipcode', zipcode, null, '/');
+        docCookies.setItem('city', city, null, '/');
+        docCookies.setItem('username', username, null, '/');
 
         console.log(docCookies.getItem('cardnum'));
         console.log(docCookies.getItem('username'));
