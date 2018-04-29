@@ -286,7 +286,6 @@ $.noConflict();
     }
     /* this probably doesn't work it's okay */
 
-
     $(this).toggleClass('selected');
 
     $('.selected', '.rows').each(function() {
