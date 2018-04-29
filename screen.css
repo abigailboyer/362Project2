@@ -382,6 +382,16 @@ but i have no idea how !!! :)))  */
 }
 
 
+/* flight selection styles */
+#flightSelection {
+  background-color: #fff;
+  background-color: none;
+}
+
+#flightResults {
+  background-color: #ADD4FF;
+}
+
 
 
 #flightselection ul li {
