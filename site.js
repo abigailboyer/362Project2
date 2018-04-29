@@ -218,7 +218,7 @@ $.noConflict();
 
   /* page two: search results */
 
-  $('#flightselection').on('submit', function(d)
+  $('#flightSelection').on('submit', function(d)
   {
       console.log("submit clicked");
 

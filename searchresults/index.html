@@ -10,250 +10,241 @@
 </head>
 <body>
   <header id="headtitle">
-    <h1><a href="" rel="home">Dominator Flight Booking</a></h1>
+    <h1><a href="" rel="home">Dominator Flight&nbsp;Booking</a></h1>
   </header>
   <main>
-    <h2>Search Results</h2>
-    <h3 id="titledepart">Departing Flight: </h3>
-    <form id="flightselection" action="../seats/index.html" method="get">
-      <ol id='departflights'>
-        <!-- to do: fix li, ol and ul being nested incorrectly -->
-    <ul id="searchtitles">
-      <li>
-        Flights
-      </li>
-      <li>
-        Departure Times
-      </li>
-      <li>
-           Arrival Times
-      </li>
-      <li id="duration">
-           Duration
-      </li>
-      <li id="stops">
-           Stops
-      </li>
-      <li id="price">
-           Price
-      </li>
-    </ul>
-        <ul>
-          <li>
-            <label for="flightone">Flight One</label>
-            <input type="radio" id="flightone" name="departflight" />
-          </li>
-          <li>
-            Depature Time 7:30 am
-          </li>
-          <li>
-            Arrival Time 9:45 am
-          </li>
-          <li>
-            Flight Duration 2 hours and 15 min
-          </li>
-          <li>
-            Stops 0
-          </li>
-          <li>
-            Price 540
-          </li>
-        </ul>
-      </li>
-  <li>
-        <ul>
-          <li>
-            <label for="flighttwo">Flight Two</label>
-          <input type="radio" id="flighttwo" name="departflight" />
-          </li>
-          <li>
-            Depature Time 5:30 am
-          </li>
-          <li>
-            Arrival Time 7:45 am
-          </li>
-          <li>
-            Flight Duration 2 hours and 15 min
-          </li>
-          <li>
-            Stops 0
-          </li>
-          <li>
-            Price 460
-          </li>
-        </ul>
-      </li>
-      <li>
-        <ul>
-          <li>
-            <label for="flightthree">Flight Three</label>
-        <input type="radio" id="flightthree" name="departflight" />
-          </li>
-          <li>
-            Depature Time 7:30 am
-          </li>
-          <li>
-            Arrival Time 9:45 am
-          </li>
-          <li>
-            Flight Duration 2 hours and 15 min
-          </li>
-          <li>
-            Stops 0
-          </li>
-          <li>
-            Price 540
-          </li>
-        </ul>
-      </li>
-      <li>
-        <ul>
-          <li>
-            <label for="flightfour">Flight Four</label>
-            <input type="radio" id="flightfour" name="departflight" />
-          </li>
-          <li>
-            Depature Time 7:30 pm
-          </li>
-          <li>
-            Arrival Time 10:45 pm
-          </li>
-          <li>
-            Flight Duration 3 hours and 15 min
-          </li>
-          <li>
-            Stops 2
-          </li>
-          <li>
-            Price 540
-          </li>
-        </ul>
-      </li>
-    </ol>
-    <ol id='returnFlights'>
-      <li>
-        <h2 id="titlereturn" class="noM">Return Flight</h2>
-      </li>
-      <li>
-      <ul id="searchtitles">
-        <li>
-          Flights
+    <h2>Flight Selection</h2>
+    <h3 id="titledepart">Departing Flights: </h3>
+    <form id="flightSelection" action="../seats/index.html" method="get">
+      <section class="columns">
+        <h4>
+          Departure Time
+        </h4>
+        <h4>
+          Arrival Time
+        </h4>
+        <h4>
+          Duration
+        </h4>
+        <h4>
+          Non-stop
+        </h4>
+        <h4>
+          Price
+        </h4>
+      </section>
+      <ul id="flightResults">
+        <li id="departingSelect">
+          <section class="columns">
+            <h4>
+              Departure Time
+            </h4>
+            <h4>
+              Arrival Time
+            </h4>
+            <h4>
+              Duration
+            </h4>
+            <h4>
+              Non-stop
+            </h4>
+            <h4>
+              Price
+            </h4>
+          </section>
+          <ol class="flights">
+            <li>
+              <input type="radio" id="flightOne" name="departingflight" />
+              <label for="flightOne">100</label>
+              <ol class="flightInfo">
+                <li>
+                  7:30 AM
+                </li>
+                <li>
+                  9:45 AM
+                </li>
+                <li>
+                  2h45
+                </li>
+                <li>
+                  x <!-- some kind of checkmark thing? -->
+                </li>
+                <li class="price">
+                  $430
+                </li>
+              </ol>
+            </li>
+            <li>
+              <input type="radio" id="flightTwo" name="departingflight" />
+              <label for="flightTwo">102</label>
+              <ol class="flightInfo">
+                <li>
+                  10:30 AM
+                </li>
+                <li>
+                  12:45 PM
+                </li>
+                <li>
+                  2h45
+                </li>
+                <li>
+                  x
+                </li>
+                <li class="price">
+                  $400
+                </li>
+              </ol>
+            </li>
+            <li>
+              <input type="radio" id="flightThree" name="departingflight" />
+              <label for="flightThree">103</label>
+              <ol class="flightInfo">
+                <li>
+                  11:00 AM
+                </li>
+                <li>
+                  1:00 PM
+                </li>
+                <li>
+                  2h00
+                </li>
+                <li>
+                  x
+                </li>
+                <li class="price">
+                  $375
+                </li>
+              </ol>
+            </li>
+            <li>
+              <input type="radio" id="flightFour" name="departingflight" />
+              <label for="flightFour">104</label>
+              <ol class="flightInfo">
+                <li>
+                  3:00 PM
+                </li>
+                <li>
+                  6:15 PM
+                </li>
+                <li>
+                  3h15
+                </li>
+                <li>
+                  x
+                </li>
+                <li class="price">
+                  $650
+                </li>
+              </ol>
+            </li>
+          </ol>
         </li>
-        <li>
-          Departure Times
-        </li>
-        <li>
-             Arrival Times
-        </li>
-        <li id="duration">
-             Duration
-        </li>
-        <li id="stops">
-             Stops
-        </li>
-        <li id="price">
-             Price
+        <li id="returningSelect">
+          <section class="columns">
+            <h4>
+              Departure Time
+            </h4>
+            <h4>
+              Arrival Time
+            </h4>
+            <h4>
+              Duration
+            </h4>
+            <h4>
+              Non-stop
+            </h4>
+            <h4>
+              Price
+            </h4>
+          </section>
+          <ol class="flights">
+            <li>
+              <input type="radio" id="flightOne" name="departingflight" />
+              <label for="flightOne2">200</label>
+              <ol class="flightInfo">
+                <li>
+                  7:30 AM
+                </li>
+                <li>
+                  9:45 AM
+                </li>
+                <li>
+                  2h45
+                </li>
+                <li>
+                  x <!-- some kind of checkmark thing? -->
+                </li>
+                <li class="price">
+                  $430
+                </li>
+              </ol>
+            </li>
+            <li>
+              <input type="radio" id="flightTwo" name="departingflight" />
+              <label for="flightTwo2">202</label>
+              <ol class="flightInfo">
+                <li>
+                  10:30 AM
+                </li>
+                <li>
+                  12:45 PM
+                </li>
+                <li>
+                  2h45
+                </li>
+                <li>
+                  x
+                </li>
+                <li class="price">
+                  $400
+                </li>
+              </ol>
+            </li>
+            <li>
+              <input type="radio" id="flightThree" name="departingflight" />
+              <label for="flightThree2">203</label>
+              <ol class="flightInfo">
+                <li>
+                  11:00 AM
+                </li>
+                <li>
+                  1:00 PM
+                </li>
+                <li>
+                  2h00
+                </li>
+                <li>
+                  x
+                </li>
+                <li class="price">
+                  $375
+                </li>
+              </ol>
+            </li>
+            <li>
+              <input type="radio" id="flightFour" name="departingflight" />
+              <label for="flightFour2">204</label>
+              <ol class="flightInfo">
+                <li>
+                  3:00 PM
+                </li>
+                <li>
+                  6:15 PM
+                </li>
+                <li>
+                  3h15
+                </li>
+                <li>
+                  x
+                </li>
+                <li class="price">
+                  $650
+                </li>
+              </ol>
+            </li>
+          </ol>
         </li>
       </ul>
-    </li>
-    <li>
-        <ul>
-          <li>
-            <label for="fone">Flight One</label>
-            <input type="radio" id="fone" name="returnflight" />
-          </li>
-          <li>
-            Depature Time 7:30 am
-          </li>
-          <li>
-            Arrival Time 9:45 am
-          </li>
-          <li>
-            Flight Duration 2 hours and 15 min
-          </li>
-          <li>
-            Stops 0
-          </li>
-          <li>
-            Price 540
-          </li>
-        </ul>
-      </li>
-
-  <!-- put the p inside of the value attribute instead??? -->
-  <li>
-        <ul>
-          <li>
-            <label for="ftwo">Flight Two</label>
-            <input type="radio" id="ftwo" name="returnflight" />
-          </li>
-          <li>
-            Depature Time 4:30 pm
-          </li>
-          <li>
-            Arrival Time 7:45 pm
-          </li>
-          <li>
-            Flight Duration 3 hours 15 minutes
-          </li>
-          <li>
-            Stops 0
-          </li>
-          <li>
-            Price 390
-          </li>
-        </ul>
-      </li>
-      <li>
-        <ul>
-          <li>
-            <label for="fthree">Flight Three</label>
-      <input type="radio" id="fthree" name="returnflight" />
-          </li>
-          <li>
-            Depature Time 5:45 am
-          </li>
-          <li>
-            Arrival Time 9:30 am
-          </li>
-          <li>
-            Flight Duration 3 hours 45 minutes
-          </li>
-          <li>
-            Stops 1
-          </li>
-          <li>
-            Price 560
-          </li>
-        </ul>
-      </li>
-      <li>
-        <ul>
-          <li>
-              <label>Flight Four:</label>
-              <input type="radio" name="returnflight" id="ffour"/>
-          </li>
-          <li>
-            Depature Time 9:30 am
-          </li>
-          <li>
-            Arrival Time  12:30pm
-          </li>
-          <li>
-            Flight Duration 3 hours 0 minutes
-          </li>
-          <li>
-            Stops: 0
-          </li>
-          <li>
-            Price: 450
-          </li>
-        </ul>
-      </li>
-      <li id="searchsubmit">
-        <input type="submit" id="submit" name="submit" value="Select Flights" />
-      </li>
-    </ol>
   </form>
 
   <h2>Search Update</h2>
