@@ -250,7 +250,7 @@ $.noConflict();
         docCookies.setItem("lname", lname, null, '/');
         docCookies.setItem("number", number, null, '/');
         docCookies.setItem("email", email, null, '/');
-        docCookies.setItem("birthday", birthday, '/');
+        docCookies.setItem("birthday", birthday, null, '/');
 
         console.log(docCookies.getItem("lname"));
         console.log(docCookies.getItem("fname"));
