@@ -281,7 +281,6 @@ form {
   margin: 0 5%;
   margin-bottom: 2.5rem; /* 40 / 16 = 2.5 */
   padding: 0.625rem 0.625rem; /* 10 / 16 = .625 */
-
   border-top: #004EA6 solid 1px;
 }
 
@@ -386,48 +385,35 @@ but i have no idea how !!! :)))  */
 #flightSelection {
   background-color: #fff;
   background-color: none;
+  border-top: none;
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 2.5rem; /* 40 / 16 = 2.5 */
+  padding: 0.625rem 5%; /* 10 / 16 = .625 */
 }
 
 #flightResults {
-  background-color: #ADD4FF;
+  margin: 0;
+  padding: 0;
+}
+
+#departingSelect,
+#returningSelect {
+  margin: 0;
+  padding: 0;
+}
+
+#departingSelect {
+  margin-bottom: 20px;
 }
 
 
 
-#flightselection ul li {
-  display: inline;
 
-}
 
-#flightselection li {
-  padding-right: 7.5rem;
-} /* 120 / 16 = 7.5  */
 
-#searchtitles li {
-    font-size: 1.75rem; /* 28 / 16 = 1.75 */
-    line-height: 3.125rem; /* 50 / 26 = 3.125 */
-    font-weight: 700;
-    padding-right: 3.125rem; /* 50 / 16 = 3.125 */
-}
 
-#flightselection{
-  background-color: white;
-}
-#returnFlights li, #departflights li{
-  background-color: #ADD4FF;
-}
-
- #duration{
-  padding-left: 3.125rem; /* 50 / 16 = 3.125 */
-}
-
-#stops{
-  padding-left: 12.5rem; /* 200 / 16 = 12.5 */
-}
-
-#price{
-  padding-left: 3.125rem; /* 50 / 16 = 3.125 */
-}
 
 #ftwo label{
   width: 30%;
