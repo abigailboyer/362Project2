@@ -14,251 +14,199 @@
   </header>
   <main>
     <h2>Flight Selection</h2>
+
+    <!-- change to figure with link buttons
+  but make sure to add js to make it work
+just like the seat selection figure -->
     <h3 id="titledepart">Departing Flights: </h3>
-    <form id="flightSelection" action="../seats/index.html" method="get">
-      <ul id="flightResults">
+
+  <!--  <form id="flightSelection" action="../seats/index.html" method="get"> -->
+  <!-- figure -->
+
+    <figure id="flightSelection">
+      <ul id="flights">
         <li id="departingSelect">
-          <ol class="columns">
+          <ol class="flightsOne"> <!-- flight one -->
             <li>
-              <h4>
-                Flight Number
-              </h4>
+              <a href="#flight102">
+              <ul>
+                <li>
+                  <h4>Departs</h4>
+                  <p>7:30 AM</p>
+                </li>
+                <li>
+                  <h4>Arrives</h4>
+                  <p>9:45 AM</p>
+                </li>
+                <li>
+                  <!--<h4>Duration</h4>-->
+                  <p>2h15</p>
+                </li>
+                <li class="tPrice">
+                  <h4>Price</h4>
+                  <p>$430</p>
+                </li>
+              </ul>
+              </a>
             </li>
             <li>
-              <h4>
-                Departure Time
-              </h4>
+              <a href="#flight103">
+              <ul>
+                <li>
+                  <h4>Departs</h4>
+                  <p>10:30 AM</p>
+                </li>
+                <li>
+                  <h4>Arrives</h4>
+                  <p>12:45 PM</p>
+                </li>
+                <li>
+                  <p>2h15</p>
+                </li>
+                <li class="tPrice">
+                  <h4>Price</h4>
+                  <p>$400</p>
+                </li>
+              </ul>
+              </a>
             </li>
             <li>
-              <h4>
-                Arrival Time
-              </h4>
+              <a href="#flight104">
+              <ul>
+                <li>
+                  <h4>Departs</h4>
+                  <p>11:00 AM</p>
+                </li>
+                <li>
+                  <h4>Arrives</h4>
+                  <p>1:00 PM</p>
+                </li>
+                <li>
+                  <p>2h00</p>
+                </li>
+                <li class="tPrice">
+                  <h4>Price</h4>
+                  <p>$375</p>
+                </li>
+              </ul>
+              </a>
             </li>
             <li>
-              <h4>
-                Duration
-              </h4>
-            </li>
-            <li>
-              <h4>
-                Non-stop
-              </h4>
-            </li>
-            <li>
-              <h4>
-                Price
-              </h4>
-            </li>
-          </ol>
-          <ol class="flights">
-            <li>
-              <input type="radio" id="flightOne" name="departingflight" />
-              <label for="flightOne">100</label>
-              <ol class="flightInfo">
+              <a href="#flight105">
+              <ul>
                 <li>
-                  7:30 AM
+                  <h4>Departs</h4>
+                  <p>5:00 PM</p>
                 </li>
                 <li>
-                  9:45 AM
+                  <h4>Arrives</h4>
+                  <p>8:00 PM</p>
                 </li>
                 <li>
-                  2h45
+                  <p>3h00</p>
                 </li>
-                <li>
-                  x <!-- some kind of checkmark thing? -->
+                <li class="tPrice">
+                  <h4>Price</h4>
+                  <p>$575</p>
                 </li>
-                <li class="price">
-                  $430
-                </li>
-              </ol>
-            </li>
-            <li>
-              <input type="radio" id="flightTwo" name="departingflight" />
-              <label for="flightTwo">102</label>
-              <ol class="flightInfo">
-                <li>
-                  10:30 AM
-                </li>
-                <li>
-                  12:45 PM
-                </li>
-                <li>
-                  2h45
-                </li>
-                <li>
-                  x
-                </li>
-                <li class="price">
-                  $400
-                </li>
-              </ol>
-            </li>
-            <li>
-              <input type="radio" id="flightThree" name="departingflight" />
-              <label for="flightThree">103</label>
-              <ol class="flightInfo">
-                <li>
-                  11:00 AM
-                </li>
-                <li>
-                  1:00 PM
-                </li>
-                <li>
-                  2h00
-                </li>
-                <li>
-                  x
-                </li>
-                <li class="price">
-                  $375
-                </li>
-              </ol>
-            </li>
-            <li>
-              <input type="radio" id="flightFour" name="departingflight" />
-              <label for="flightFour">104</label>
-              <ol class="flightInfo">
-                <li>
-                  3:00 PM
-                </li>
-                <li>
-                  6:15 PM
-                </li>
-                <li>
-                  3h15
-                </li>
-                <li>
-                  x
-                </li>
-                <li class="price">
-                  $650
-                </li>
-              </ol>
+              </ul>
+              </a>
             </li>
           </ol>
         </li>
         <li id="returningSelect">
-          <ol class="columns">
-            <li>
-              <h4>
-                Flight Number
-              </h4>
-            </li>
-            <li>
-              <h4>
-                Departure Time
-              </h4>
-            </li>
-            <li>
-              <h4>
-                Arrival Time
-              </h4>
-            </li>
-            <li>
-              <h4>
-                Duration
-              </h4>
-            </li>
-            <li>
-              <h4>
-                Non-stop
-              </h4>
-            </li>
-            <li>
-              <h4>
-                Price
-              </h4>
-            </li>
-          </ol>
-          <ol class="flights">
-            <li>
-              <input type="radio" id="flightOne" name="departingflight" />
-              <label for="flightOne2">200</label>
-              <ol class="flightInfo">
-                <li>
-                  7:30 AM
-                </li>
-                <li>
-                  9:45 AM
-                </li>
-                <li>
-                  2h45
-                </li>
-                <li>
-                  x <!-- some kind of checkmark thing? -->
-                </li>
-                <li class="price">
-                  $430
-                </li>
-              </ol>
-            </li>
-            <li>
-              <input type="radio" id="flightTwo" name="departingflight" />
-              <label for="flightTwo2">202</label>
-              <ol class="flightInfo">
-                <li>
-                  10:30 AM
-                </li>
-                <li>
-                  12:45 PM
-                </li>
-                <li>
-                  2h45
-                </li>
-                <li>
-                  x
-                </li>
-                <li class="price">
-                  $400
-                </li>
-              </ol>
-            </li>
-            <li>
-              <input type="radio" id="flightThree" name="departingflight" />
-              <label for="flightThree2">203</label>
-              <ol class="flightInfo">
-                <li>
-                  11:00 AM
-                </li>
-                <li>
-                  1:00 PM
-                </li>
-                <li>
-                  2h00
-                </li>
-                <li>
-                  x
-                </li>
-                <li class="price">
-                  $375
-                </li>
-              </ol>
-            </li>
-            <li>
-              <input type="radio" id="flightFour" name="departingflight" />
-              <label for="flightFour2">204</label>
-              <ol class="flightInfo">
-                <li>
-                  3:00 PM
-                </li>
-                <li>
-                  6:15 PM
-                </li>
-                <li>
-                  3h15
-                </li>
-                <li>
-                  x
-                </li>
-                <li class="price">
-                  $650
-                </li>
-              </ol>
-            </li>
-          </ol>
+          <ul>
+            <ol class="flightsTwo">
+              <li>
+                <a href="#flight201">
+                <ul>
+                  <li>
+                    <h4>Departs</h4>
+                    <p>7:30 AM</p>
+                  </li>
+                  <li>
+                    <h4>Arrives</h4>
+                    <p>9:45 AM</p>
+                  </li>
+                  <li>
+                    <!--<h4>Duration</h4>-->
+                    <p>2h15</p>
+                  </li>
+                  <li class="tPrice">
+                    <h4>Price</h4>
+                    <p>$430</p>
+                  </li>
+                </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#flight202">
+                <ul>
+                  <li>
+                    <h4>Departs</h4>
+                    <p>10:30 AM</p>
+                  </li>
+                  <li>
+                    <h4>Arrives</h4>
+                    <p>12:45 PM</p>
+                  </li>
+                  <li>
+                    <p>2h15</p>
+                  </li>
+                  <li class="tPrice">
+                    <h4>Price</h4>
+                    <p>$400</p>
+                  </li>
+                </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#flight203">
+                <ul>
+                  <li>
+                    <h4>Departs</h4>
+                    <p>11:00 AM</p>
+                  </li>
+                  <li>
+                    <h4>Arrives</h4>
+                    <p>1:00 PM</p>
+                  </li>
+                  <li>
+                    <p>2h00</p>
+                  </li>
+                  <li class="tPrice">
+                    <h4>Price</h4>
+                    <p>$375</p>
+                  </li>
+                </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#flight204">
+                <ul>
+                  <li>
+                    <h4>Departs</h4>
+                    <p>5:00 PM</p>
+                  </li>
+                  <li>
+                    <h4>Arrives</h4>
+                    <p>8:00 PM</p>
+                  </li>
+                  <li>
+                    <p>3h00</p>
+                  </li>
+                  <li class="tPrice">
+                    <h4>Price</h4>
+                    <p>$575</p>
+                  </li>
+                </ul>
+                </a>
+              </li>
+            </ol>
+          </ul>
         </li>
       </ul>
-  </form>
+  </figure>
 
   <h2>Search Update</h2>
   <form action="" method="get" id="searchUpdate" novalidate>
