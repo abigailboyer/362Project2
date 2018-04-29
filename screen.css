@@ -408,10 +408,27 @@ but i have no idea how !!! :)))  */
   margin-bottom: 20px;
 }
 
+#flights a {
+  display: grid;
+  margin-bottom: 20px;
+  background-color: #ADD4FF;
+  border-radius: 16px;
+  padding: 10px 0;
+  width: 100%;
+}
 
+.other {
+}
 
+.indivFlight li {
+}
 
+.indivFlight h4{
+}
 
+.priceP {
+  background-color: yellow;
+}
 
 
 
