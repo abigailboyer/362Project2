@@ -279,6 +279,14 @@ $.noConflict();
       return;
     }
 
+    /* if selected seat number is greater than ticket number */
+    if($('.one .selected').length > docCookies.getItem("quantity")) {
+      console.log("Only selected " + docCookies.getItem("quantity") + " tickets.");
+      return;
+    }
+    /* this probably doesn't work it's okay */
+
+
     $(this).toggleClass('selected');
 
     $('.selected', '.rows').each(function() {
@@ -324,6 +332,14 @@ $.noConflict();
       console.log("too manu");
       return;
     }
+
+    /* if selected seat number is greater than ticket number */
+    if($('.two .selected').length > docCookies.getItem("quantity")) {
+      console.log("Only selected " + docCookies.getItem("quantity") + " tickets.");
+      return;
+    }
+    /* this probably doesn't work it's okay */
+
 
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
