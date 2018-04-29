@@ -281,14 +281,13 @@ form {
   margin: 0 5%;
   margin-bottom: 2.5rem; /* 40 / 16 = 2.5 */
   padding: 0.625rem 0.625rem; /* 10 / 16 = .625 */
-
   border-top: #004EA6 solid 1px;
 }
 
 label {
   font-size: 1em; /* 16 / 16 = 1 */
   line-height: 1.25rem; /* 20 / 16 = 1.25 */
-  margin: 0 0 0.625rem 0; /* 10 / 16 = .625 */
+  margin-bottom: 0.625rem;/* 10 / 16 = .625 */
   display: inline-block;
 }
 
@@ -298,8 +297,8 @@ input {
   background-color: #ffffff;
   font-family: inherit;
   font-size: 1em; /* 16 / 16 = 1 */
-  line-height: 1.25rem; /* 20 / 16 = 1.25 */
-  margin: 0 0 0.625rem 0;/* 10 / 16 = .625 */
+  line-height: 30px; /* 20 / 16 = 1.25 */
+  margin-bottom: 0.625rem;/* 10 / 16 = .625 */
   width: 100%;
 }
 
@@ -313,46 +312,115 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+
 /* error messages */
 #errormessage {
   color: red;
   font-weight: bold;
 }
 
-#flightselection ul li {
-  display: inline;
-
+.trip {
+  /* do this eventually */
 }
 
-#flightselection li {
-  padding-right: 7.5rem;
-} /* 120 / 16 = 7.5  */
+/* ticket number selection */
 
-#searchtitles li {
-    font-size: 1.75rem; /* 28 / 16 = 1.75 */
-    line-height: 3.125rem; /* 50 / 26 = 3.125 */
-    font-weight: 700;
-    padding-right: 3.125rem; /* 50 / 16 = 3.125 */
+.ti{
+  font-weight: 900;
+  margin-top: 10px;
 }
 
-#flightselection{
-  background-color: white;
+.tickets {
+  width: 100%;
 }
-#returnFlights li, #departflights li{
+
+.tickets label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.tickets input {
+  display: inline-block;
+  text-align: center;
+  margin: 5px auto;
+  width: 65%;
+}
+
+/* buttons for tickets */
+/* these need to go in a container set to 20% total width
+but i have no idea how !!! :)))  */
+#more,
+#less {
+  display: inline-block;
+  background-color: #004EA6;
+  border-radius: 50%;
+  width: 30px;
+  height: auto;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: center;
+  margin: 0 2%;
+}
+
+/* error messages */
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+
+/* flight selection styles */
+#flightSelection {
+  background-color: #fff;
+  background-color: none;
+  border-top: none;
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 2.5rem; /* 40 / 16 = 2.5 */
+  padding: 0.625rem 5%; /* 10 / 16 = .625 */
+}
+
+#flightResults {
+  margin: 0;
+  padding: 0;
+}
+
+#departingSelect,
+#returningSelect {
+  margin: 0;
+  padding: 0;
+}
+
+#departingSelect {
+  margin-bottom: 20px;
+}
+
+#flights a {
+  display: grid;
+  margin-bottom: 20px;
   background-color: #ADD4FF;
+  border-radius: 16px;
+  padding: 10px 0;
+  width: 100%;
 }
 
- #duration{
-  padding-left: 3.125rem; /* 50 / 16 = 3.125 */
+.other {
 }
 
-#stops{
-  padding-left: 12.5rem; /* 200 / 16 = 12.5 */
+.indivFlight li {
 }
 
-#price{
-  padding-left: 3.125rem; /* 50 / 16 = 3.125 */
+.indivFlight h4{
 }
+
+.priceP {
+  background-color: yellow;
+}
+
 
 
 #ftwo label{
@@ -360,26 +428,6 @@ input[type="submit"] {
   float: left;
 }
 
-input[type="submit"]:hover {
-  background-color: #004EA6;
-  transition: .2s;
-}
-
-input[type="radio"] {
-  width: 1.5625rem; /* 25 / 16 = 1.5625 */
-  display: inline;
-}
-
-.ti{
-  font-weight: 900;
-  width: 25rem; /* 400 / 16 = 25 */
-}
-
-.tickets {
-  display: flex;
-  padding: 0.1875rem; /* 3 / 16 = .1875 */
-  align-content: space-between;
-}
 
 #noM {
   margin-left: 0;
@@ -389,14 +437,10 @@ input[type="radio"] {
   margin-left: 0;
 }
 
-/* todo: make radio buttons touch accessible make the stupid button more clickable */
-/* also make the radio buttons fuckginFbgin ALIGN PROPERLY */
-
 /* seat selection styles */
 
 #airplane {
   margin: 0 5%;
-
 }
 
 .one,

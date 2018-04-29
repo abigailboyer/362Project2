@@ -10,6 +10,119 @@ $.noConflict();
   var birthday = $('#birthday').val();
 
   /* page one: search */
+
+  /* search form: page one and two */
+  /* prettier, easier buttons */
+  /* this is 99% stolley's code so
+      https://github.com/itmd-362-2018/demos/blob/master/03-07/site.js
+    here's some credit i guess
+   */
+
+  $('#adult').after('<a class="ad" id="more" href="#null">+</a>');
+  $('#adult').before('<a class="ad" id="less" href="#null">-</a>');
+  $('#senior').after('<a class="se" id="more" href="#null">+</a>');
+  $('#senior').before('<a class="se" id="less" href="#null">-</a>');
+  $('#children').after('<a class="ch" id="more" href="#null">+</a>');
+  $('#children').before('<a class="ch" id="less" href="#null">-</a>');
+  $('#infant').after('<a class="inf" id="more" href="#null">+</a>');
+  $('#infant').before('<a class="inf" id="less" href="#null">-</a>');
+
+  $('#more.ad').on('click', function(e) {
+    var adultValue = $('#adult').val();
+    var newAdultValue = parseInt(adultValue, 10) + 1;
+    $('#adult').val(newAdultValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#less.ad').on('click', function(e) {
+    var adultValue = $('#adult').val();
+    var newAdultValue = parseInt(adultValue, 10) - 1;
+    if(newAdultValue < 0) {
+      newAdultValue = 0;
+    }
+    $('#adult').val(newAdultValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#more.se').on('click', function(e) {
+    var seniorValue = $('#senior').val();
+    var newSeniorValue = parseInt(seniorValue, 10) + 1;
+    $('#senior').val(newSeniorValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#less.se').on('click', function(e) {
+    var seniorValue = $('#senior').val();
+    var newSeniorValue = parseInt(seniorValue, 10) - 1;
+    if(newSeniorValue < 0) {
+      newSeniorValue = 0;
+    }
+    $('#senior').val(newSeniorValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#more.ch').on('click', function(e) {
+    var childrenValue = $('#children').val();
+    var newChildrenValue = parseInt(childrenValue, 10) + 1;
+    $('#children').val(newChildrenValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#less.ch').on('click', function(e) {
+    var childrenValue = $('#children').val();
+    var newChildrenValue = parseInt(childrenValue, 10) - 1;
+    if(newChildrenValue < 0) {
+      newChildrenValue = 0;
+    }
+    $('#children').val(newChildrenValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#more.inf').on('click', function(e) {
+    var infantValue = $('#infant').val();
+    var newInfantValue = parseInt(infantValue, 10) + 1;
+    $('#infant').val(newInfantValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  $('#less.inf').on('click', function(e) {
+    var infantValue = $('#infant').val();
+    var newInfantValue = parseInt(infantValue, 10) - 1;
+    if(newInfantValue < 0) {
+      newInfantValue = 0;
+    }
+    $('#infant').val(newInfantValue);
+    e.stopPropogation();
+    e.preventDefault();
+  });
+
+  /* eventually find a way to do this less redundantly? */
+
+    /* this is so repetitive big yikes */
+/*  $('#more').on('click', function(e) {
+    var infantValue = $('#infant').val();
+    var newInfantValue = parseInt(infantValue, 10)
+    var childrenValue = $('#children').val();
+    var newChildrenValue = parseInt(childrenValue, 10);
+    var seniorValue = $('#senior').val();
+    var newSeniorValue = parseInt(seniorValue, 10);
+    var adultValue = $('#adult').val();
+    var newAdultValue = parseInt(adultValue, 10);
+
+    var total = newAdultValue + newseniorValue + newChildrenValue + newInfantValue;
+
+    if(total < 7) {
+
+    }
+  }); */
+
   $('#flightsearch').on('submit', function(e) {
 
     /* serialize array for form inputs */
@@ -104,19 +217,10 @@ $.noConflict();
 
   });
 
-  /* prettier, easier buttons
-  $('#adult').after('<a id="more" href="#null">+</a>');
-  $('#adult').before('<a id="less" href="#null">-</a>');
-  $('#senior').after('<a id="more" href="#null">+</a>');
-  $('#senior').before('<a id="less" href="#null">-</a>');
-  $('#children').after('<a id="more" href="#null">+</a>');
-  $('#children').before('<a id="less" href="#null">-</a>');
-  $('#infant').after('<a id="more" href="#null">+</a>');
-  $('#infant').before('<a id="less" href="#null">-</a>');
+
   /* page two: search results */
 
-
-  $('#flightselection').on('submit', function(d)
+  $('#flightSelection').on('submit', function(d)
   {
       console.log("submit clicked");
 
@@ -155,13 +259,10 @@ $.noConflict();
 
   /* page three: seat selection */
 
-/*  var unavailable = ["A1", "A2"];
-  $.each(unavailable, function(i,v) {
-    $('.seats a[href="#'+v'"]').addClass('unavailable').prepend('<h6>Seat unavailable.</h6>');
-  }); */
   $('#seatSelection').on('submit', function(e) {
     var seatSelectionData = $(this).serializeArray();
-  })
+  });
+
   $('.one a').on('click', function(e) {
     var selected = [];
     var seats;
@@ -172,18 +273,44 @@ $.noConflict();
       return;
     }
 
+    /* deny the ability to select
+    if there are 6 selected already */
+
+    if($('.one .selected').length > 5) {
+      console.log("too manu");
+      return;
+    }
+
+    /* if selected seat number is greater than ticket number */
+    if($('.one .selected').length > docCookies.getItem("quantity")) {
+      console.log("Only selected " + docCookies.getItem("quantity") + " tickets.");
+      return;
+    }
+    /* this probably doesn't work it's okay */
+
     $(this).toggleClass('selected');
+
     $('.selected', '.rows').each(function() {
-      console.log("here");
-      var seat = $(this).attr('href').substring(1);
-      selected.push(seat);
+      //console.log("Inside flight one seat selection.");
+
+      /* if a parent has the class two, don't add
+      to the array. otherwise, add to array. */
+
+      //  console.log("Checking parents of element.");
+        if($(this).parents('.two').length) {
+          return;
+          } else {
+              console.log("Has a parent with class one.");
+              var seat = $(this).attr('href').substring(1);
+              selected.push(seat);
+          }
     });
 
     /* make string of array to put inside input */
     seats = selected.join(", ");
     $('#seatsFlightOne').val(seats);
-    console.log(selected);
-    console.log(seatsFlightOne);
+  //  console.log(selected);
+    //console.log(seatsFlightOne);
     docCookies.setItem('seatsFlightOne', seats);
     console.log("flight one seats cookie: " + docCookies.getItem('seatsFlightOne'));
 
@@ -199,11 +326,40 @@ $.noConflict();
       return;
     }
 
+    /* deny the ability to select
+    if there are 6 selected already */
+
+    if($('.two .selected').length > 5) {
+      console.log("too manu");
+      return;
+    }
+
+    /* if selected seat number is greater than ticket number */
+    if($('.two .selected').length > docCookies.getItem("quantity")) {
+      console.log("Only selected " + docCookies.getItem("quantity") + " tickets.");
+      return;
+    }
+    /* this probably doesn't work it's okay */
+
+
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
-      console.log("here2");
-      var seat = $(this).attr('href').substring(1);
-      selected.push(seat);
+      console.log("Inside flight two seat selection.");
+
+      /* if a parent has the class one, don't add
+      to the array. otherwise, add to array. */
+
+      console.log("Checking parents of element.");
+      if($(this).parents('.one').length) {
+        console.log("Has a parent with class one.");
+        console.log("Selected: " + (selected));
+        console.log("Seats two: " + (seatsFlightTwo));
+
+      } else {
+        console.log("Has a parent with class two.");
+        var seat = $(this).attr('href').substring(1);
+        selected.push(seat);
+      }
     });
 
     /* make string of array to put inside input */
@@ -213,7 +369,10 @@ $.noConflict();
     console.log(seatsFlightTwo);
     docCookies.setItem('seatsFlightTwo', seats);
     console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
-  });
+
+  }); /* end flight two function */
+
+  /* end seat selection */
 
 
   /* page whatever: user information */
