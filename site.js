@@ -231,7 +231,7 @@ $.noConflict();
     $.each(formTwoData, function(i, field) {
       console.log(field.name, field.value);
 
-      docCookies.setItem(field.name, field.value);
+      docCookies.setItem(field.name, field.value, null, '/');
       console.log(field.name + ": " + docCookies.getItem(field.name));
     });
 
@@ -309,9 +309,9 @@ $.noConflict();
     /* make string of array to put inside input */
     seats = selected.join(", ");
     $('#seatsFlightOne').val(seats);
-  //  console.log(selected);
-    //console.log(seatsFlightOne);
-    docCookies.setItem('seatsFlightOne', seats);
+    console.log(selected);
+    console.log(seatsFlightOne);
+    docCookies.setItem('seatsFlightOne', seats, null, '/');
     console.log("flight one seats cookie: " + docCookies.getItem('seatsFlightOne'));
 
   }); /* end .one function */
@@ -367,7 +367,7 @@ $.noConflict();
     $('#seatsFlightTwo').val(seats);
     console.log(selected);
     console.log(seatsFlightTwo);
-    docCookies.setItem('seatsFlightTwo', seats);
+    docCookies.setItem('seatsFlightTwo', seats, null, '/');
     console.log("flight two seats cookie: " + docCookies.getItem('seatsFlightTwo'));
 
   }); /* end flight two function */
@@ -405,11 +405,11 @@ $.noConflict();
         $('#errormessage').remove();
         $('#h2card').after('<p id="reciept">RECIEPT: You requested ' + docCookies.getItem('quantity') + ' tickets, so the total for your departing and arrival flight will be $460 + $390 = $850</p>');
 
-        docCookies.setItem("fname", fname, "/traveler/index.html");
-        docCookies.setItem("lname", lname, "/traveler/index.html");
-        docCookies.setItem("number", number, "/traveler/index.html");
-        docCookies.setItem("email", email, "/traveler/index.html");
-        docCookies.setItem("birthday", birthday, "/traveler/index.html");
+        docCookies.setItem("fname", fname, null, '/');
+        docCookies.setItem("lname", lname, null, '/');
+        docCookies.setItem("number", number, null, '/');
+        docCookies.setItem("email", email, null, '/');
+        docCookies.setItem("birthday", birthday, null, '/');
 
         console.log(docCookies.getItem("lname"));
         console.log(docCookies.getItem("fname"));
@@ -467,14 +467,14 @@ $.noConflict();
         if(d.target instanceof HTMLAnchorElement) d.preventDefault();
         $('#errormessage').remove();
 
-        docCookies.setItem('cardnum', cardnum, "/payment/index.html");
-        docCookies.setItem('expmonth', expmonth, "/payment/index.html");
-        docCookies.setItem('expyear', expyear, "/payment/index.html");
-        docCookies.setItem('address', address, "/payment/index.html");
-        docCookies.setItem('state', state, "/payment/index.html");
-        docCookies.setItem('zipcode', zipcode, "/payment/index.html");
-        docCookies.setItem('city', city, "/payment/index.html");
-        docCookies.setItem('username', username, "/payment/index.html");
+        docCookies.setItem('cardnum', cardnum, null, '/');
+        docCookies.setItem('expmonth', expmonth, null, '/');
+        docCookies.setItem('expyear', expyear, null, '/');
+        docCookies.setItem('address', address, null, '/');
+        docCookies.setItem('state', state, null, '/');
+        docCookies.setItem('zipcode', zipcode, null, '/');
+        docCookies.setItem('city', city, null, '/');
+        docCookies.setItem('username', username, null, '/');
 
         console.log(docCookies.getItem('cardnum'));
         console.log(docCookies.getItem('username'));
@@ -489,11 +489,11 @@ $.noConflict();
   });
  departdate = $('#departdate').val()
   console.log(document.cookie);
-  $('#personalinfo').append('<p> Your first name: ' + docCookies.getItem('fname') + '</p>' + '<p> Your last name: '
+  $('#personalinsert').append('<b> Your first name: ' + docCookies.getItem('fname') + '</b>' + '<p> Your last name: '
   + docCookies.getItem('lname') + '</p>' + '<p> Your birthday is: ' + docCookies.getItem('birthday') + '</p>'
   + '<p> Your number is: ' + docCookies.getItem('number') + '</p>' + '<p> Your email address is: ' + docCookies.getItem('email') + '</p>' );
 
-  $('#paymentinfo').append('<p> Your card number: ' + docCookies.getItem('cardnum') + '</p>' +
+  $('#paymentinsert').append('<p> Your card number: ' + docCookies.getItem('cardnum') + '</p>' +
   '<p> The expiration month is: ' + docCookies.getItem('expmonth') + '</p>' +
    '<p> The expiration year is: ' + docCookies.getItem('expyear') + '</p>' +
   '<p> The full name displayed on the card: ' + docCookies.getItem('username') + '</p>' +
@@ -502,16 +502,16 @@ $.noConflict();
   '<p> The zipcode: ' + docCookies.getItem('zipcode') + '</p>' +
   '<p> The state: ' + docCookies.getItem('state') + '</p>');
 
-  $('#flightinfo').append('<p> Your ticket quantity: ' + docCookies.getItem('quantity') + '</p>' +
+  $('#flightinsert').append('<p> Your ticket quantity: ' + docCookies.getItem('quantity') + '</p>' +
   '<p> The number of adult tickets: ' + docCookies.getItem('adult') + '</p>' +
   '<p> The number of senior tickets: ' + docCookies.getItem('senior') + '</p>' +
   '<p> The number of children tickets: ' + docCookies.getItem('children') + '</p>' +
   '<p> The number of infant tickets: ' + docCookies.getItem('infant') + '</p>');
 
-  $('#ticketinfo').append('<p> Your departing flight is: ' + docCookies.getItem('departflight') + '</p>' +
+  $('#ticketinsert').append('<p> Your departing flight is: ' + docCookies.getItem('departflight') + '</p>' +
   '<p> Your arriving flight is: ' + docCookies.getItem('returnflight') + '</p>');
 
-  $('#seatinfo').append('<p> Your selected seats for flight one: ' + docCookies.getItem('seatsFlightOne') + '</p>' +
+  $('#seatinsert').append('<p> Your selected seats for flight one: ' + docCookies.getItem('seatsFlightOne') + '</p>' +
   '<p> Your selected seats for flight two: ' + docCookies.getItem('seatsFlightTwo') + '</p>');
 
   $('#confirmationpg').append('<p> Hello ' + docCookies.getItem('fname') + '</p>' +

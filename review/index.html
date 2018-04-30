@@ -15,26 +15,51 @@
   <main>
     <section id="confirmingdata">
       <h2>Review Your Information</h2>
-      <form action="../confirmeditinerary/index.html" method="get" id="confirminformation">
-        <section id="personalsec">
-          <h3 id="personalinfo">Personal Information</h3>
-        </section>
-        <section id="paymentsec">
+      <section id="personalsec">
+        <h3 id="personalinfo">Personal Information</h3>
+        <p id="personalinsert">
+        </p>
+        <form action="../traveler/index.html" method="get" novalidate>
+          <input type="submit" id="submit" value="Edit personal information." />
+        </form>
+      </section>
+      <section id="paymentsec">
           <h3 id="paymentinfo">Payment Information</h3>
+          <p id="paymentinsert">
+          </p>
+          <form action="../payment/index.html" method="get" novalidate>
+            <input type="submit" id="submit" value="Edit payment information." />
+          </form>
         </section>
         <section id="flightsec">
           <h3 id="flightinfo">Flight Information</h3>
+          <p id="flightinsert">
+          </p>
+          <form action="../index.html" method="get" novalidate>
+            <input type="submit" id="submit" value="Edit flight information." />
+          </form>
         </section>
         <section id="ticketsec">
           <h3 id="ticketinfo">Ticket Information</h3>
+          <p id="ticketinsert">
+          </p>
+          <form action="../searchresults/index.html" method="get" novalidate>
+            <input type="submit" id="submit" value="Edit ticket information." />
+          </form>
         </section>
         <section id="seatsec">
           <h3 id="seatinfo">Seat Information</h3>
+          <p id="seatinsert">
+          </p>
+          <form action="../seats/index.html" method="get" novalidate>
+            <input type="submit" id="submit" value="Edit seat information." />
+          </form>
         </section>
         <li>
-          <input id="submit" name="submit" value="Complete" type="submit"/>
+          <form action="../confirmeditinerary/index.html" method="get" id="confirminformation">
+            <input type="submit" value="Complete" />
+          </form>
         </li>
-      </form>
     </section>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
