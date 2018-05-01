@@ -402,25 +402,39 @@ but i have no idea how !!! :)))  */
 #flights a {
   display: grid;
   margin-bottom: 20px;
-  background-color: #ADD4FF;
+  background-color: #004EA6;
   border-radius: 16px;
-  padding: 10px 0;
   width: 100%;
 }
 
-.other {
+.ig,
+.igl {
+  background-color: #ADD4FF;
+  display: block;
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
 }
 
-.indivFlight li {
+.indivFlight .ig {
+  float: left;
 }
 
-.indivFlight h4{
+.indivFlight .igl {
+  width: 100%;
 }
 
-.priceP {
-  background-color: yellow;
+
+.pretty {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
 }
 
+.pretty h4 {
+  color: #fff;
+}
 
 
 #ftwo label{
