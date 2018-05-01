@@ -18,41 +18,41 @@
       <form action="../searchresults/index.html" method="get" id="flightsearch" novalidate>
         <ol id="searchone">
           <li>
-          <ul class="trip">
-            <li>
-              <label for="oneway">One-Way</label>
-              <input type="radio" id="oneway" name="trip" value="One-Way" />
-            </li>
-            <li>
-              <label for="roundtrip">Round Trip</label>
-              <input type="radio" id="roundtrip" name="trip" value="Round Trip" checked />
-            </li>
-          </ul>
-        </li>
-        <li>
-          <ul class="loc">
-            <li>
-              <label for="deparloc">Departing Location</label>
-              <input type="text" id="deparloc" name="departing location" placeholder="Chicago, IL" />
-            </li>
-            <li>
-              <label for="arriveloc">Arriving Location</label>
-              <input type="text" id="arriveloc" name="arriving location" placeholder="Orlando, FL" />
-            </li>
-          </ul>
-        </li>
-        <li>
-          <ul class="dates">
-            <li>
-              <label for="departdate">Departure Date</label>
-              <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
-            </li>
-            <li>
-              <label for="returndate">Return Date</label>
-              <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
-            </li>
-          </ul>
-        </li>
+            <ul class="trip">
+              <li>
+                <label for="oneway">One-Way</label>
+                <input type="radio" id="oneway" name="trip" value="One-Way" />
+              </li>
+              <li>
+                <label for="roundtrip">Round Trip</label>
+                <input type="radio" id="roundtrip" name="trip" value="Round Trip" checked />
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul class="loc">
+              <li>
+                <label for="deparloc">Departing Location</label>
+                <input type="text" id="deparloc" name="departing location" placeholder="Chicago, IL" />
+              </li>
+              <li>
+                <label for="arriveloc">Arriving Location</label>
+                <input type="text" id="arriveloc" name="arriving location" placeholder="Orlando, FL" />
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul class="dates">
+              <li>
+                <label for="departdate">Departure Date</label>
+                <input type="date" id="departdate" name="departure date" placeholder="mm/dd/yyyy" />
+              </li>
+              <li>
+                <label for="returndate">Return Date</label>
+                <input type="date" id="returndate" name="return date" placeholder="mm/dd/yyyy" />
+              </li>
+            </ul>
+          </li>
           <li class="ti">
             <label for="tickets">Tickets</label>
           </li>
@@ -60,19 +60,19 @@
             <ul class="tickets">
               <li>
                 <label for="adult">Adults</label>
-                <input type="number" name="tickets" id="adult" value="1" />
+                <input type="text" name="tickets" id="adult" pattern="[0-9]*" inputmode="numeric" value="1" />
               </li>
               <li>
                 <label for="senior">Seniors</label>
-                <input type="number" name="tickets" id="senior" value="0" />
+                <input type="text" name="tickets" id="senior" pattern="[0-9]*" inputmode="numeric" value="0" />
               </li>
               <li>
                 <label for="children">Children</label>
-                <input type="number" name="tickets" id="children" value="0" />
+                <input type="text" name="tickets" id="children" pattern="[0-9]*" inputmode="numeric" value="0" />
               </li>
               <li>
                 <label for="infant">Infants</label>
-                <input type="number" name="tickets" id="infant" value="0" />
+                <input type="text" name="tickets" id="infant" pattern="[0-9]*" inputmode="numeric" value="0" />
               </li>
             </ul>
           </li>
