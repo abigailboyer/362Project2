@@ -380,7 +380,7 @@ but i have no idea how !!! :)))  */
   margin: 0;
   padding: 0;
 
-  margin-bottom: 2.5rem; /* 40 / 16 = 2.5 */
+  margin-bottom: 10px;
   padding: 0.625rem 5%; /* 10 / 16 = .625 */
 }
 
@@ -424,7 +424,6 @@ but i have no idea how !!! :)))  */
   width: 100%;
 }
 
-
 .pretty {
   color: #fff;
   text-align: center;
@@ -434,6 +433,14 @@ but i have no idea how !!! :)))  */
 
 .pretty h4 {
   color: #fff;
+}
+
+#flightSelections {
+  margin-bottom: 40px;
+}
+/* whatever */
+#flightselections input[type="text"] {
+  line-height: 30px;
 }
 
 
