@@ -453,8 +453,7 @@ but i have no idea how !!! :)))  */
   background-color: #2b8fff;
 }
 
-a.selectedFlight {
-
+#flights a.selectedFlight {
   background-color: #217FE8;
 }
 

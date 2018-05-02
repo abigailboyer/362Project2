@@ -219,6 +219,11 @@ $.noConflict();
 
 
   /* page two: search results */
+  $(document).ready(function() {
+    $('#flightOneSelection').val('');
+    $('#flightTwoSelection').val('');
+  });
+
   $('#flightSelections').on('submit', function(e) {
     var flightSelectionData = $(this).serializeArray();
   });
@@ -229,16 +234,35 @@ $.noConflict();
 
     e.preventDefault();
 
-    if($('.flightsOne .selected').length > 0) {
-      console.log("Only allowed to select one flight at a time.");
+    /*
+    if($(this).hasClass('unavailable')) {
       return;
     }
-    /* this probably doesn't work it's okay */
+    */
 
-    $(this).toggleClass('selected');
+    if($('.flightsOne .selectedFlight').length > 0) {
+      console.log("too many bitch");
+      return;
+    }
 
-    $('.selected').each(function() {
-      if($(this).parents('.flightsTwo').length) {
+    /*
+    if($('.flightsOne .selected').length > docCookies.getItem("quantity")) {
+      console.log("Only selected " + docCookies.getItem("quantity") + " tickets.");
+      return;
+    }
+    */
+
+    $(this).toggleClass('selectedFlight');
+
+    $('.selectedFlight').each(function() {
+      console.log("Flight one selection.");
+
+      /* if a parent has the class two, don't add
+      to the array. otherwise, add to array. */
+
+      console.log("Checking parents of element.");
+        if($(this).parents('.flightsTwo').length) {
+          console.log("unacceptable");
           return;
           } else {
               console.log("Has a parent with class one.");
@@ -246,8 +270,6 @@ $.noConflict();
               selected.push(flight);
           }
     });
-
-    /* as long as not null then continue */
 
     /* make string of array to put inside input */
     flights = selected.join(", ");
@@ -257,84 +279,61 @@ $.noConflict();
     docCookies.setItem('flightOneSelection', flights, null, '/');
     console.log("flight one selection cookie: " + docCookies.getItem('flightOneSelection'));
 
-  }); /* end .one function */
+  });
 
-  $('.flightsTwo a').on('click', function(e) {
-    var selected = [];
-    var flights;
+  /* flight two selection */
 
-    e.preventDefault();
+    $('.flightsTwo a').on('click', function(e) {
+      var selected = [];
+      var flights;
 
-    if($('.flightsTwo .selected').length > 0) {
-      console.log("Only allowed to select one flight at a time.");
-      /* shorten array to most recent selection */
-      $(this).length(1);
-      return;
-    }
+      e.preventDefault();
 
-    $(this).toggleClass('selected');
+      /*
+      if($(this).hasClass('unavailable')) {
+        return;
+      }
+      */
 
-    $('.selected').each(function() {
-      if($(this).parents('.flightsOne').length) {
-          return;
-          } else {
-              console.log("Has a parent with class one.");
-              var flight = $(this).attr('href').substring(1);
-              selected.push(flight);
-          }
+      if($('.flightsTwo .selectedFlight').length > 0) {
+        console.log("too many bitch");
+        return;
+      }
+
+      /*
+      if($('.flightsOne .selected').length > docCookies.getItem("quantity")) {
+        console.log("Only selected " + docCookies.getItem("quantity") + " tickets.");
+        return;
+      }
+      */
+
+      $(this).toggleClass('selectedFlight');
+
+      $('.selectedFlight').each(function() {
+        console.log("Flight two selection.");
+
+        /* if a parent has the class two, don't add
+        to the array. otherwise, add to array. */
+
+        console.log("Checking parents of element.");
+          if($(this).parents('.flightsOne').length) {
+            console.log("NO");
+            return;
+            } else {
+                console.log("Has a parent with class two.");
+                var flight = $(this).attr('href').substring(1);
+                selected.push(flight);
+            }
+      });
+
+      /* make string of array to put inside input */
+      flights = selected.join(", ");
+      $('#flightTwoSelection').val(flights);
+      console.log(selected);
+      console.log(flightTwoSelection);
+      docCookies.setItem('flightTwoSelection', flights, null, '/');
+      console.log("flight two selection cookie: " + docCookies.getItem('flightTwoSelection'));
     });
-
-    /* as long as not null then continue */
-
-    /* make string of array to put inside input */
-    flights = selected.join(", ");
-    $('#flightTwoSelection').val(flights);
-    console.log(selected);
-    console.log(flightTwoSelection);
-    docCookies.setItem('flightTwoSelection', flights, null, '/');
-    console.log("flight one selection cookie: " + docCookies.getItem('flightTwoSelection'));
-
-  }); /* end .one function */
-
-
-
-
-/*  $('#flightSelection').on('submit', function(d)
-  {
-      console.log("submit clicked");
-
-    /* serialize array for form inputs */
-/*    var formTwoData = $(this).serializeArray();
-    console.log(formTwoData);
-
-    $.each(formTwoData, function(i, field) {
-      console.log(field.name, field.value);
-
-      docCookies.setItem(field.name, field.value, null, '/');
-      console.log(field.name + ": " + docCookies.getItem(field.name));
-    });
-
-
-      var departflights = document.getElementsByName("departflight");
-      var returnflights = document.getElementsByName("returnflight");
-      var formValid = false;
-      var formValid2 = false;
-      var j = 0;
-      var i = 0;
-
-      while (!formValid && i < departflights.length) {
-        if (departflights[i].checked) formValid = true;
-            i++;
-        }
-        while (!formValid2 && j < returnflights.length) {
-          if (returnflights[j].checked) formValid2 = true;
-            j++;
-        }
-        if (!formValid || !formValid2){
-          d.preventDefault();
-          $('#searchsubmit').after('<li id="errormessage">You have information missing! Please select your flight/flights!</li>');
-        }
-  }); */
 
   /* page three: seat selection */
 
@@ -351,9 +350,6 @@ $.noConflict();
     if($(this).hasClass('unavailable')) {
       return;
     }
-
-    /* deny the ability to select
-    if there are 6 selected already */
 
     if($('.one .selected').length > 5) {
       console.log("too manu");
