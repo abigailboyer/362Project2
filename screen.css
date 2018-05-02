@@ -715,35 +715,3 @@ do all this Extra work */
     width: 63%;
   }
 }
-
-@media screen and (min-width: 900px) {
-#flightselection{
-  display: block;
-}
-
-}
-@media screen and (max-width: 500px){
-  #flightselection{
-   display: block;
-    background-color: #ADD4FF;
-  }
-  #searchtitles{
-    display: none;
-  }
-  #flightselection ul li {
-    display: block;
-
-  }
-
-  #flightselection li {
-    padding-right: 3.75rem; /* 60 / 16 = 3.75 */
-  }
-
-}
-@media screen and (min-width: 1000px){
-  #flightselection{
-    display: block;
-
-  }
-
-}
