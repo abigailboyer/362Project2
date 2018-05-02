@@ -380,7 +380,7 @@ but i have no idea how !!! :)))  */
   margin: 0;
   padding: 0;
 
-  margin-bottom: 2.5rem; /* 40 / 16 = 2.5 */
+  margin-bottom: 10px;
   padding: 0.625rem 5%; /* 10 / 16 = .625 */
 }
 
@@ -402,25 +402,46 @@ but i have no idea how !!! :)))  */
 #flights a {
   display: grid;
   margin-bottom: 20px;
-  background-color: #ADD4FF;
+  background-color: #004EA6;
   border-radius: 16px;
-  padding: 10px 0;
   width: 100%;
 }
 
-.other {
+.ig,
+.igl {
+  background-color: #ADD4FF;
+  display: block;
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
 }
 
-.indivFlight li {
+.indivFlight .ig {
+  float: left;
 }
 
-.indivFlight h4{
+.indivFlight .igl {
+  width: 100%;
 }
 
-.priceP {
-  background-color: yellow;
+.pretty {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
 }
 
+.pretty h4 {
+  color: #fff;
+}
+
+#flightSelections {
+  margin-bottom: 40px;
+}
+
+#flightselections input[type="text"] {
+  line-height: 30px;
+}
 
 
 #ftwo label{
@@ -505,7 +526,7 @@ a.unavailable:hover {
 
 /* search results styles */
 
-#titledepart {
+main h3 {
   margin: 0 5%;
   margin-bottom: 0.625rem; /* 10 / 16 = .625rem */
 }
