@@ -400,7 +400,7 @@ but i have no idea how !!! :)))  */
 }
 
 #flights a {
-  display: grid;
+  display: block;
   margin-bottom: 20px;
   background-color: #004EA6;
   border-radius: 16px;
@@ -413,7 +413,7 @@ but i have no idea how !!! :)))  */
   display: block;
   width: 50%;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 0;\
 }
 
 .indivFlight .ig {
@@ -441,6 +441,21 @@ but i have no idea how !!! :)))  */
 
 #flightselections input[type="text"] {
   line-height: 30px;
+}
+
+/* flight selection classes for js */
+
+#flights a {
+}
+
+#flights a:hover {
+  transition: 0.3s;
+  background-color: #2b8fff;
+}
+
+a.selectedFlight {
+
+  background-color: #217FE8;
 }
 
 

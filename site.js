@@ -219,13 +219,92 @@ $.noConflict();
 
 
   /* page two: search results */
+  $('#flightSelections').on('submit', function(e) {
+    var flightSelectionData = $(this).serializeArray();
+  });
 
-  $('#flightSelection').on('submit', function(d)
+  $('.flightsOne a').on('click', function(e) {
+    var selected = [];
+    var flights;
+
+    e.preventDefault();
+
+    if($('.flightsOne .selected').length > 0) {
+      console.log("Only allowed to select one flight at a time.");
+      return;
+    }
+    /* this probably doesn't work it's okay */
+
+    $(this).toggleClass('selected');
+
+    $('.selected').each(function() {
+      if($(this).parents('.flightsTwo').length) {
+          return;
+          } else {
+              console.log("Has a parent with class one.");
+              var flight = $(this).attr('href').substring(1);
+              selected.push(flight);
+          }
+    });
+
+    /* as long as not null then continue */
+
+    /* make string of array to put inside input */
+    flights = selected.join(", ");
+    $('#flightOneSelection').val(flights);
+    console.log(selected);
+    console.log(flightOneSelection);
+    docCookies.setItem('flightOneSelection', flights, null, '/');
+    console.log("flight one selection cookie: " + docCookies.getItem('flightOneSelection'));
+
+  }); /* end .one function */
+
+  $('.flightsTwo a').on('click', function(e) {
+    var selected = [];
+    var flights;
+
+    e.preventDefault();
+
+    if($('.flightsTwo .selected').length > 0) {
+      console.log("Only allowed to select one flight at a time.");
+      /* shorten array to most recent selection */
+      $(this).length(1);
+      return;
+    }
+
+    $(this).toggleClass('selected');
+
+    $('.selected').each(function() {
+      if($(this).parents('.flightsOne').length) {
+          return;
+          } else {
+              console.log("Has a parent with class one.");
+              var flight = $(this).attr('href').substring(1);
+              selected.push(flight);
+          }
+    });
+
+    /* as long as not null then continue */
+
+    /* make string of array to put inside input */
+    flights = selected.join(", ");
+    $('#flightTwoSelection').val(flights);
+    console.log(selected);
+    console.log(flightTwoSelection);
+    docCookies.setItem('flightTwoSelection', flights, null, '/');
+    console.log("flight one selection cookie: " + docCookies.getItem('flightTwoSelection'));
+
+  }); /* end .one function */
+
+
+
+
+/*  $('#flightSelection').on('submit', function(d)
   {
       console.log("submit clicked");
 
     /* serialize array for form inputs */
-    var formTwoData = $(this).serializeArray();
+/*    var formTwoData = $(this).serializeArray();
     console.log(formTwoData);
 
     $.each(formTwoData, function(i, field) {
@@ -255,7 +334,7 @@ $.noConflict();
           d.preventDefault();
           $('#searchsubmit').after('<li id="errormessage">You have information missing! Please select your flight/flights!</li>');
         }
-  });
+  }); */
 
   /* page three: seat selection */
 

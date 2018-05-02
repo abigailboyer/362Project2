@@ -238,7 +238,8 @@
       </ul>
     </figure>
 
-  <form id="flightSelections">
+    <!-- action="../seats/index.html" -->
+  <form id="flightSelections" method="get" id="seatSelection" novalidate>
     <ol>
       <li>
         <label for="flightOneSelection">Departing Flight: </label>
@@ -246,7 +247,7 @@
       </li>
       <li class="flightTwoShow">
         <label for="flightTwoSelection">Returning Flight: </label>
-        <input type="text" id="flightwoSelection" name="flightTwoSelection" placeholder="Flight202" />
+        <input type="text" id="flightTwoSelection" name="flightTwoSelection" placeholder="Flight202" />
       </li>
       <li>
         <input type="submit" id="submit" name="submit" value="Select seats!" />
